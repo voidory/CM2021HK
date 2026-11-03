@@ -33,6 +33,19 @@ export default function App() {
   const [animationsEnabled, setAnimationsEnabled] = useState<boolean>(true);
   const [activeYearFilter, setActiveYearFilter] = useState<string>('ALL');
   const [activeThemeFilter, setActiveThemeFilter] = useState<string>('ALL');
+  const [rapidIntakeEnabled, setRapidIntakeEnabled] = useState<boolean>(false);
+
+  // Toast notification state
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const toastTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const showToast = useCallback((msg: string) => {
+    setToastMessage(msg);
+    if (toastTimeoutRef.current) clearTimeout(toastTimeoutRef.current);
+    toastTimeoutRef.current = setTimeout(() => {
+      setToastMessage(null);
+    }, 4500);
+  }, []);
 
   // Session state
   const [recentQuestionIds, setRecentQuestionIds] = useState<string[]>([]);
@@ -63,6 +76,9 @@ export default function App() {
         setAnimationsEnabled(stored.settings.animationsEnabled ?? true);
         setActiveYearFilter(stored.settings.activeYearFilter ?? 'ALL');
         setActiveThemeFilter(stored.settings.activeThemeFilter ?? 'ALL');
+        if (stored.settings.rapidIntakeEnabled !== undefined) {
+          setRapidIntakeEnabled(stored.settings.rapidIntakeEnabled);
+        }
       }
     }
   }, []);
@@ -98,15 +114,18 @@ export default function App() {
 
   // Pick next question
   const pickAndSetQuestion = useCallback(
-    (pool: Question[] = filteredPool) => {
+    (pool: Question[] = filteredPool, overrideRapidIntake?: boolean) => {
       const targetPool = pool.length > 0 ? pool : QUESTIONS;
+      const isRapid = overrideRapidIntake !== undefined ? overrideRapidIntake : rapidIntakeEnabled;
       const nextQ = selectNextQuestion(targetPool, {
         learningStates,
         recentQuestionIds,
         sessionMistakeQueue,
         themeAttemptCounts,
         totalSessionAttempts: sessionAttempts,
-        config: schedulerConfig
+        config: schedulerConfig,
+        rapidIntakeEnabled: isRapid,
+        criticalRetentionThreshold: 0.70
       });
 
       if (nextQ) {
@@ -115,7 +134,7 @@ export default function App() {
         setIsAnswerSubmitted(false);
       }
     },
-    [filteredPool, learningStates, recentQuestionIds, sessionMistakeQueue, themeAttemptCounts, sessionAttempts, schedulerConfig]
+    [filteredPool, learningStates, recentQuestionIds, sessionMistakeQueue, themeAttemptCounts, sessionAttempts, schedulerConfig, rapidIntakeEnabled]
   );
 
   // Initialize first question immediately on mount
@@ -177,6 +196,21 @@ export default function App() {
       return nextQueue;
     });
 
+    // Auto-revert if in rapid intake mode and all questions in pool are now explored
+    let nextRapidIntake = rapidIntakeEnabled;
+    if (rapidIntakeEnabled) {
+      const remainingUnseen = filteredPool.filter(
+        q => !updatedStates[q.id] || updatedStates[q.id].history.length === 0
+      ).length;
+      if (remainingUnseen === 0) {
+        nextRapidIntake = false;
+        setRapidIntakeEnabled(false);
+        showToast(
+          `🎉 All ${filteredPool.length} questions in this pool have been explored! Returning to adaptive spaced review.`
+        );
+      }
+    }
+
     // Save to localStorage
     const toSave: StoredAppData = {
       schemaVersion: '1.0',
@@ -185,7 +219,8 @@ export default function App() {
         targetRetention,
         animationsEnabled,
         activeYearFilter,
-        activeThemeFilter
+        activeThemeFilter,
+        rapidIntakeEnabled: nextRapidIntake
       }
     };
     saveStoredData(toSave);
@@ -195,6 +230,43 @@ export default function App() {
     pickAndSetQuestion();
   };
 
+  const handleToggleRapidIntake = () => {
+    const currentUnseen = filteredPool.filter(
+      q => !learningStates[q.id] || learningStates[q.id].history.length === 0
+    ).length;
+
+    if (currentUnseen === 0 && !rapidIntakeEnabled) {
+      showToast('All questions in this pool have already been explored!');
+      return;
+    }
+
+    const nextVal = !rapidIntakeEnabled;
+    setRapidIntakeEnabled(nextVal);
+
+    saveStoredData({
+      schemaVersion: '1.0',
+      learningStates,
+      settings: {
+        targetRetention,
+        animationsEnabled,
+        activeYearFilter,
+        activeThemeFilter,
+        rapidIntakeEnabled: nextVal
+      }
+    });
+
+    if (nextVal) {
+      showToast('⚡ Rapid Intake activated: introducing remaining unseen questions faster!');
+      // If current question has already been reviewed, immediately draw an unseen question
+      const currentIsReviewed = currentQuestion && learningStates[currentQuestion.id] && learningStates[currentQuestion.id].history.length > 0;
+      if (!isAnswerSubmitted && currentIsReviewed) {
+        pickAndSetQuestion(filteredPool, true);
+      }
+    } else {
+      showToast('Rapid Intake paused: returned to standard adaptive review.');
+    }
+  };
+
   const handleYearFilterChange = (year: string) => {
     setActiveYearFilter(year);
     const newPool = QUESTIONS.filter(q => {
@@ -202,7 +274,19 @@ export default function App() {
       if (activeThemeFilter !== 'ALL' && q.primaryTheme !== activeThemeFilter) return false;
       return true;
     });
-    pickAndSetQuestion(newPool);
+
+    let nextRapid = rapidIntakeEnabled;
+    if (rapidIntakeEnabled) {
+      const unseenInNew = newPool.filter(
+        q => !learningStates[q.id] || learningStates[q.id].history.length === 0
+      ).length;
+      if (unseenInNew === 0) {
+        nextRapid = false;
+        setRapidIntakeEnabled(false);
+        showToast(`All questions in ${year} have already been seen! Reverting to adaptive review.`);
+      }
+    }
+    pickAndSetQuestion(newPool, nextRapid);
   };
 
   const handleThemeFilterChange = (theme: string) => {
@@ -212,7 +296,19 @@ export default function App() {
       if (theme !== 'ALL' && q.primaryTheme !== theme) return false;
       return true;
     });
-    pickAndSetQuestion(newPool);
+
+    let nextRapid = rapidIntakeEnabled;
+    if (rapidIntakeEnabled) {
+      const unseenInNew = newPool.filter(
+        q => !learningStates[q.id] || learningStates[q.id].history.length === 0
+      ).length;
+      if (unseenInNew === 0) {
+        nextRapid = false;
+        setRapidIntakeEnabled(false);
+        showToast(`All questions in this theme have already been seen! Reverting to adaptive review.`);
+      }
+    }
+    pickAndSetQuestion(newPool, nextRapid);
   };
 
   const handleImportData = (imported: StoredAppData) => {
@@ -222,6 +318,9 @@ export default function App() {
       setAnimationsEnabled(imported.settings.animationsEnabled);
       setActiveYearFilter(imported.settings.activeYearFilter);
       setActiveThemeFilter(imported.settings.activeThemeFilter);
+      if (imported.settings.rapidIntakeEnabled !== undefined) {
+        setRapidIntakeEnabled(imported.settings.rapidIntakeEnabled);
+      }
     }
     saveStoredData(imported);
     pickAndSetQuestion();
@@ -234,6 +333,7 @@ export default function App() {
     setSessionMistakeQueue([]);
     setSessionAttempts(0);
     setSessionCorrect(0);
+    setRapidIntakeEnabled(false);
 
     const toSave: StoredAppData = {
       schemaVersion: '1.0',
@@ -242,11 +342,12 @@ export default function App() {
         targetRetention,
         animationsEnabled,
         activeYearFilter: 'ALL',
-        activeThemeFilter: 'ALL'
+        activeThemeFilter: 'ALL',
+        rapidIntakeEnabled: false
       }
     };
     saveStoredData(toSave);
-    pickAndSetQuestion(QUESTIONS);
+    pickAndSetQuestion(QUESTIONS, false);
   };
 
   const handleDownloadStandaloneHtml = () => {
@@ -299,6 +400,9 @@ export default function App() {
         attemptedCount={attemptedCount}
         totalQuestions={QUESTIONS.length}
         dueCount={dueCount}
+        rapidIntakeEnabled={rapidIntakeEnabled}
+        onToggleRapidIntake={handleToggleRapidIntake}
+        unseenCount={unseenInPoolCount}
       />
 
       <main className="flex-1 flex items-center justify-center py-4">
@@ -311,6 +415,12 @@ export default function App() {
             isAnswerSubmitted={isAnswerSubmitted}
             activePoolCount={filteredPool.length}
             unseenInPoolCount={unseenInPoolCount}
+            rapidIntakeEnabled={rapidIntakeEnabled}
+            onToggleRapidIntake={handleToggleRapidIntake}
+            isUnseenQuestion={
+              !learningStates[currentQuestion.id] ||
+              learningStates[currentQuestion.id].history.length === 0
+            }
           />
         ) : (
           <div className="text-center p-8 bg-white/90 rounded-3xl shadow-sm border border-sky-100 max-w-md mx-auto">
@@ -337,6 +447,25 @@ export default function App() {
       <footer className="py-3 text-center text-xs text-slate-400">
         CloudChem CM2021 Inorganic Revision • Sole Answer Authority: ANS.pdf • 130 Verified Exam Questions
       </footer>
+
+      {/* Toast Notification for Rapid Intake & Auto-Reversion */}
+      {toastMessage && (
+        <div
+          role="status"
+          aria-live="polite"
+          className="fixed bottom-6 right-6 z-50 max-w-sm bg-slate-900/90 text-white text-xs sm:text-sm px-4 py-3 rounded-2xl shadow-xl backdrop-blur-md border border-slate-700/60 flex items-center gap-3 animate-in fade-in slide-in-from-bottom-2 duration-200"
+        >
+          <span className="text-amber-400 text-lg shrink-0">⚡</span>
+          <div className="flex-1 font-medium leading-snug">{toastMessage}</div>
+          <button
+            onClick={() => setToastMessage(null)}
+            className="text-slate-400 hover:text-white text-xs ml-1 transition cursor-pointer p-1"
+            aria-label="Dismiss message"
+          >
+            ✕
+          </button>
+        </div>
+      )}
 
       {/* Modals */}
       <ProgressPanel
@@ -375,7 +504,8 @@ export default function App() {
               targetRetention: r,
               animationsEnabled,
               activeYearFilter,
-              activeThemeFilter
+              activeThemeFilter,
+              rapidIntakeEnabled
             }
           });
         }}
@@ -389,10 +519,14 @@ export default function App() {
               targetRetention,
               animationsEnabled: enabled,
               activeYearFilter,
-              activeThemeFilter
+              activeThemeFilter,
+              rapidIntakeEnabled
             }
           });
         }}
+        rapidIntakeEnabled={rapidIntakeEnabled}
+        onRapidIntakeToggle={handleToggleRapidIntake}
+        unseenCount={unseenInPoolCount}
       />
     </div>
   );

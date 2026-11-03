@@ -83,3 +83,73 @@ test('selectNextQuestion prioritizes session relearning items after threshold', 
   });
   assert.equal(chosen?.id, 'Q4');
 });
+
+test('selectNextQuestion with rapidIntakeEnabled selects unseen question', () => {
+  const pool = [
+    { id: 'Q1', primaryTheme: 'Theme 1', academicYear: 'AY21/22' },
+    { id: 'Q2', primaryTheme: 'Theme 2', academicYear: 'AY21/22' },
+    { id: 'Q3', primaryTheme: 'Theme 3', academicYear: 'AY21/22' }
+  ];
+  const now = 10000000;
+  // Q1 is seen and retained nicely
+  const learningStates: Record<string, QuestionLearningState> = {
+    Q1: {
+      questionId: 'Q1',
+      reps: 1,
+      lapses: 0,
+      stability: 48,
+      lastReviewedAt: now - 3600 * 1000,
+      nextDueAt: now + 40 * 3600 * 1000,
+      history: []
+    }
+  };
+
+  const chosen = selectNextQuestion(pool, {
+    learningStates,
+    recentQuestionIds: ['Q1'],
+    sessionMistakeQueue: [],
+    themeAttemptCounts: { 'Theme 1': 1 },
+    totalSessionAttempts: 1,
+    rapidIntakeEnabled: true,
+    currentTime: now
+  });
+
+  // Must pick one of the unseen questions (Q2 or Q3)
+  assert.ok(chosen?.id === 'Q2' || chosen?.id === 'Q3');
+});
+
+test('selectNextQuestion with rapidIntakeEnabled prioritizes review guard if critically overdue', () => {
+  const pool = [
+    { id: 'Q1', primaryTheme: 'Theme 1', academicYear: 'AY21/22' },
+    { id: 'Q2', primaryTheme: 'Theme 2', academicYear: 'AY21/22' }
+  ];
+  const now = 10000000;
+  // Q1 has lapsed/decayed significantly: elapsed 100h on stability 24h -> R(t) = exp(-100/24) ≈ 0.015 (< 0.70)
+  const learningStates: Record<string, QuestionLearningState> = {
+    Q1: {
+      questionId: 'Q1',
+      reps: 1,
+      lapses: 1,
+      stability: 24,
+      lastReviewedAt: now - 100 * 3600 * 1000,
+      nextDueAt: now - 50 * 3600 * 1000,
+      history: []
+    }
+    // Q2 is unseen
+  };
+
+  const chosen = selectNextQuestion(pool, {
+    learningStates,
+    recentQuestionIds: [],
+    sessionMistakeQueue: [],
+    themeAttemptCounts: {},
+    totalSessionAttempts: 5,
+    rapidIntakeEnabled: true,
+    criticalRetentionThreshold: 0.70,
+    currentTime: now
+  });
+
+  // Because Q1 is critically overdue (R < 0.70), Review Guard triggers to save Q1 from total forgetting
+  assert.equal(chosen?.id, 'Q1');
+});
+

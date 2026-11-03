@@ -14,6 +14,9 @@ interface HeaderProps {
   attemptedCount: number;
   totalQuestions: number;
   dueCount: number;
+  rapidIntakeEnabled: boolean;
+  onToggleRapidIntake: () => void;
+  unseenCount: number;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -28,7 +31,10 @@ export const Header: React.FC<HeaderProps> = ({
   onThemeFilterChange,
   attemptedCount,
   totalQuestions,
-  dueCount
+  dueCount,
+  rapidIntakeEnabled,
+  onToggleRapidIntake,
+  unseenCount
 }) => {
   const years = ['ALL', 'AY25/26', 'AY24/25', 'AY23/24', 'AY22/23', 'AY21/22'];
 
@@ -59,7 +65,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Progress Button */}
             <button
               onClick={onOpenProgress}
-              className="px-3 py-1.5 rounded-xl bg-sky-50 hover:bg-sky-100 text-sky-800 font-semibold border border-sky-200 transition flex items-center gap-1.5 shadow-2xs"
+              className="px-3 py-1.5 rounded-xl bg-sky-50 hover:bg-sky-100 text-sky-800 font-semibold border border-sky-200 transition flex items-center gap-1.5 shadow-2xs cursor-pointer"
             >
               <span>📊</span>
               <span>Progress</span>
@@ -71,6 +77,41 @@ export const Header: React.FC<HeaderProps> = ({
                   {dueCount} due
                 </span>
               )}
+            </button>
+
+            {/* Rapid Intake Accelerator Button */}
+            <button
+              onClick={onToggleRapidIntake}
+              className={`px-3 py-1.5 rounded-xl font-semibold transition flex items-center gap-1.5 shadow-2xs ${
+                unseenCount === 0
+                  ? 'bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed opacity-80'
+                  : rapidIntakeEnabled
+                  ? 'bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white border border-amber-600 ring-2 ring-amber-300/70 shadow-xs cursor-pointer'
+                  : 'bg-amber-50 hover:bg-amber-100/90 text-amber-900 border border-amber-200/90 cursor-pointer'
+              }`}
+              title={
+                unseenCount === 0
+                  ? 'All questions in this pool have been explored'
+                  : rapidIntakeEnabled
+                  ? 'Rapid Intake Active: Introducing unseen questions faster (click to toggle off)'
+                  : 'Rapid Intake: Accelerate introducing remaining unseen questions'
+              }
+            >
+              <span className="text-xs">⚡</span>
+              <span className="whitespace-nowrap shrink-0">
+                {unseenCount === 0 ? 'All Seen' : rapidIntakeEnabled ? 'Rapid Intake ON' : 'Rapid Intake'}
+              </span>
+              <span
+                className={`px-1.5 py-0.2 rounded-md text-[10px] tabular-nums font-bold ${
+                  rapidIntakeEnabled
+                    ? 'bg-amber-800/80 text-white'
+                    : unseenCount === 0
+                    ? 'bg-slate-200 text-slate-500'
+                    : 'bg-amber-200/80 text-amber-950'
+                }`}
+              >
+                {unseenCount}
+              </span>
             </button>
 
             {/* Audit Button */}

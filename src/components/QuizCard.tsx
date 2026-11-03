@@ -12,6 +12,9 @@ interface QuizCardProps {
   isAnswerSubmitted: boolean;
   activePoolCount: number;
   unseenInPoolCount: number;
+  rapidIntakeEnabled?: boolean;
+  onToggleRapidIntake?: () => void;
+  isUnseenQuestion?: boolean;
 }
 
 export const QuizCard: React.FC<QuizCardProps> = ({
@@ -21,7 +24,10 @@ export const QuizCard: React.FC<QuizCardProps> = ({
   onNextQuestion,
   isAnswerSubmitted,
   activePoolCount,
-  unseenInPoolCount
+  unseenInPoolCount,
+  rapidIntakeEnabled,
+  onToggleRapidIntake,
+  isUnseenQuestion
 }) => {
   const [isZoomOpen, setIsZoomOpen] = useState(false);
 
@@ -74,15 +80,38 @@ export const QuizCard: React.FC<QuizCardProps> = ({
               {question.academicYear} • Q{question.originalQNum}
             </span>
             <span className="text-slate-400 font-medium">Page {question.page}</span>
+            {isUnseenQuestion && (
+              <span className="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[10px] font-semibold flex items-center gap-1">
+                <span>✨</span>
+                <span>Unseen</span>
+              </span>
+            )}
           </div>
 
           <div className="flex items-center gap-2">
             <span className="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 font-medium text-[11px]">
               {question.primaryTheme}
             </span>
-            <span className="text-[11px] text-slate-400">
-              Pool: {activePoolCount} ({unseenInPoolCount} unseen)
-            </span>
+            {onToggleRapidIntake && (
+              <button
+                type="button"
+                onClick={onToggleRapidIntake}
+                className={`px-2 py-0.5 rounded-full text-[11px] font-medium border transition flex items-center gap-1 cursor-pointer ${
+                  rapidIntakeEnabled
+                    ? 'bg-amber-100 hover:bg-amber-200 text-amber-900 border-amber-300 font-semibold'
+                    : 'bg-slate-100 hover:bg-slate-200 text-slate-600 border-slate-200'
+                }`}
+                title={
+                  rapidIntakeEnabled
+                    ? 'Rapid Intake active: prioritizing unseen questions. Click to pause.'
+                    : 'Click to enable Rapid Intake mode.'
+                }
+              >
+                <span>⚡</span>
+                <span>{rapidIntakeEnabled ? 'Rapid Intake' : 'Accelerate'}</span>
+                <span className="text-[10px] tabular-nums text-slate-500">({unseenInPoolCount})</span>
+              </button>
+            )}
           </div>
         </div>
 

@@ -7,6 +7,9 @@ interface SettingsModalProps {
   onTargetRetentionChange: (r: number) => void;
   animationsEnabled: boolean;
   onAnimationsToggle: (enabled: boolean) => void;
+  rapidIntakeEnabled?: boolean;
+  onRapidIntakeToggle?: (enabled: boolean) => void;
+  unseenCount?: number;
 }
 
 export const SettingsModal: React.FC<SettingsModalProps> = ({
@@ -15,7 +18,10 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   targetRetention,
   onTargetRetentionChange,
   animationsEnabled,
-  onAnimationsToggle
+  onAnimationsToggle,
+  rapidIntakeEnabled = false,
+  onRapidIntakeToggle,
+  unseenCount = 0
 }) => {
   if (!isOpen) return null;
 
@@ -79,6 +85,36 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               <span>95% (Frequent reviews)</span>
             </div>
           </div>
+
+          {/* Rapid Intake Accelerator Mode */}
+          {onRapidIntakeToggle && (
+            <div className="bg-amber-50/70 rounded-2xl p-5 border border-amber-200/90 flex items-center justify-between">
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold text-slate-800 text-sm">
+                    Rapid Intake Accelerator (⚡)
+                  </span>
+                  <span className="text-[10px] bg-amber-200/80 text-amber-900 font-bold px-2 py-0.5 rounded-full">
+                    {unseenCount} unseen in pool
+                  </span>
+                </div>
+                <div className="text-xs text-slate-600 mt-1 max-w-md leading-relaxed">
+                  Fast-tracks unseen questions to cover the syllabus faster. Automatically pauses to review cards that are critically overdue (R &lt; 70%) or require immediate relearning.
+                </div>
+              </div>
+              <label className="relative inline-flex items-center cursor-pointer shrink-0 ml-4">
+                <input
+                  type="checkbox"
+                  checked={rapidIntakeEnabled}
+                  disabled={unseenCount === 0 && !rapidIntakeEnabled}
+                  onChange={e => onRapidIntakeToggle(e.target.checked)}
+                  className="sr-only peer"
+                  aria-label="Toggle Rapid Intake Accelerator"
+                />
+                <div className="w-11 h-6 bg-slate-300 peer-focus:outline-hidden rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-500 peer-disabled:opacity-50"></div>
+              </label>
+            </div>
+          )}
 
           {/* Visual Animation Preferences */}
           <div className="bg-slate-50 rounded-2xl p-5 border border-slate-200 flex items-center justify-between">

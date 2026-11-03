@@ -1,0 +1,6 @@
+{
+  "summary": "Implementation plan for the Rapid Intake (Accelerate Unseen Questions) feature in CloudChem. Outlines the scheduling algorithm enhancement, priority thresholding for critically overdue items, UI toggle in header and quiz card toolbar, automated auto-reversion with toast notifications when the pool is fully explored, and persistence in localStorage.",
+  "updatedAt": "2026-11-03T19:24:33.629161526Z",
+  "requestFeedback": true,
+  "userFacing": true
+}

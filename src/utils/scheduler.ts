@@ -140,6 +140,8 @@ export interface SelectorContext {
   totalSessionAttempts: number;
   currentTime?: number;
   config?: SchedulerConfig;
+  rapidIntakeEnabled?: boolean;
+  criticalRetentionThreshold?: number; // default 0.70
 }
 
 export interface SelectableQuestion {
@@ -174,6 +176,60 @@ export function selectNextQuestion<T extends SelectableQuestion>(
   if (readyRelearning) {
     const match = pool.find(q => q.id === readyRelearning.questionId);
     if (match) return match;
+  }
+
+  // Rapid Intake Mode: Accelerate unseen questions while mathematically protecting retention
+  if (context.rapidIntakeEnabled) {
+    const criticalThreshold = context.criticalRetentionThreshold ?? 0.70;
+
+    // 1. Review Guard: Check if any reviewed question in the pool is critically overdue (R < threshold)
+    const criticallyOverdueCandidates: { question: T; retention: number }[] = [];
+    for (const q of pool) {
+      if (recentSet.has(q.id) && pool.length > recentExclusionWindow) continue;
+      const s = context.learningStates[q.id];
+      if (s && s.lastReviewedAt !== null && s.nextDueAt !== null && now >= s.nextDueAt) {
+        const ret = calculateRetention(s.lastReviewedAt, s.stability, now) ?? 1.0;
+        if (ret < criticalThreshold) {
+          criticallyOverdueCandidates.push({ question: q, retention: ret });
+        }
+      }
+    }
+
+    if (criticallyOverdueCandidates.length > 0) {
+      // Prioritize the card with the lowest retention to guard against severe forgetting
+      criticallyOverdueCandidates.sort((a, b) => a.retention - b.retention);
+      return criticallyOverdueCandidates[0].question;
+    }
+
+    // 2. Unseen Acceleration: Pick from remaining unseen questions with balanced theme exploration
+    const unseenCandidates = pool.filter(q => {
+      const s = context.learningStates[q.id];
+      return !s || s.lastReviewedAt === null;
+    });
+
+    if (unseenCandidates.length > 0) {
+      const nonRecentUnseen = unseenCandidates.filter(q => !recentSet.has(q.id));
+      const targetUnseenPool = nonRecentUnseen.length > 0 ? nonRecentUnseen : unseenCandidates;
+
+      const totalThemeAttempts = Object.values(context.themeAttemptCounts).reduce((a, b) => a + b, 0);
+      const scoredUnseen: { question: T; weight: number }[] = [];
+
+      for (const q of targetUnseenPool) {
+        const themeAttempts = context.themeAttemptCounts[q.primaryTheme] || 0;
+        const themeRatio = totalThemeAttempts > 0 ? themeAttempts / totalThemeAttempts : 0;
+        const weight = 10.0 + Math.max(0, (0.25 - themeRatio) * 20);
+        scoredUnseen.push({ question: q, weight });
+      }
+
+      const totalWeight = scoredUnseen.reduce((sum, item) => sum + item.weight, 0);
+      let rand = Math.random() * totalWeight;
+      for (const item of scoredUnseen) {
+        rand -= item.weight;
+        if (rand <= 0) return item.question;
+      }
+      return scoredUnseen[scoredUnseen.length - 1].question;
+    }
+    // If no unseen questions remain in pool, continue to standard adaptive distribution
   }
 
   // Calculate weights for candidates

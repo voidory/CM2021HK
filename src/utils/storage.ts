@@ -12,6 +12,7 @@ export interface StoredAppData {
     animationsEnabled: boolean;
     activeYearFilter: string; // 'ALL' or 'AY21/22', etc.
     activeThemeFilter: string; // 'ALL' or specific theme
+    rapidIntakeEnabled?: boolean;
   };
 }
 
@@ -84,7 +85,8 @@ export function validateImportedData(parsed: any): { valid: boolean; data?: Stor
       targetRetention: typeof parsed.settings?.targetRetention === 'number' ? parsed.settings.targetRetention : DEFAULT_CONFIG.targetRetention,
       animationsEnabled: typeof parsed.settings?.animationsEnabled === 'boolean' ? parsed.settings.animationsEnabled : true,
       activeYearFilter: typeof parsed.settings?.activeYearFilter === 'string' ? parsed.settings.activeYearFilter : 'ALL',
-      activeThemeFilter: typeof parsed.settings?.activeThemeFilter === 'string' ? parsed.settings.activeThemeFilter : 'ALL'
+      activeThemeFilter: typeof parsed.settings?.activeThemeFilter === 'string' ? parsed.settings.activeThemeFilter : 'ALL',
+      rapidIntakeEnabled: typeof parsed.settings?.rapidIntakeEnabled === 'boolean' ? parsed.settings.rapidIntakeEnabled : false
     }
   };
 
