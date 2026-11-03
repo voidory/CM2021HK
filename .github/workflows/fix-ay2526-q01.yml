@@ -1,0 +1,67 @@
+name: Correct AY25/26 Q01
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/fix-ay2526-q01.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: fix-ay2526-q01
+  cancel-in-progress: false
+jobs:
+  correct:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Correct only Q01 and its audit note
+        shell: python
+        run: |
+          import json, re
+          from pathlib import Path
+          explanation = 'The neutral ligand CH3NH2 is methylamine, and the four methylamine ligands are named tetrakis(methylamine). The two cyanide ligands contribute a total charge of -2, so iron is in the +2 oxidation state in the neutral complex. The name is therefore dicyanotetrakis(methylamine)iron(II), corresponding to option D.'
+          note = 'CH3NH2 is methylamine, not dimethylamine; four methylamine ligands require tetrakis(methylamine), and iron is in oxidation state +2.'
+          old_audit = '20 questions verified; Q01 key authority selects B (dimethylamine) despite formula CH3NH2.'
+          new_audit = '20 questions verified; Q01 corrected to D after validation of the methylamine ligand formula CH3NH2.'
+          paths = [Path('src/data/questions.ts'), Path('src/data/questions.json')]
+          updates = {}
+          for path in paths:
+              text = path.read_text()
+              match = re.search(r'\{\s*"id":\s*"AY25_26_Q01".*?\n  \}', text, re.S)
+              assert match, f'Question not found in {path}'
+              question = json.loads(match.group())
+              assert question['acceptedAnswers'] in (['B'], ['D'])
+              assert question['options']['D'] == 'dicyanotetrakis(methylamine)iron(II)'
+              block = match.group()
+              for field, value in [('acceptedAnswers', ['D']), ('explanation', explanation), ('notes', note)]:
+                  pattern = r'("' + field + r'"\s*:\s*)' + (r'\[[^\]]*\]' if field == 'acceptedAnswers' else r'"(?:\\.|[^"\\])*"')
+                  block, count = re.subn(pattern, lambda m: m.group(1) + json.dumps(value, ensure_ascii=False), block, count=1)
+                  assert count == 1, f'Missing field {field}'
+              assert text.count(old_audit) == 1 or text.count(new_audit) == 1
+              updates[path] = (text[:match.start()] + block + text[match.end():]).replace(old_audit, new_audit)
+          ts_questions = json.loads(updates[paths[0]].split('export const QUESTIONS: Question[] = ', 1)[1].strip().removesuffix(';'))
+          json_data = json.loads(updates[paths[1]])
+          assert ts_questions == json_data['questions']
+          before = json.loads(paths[1].read_text())
+          assert len(ts_questions) == len(before['questions']) == 130
+          for old, new in zip(before['questions'], ts_questions):
+              if old['id'] != 'AY25_26_Q01':
+                  assert old == new, 'Unrelated question changed'
+          for path, text in updates.items():
+              path.write_text(text)
+      - name: Commit corrected question banks
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/data/questions.ts src/data/questions.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Correct AY25/26 Q01 to D and align explanation and audit'
+            git push origin HEAD:main
+          fi
+      - name: Request existing Pages deployment
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main
