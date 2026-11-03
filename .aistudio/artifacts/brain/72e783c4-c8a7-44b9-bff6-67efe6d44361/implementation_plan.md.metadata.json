@@ -1,0 +1,6 @@
+{
+  "summary": "Comprehensive architectural plan to fix GitHub Pages deployment under all three configurations (GitHub Actions ./dist workflow, branch /docs directory, and direct root serving) and pre-build the complete offline standalone revision HTML (all 130 exam questions and isomer visualizer embedded) across root, docs, and public directories.",
+  "updatedAt": "2026-11-03T19:45:37.343677852Z",
+  "requestFeedback": true,
+  "userFacing": true
+}

@@ -24,17 +24,13 @@
     <script>
       (function () {
         var rawEntry = document.querySelector('script[type="module"][src="/src/main.tsx"]');
-        if (rawEntry && window.location.hostname.endsWith('.github.io')) {
-          var directory = new URL('./', window.location.href);
-          if (!directory.pathname.endsWith('/docs/')) window.location.replace(new URL('docs/', directory).href);
-          return;
+        if (rawEntry && window.location.hostname.endsWith('github.io')) {
+          var path = window.location.pathname;
+          if (path.indexOf('/docs') === -1) {
+            var basePath = path.endsWith('/') ? path : path + '/';
+            window.location.replace(window.location.origin + basePath + 'docs/');
+          }
         }
-        function showFailure() {
-          var status = document.getElementById('startup-status');
-          if (status) status.textContent = 'CloudChem could not start. Reload this page or open the standalone revision app.';
-        }
-        window.addEventListener('error', showFailure, true);
-        window.addEventListener('unhandledrejection', showFailure);
       }());
     </script>
   </body>

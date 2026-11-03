@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { createRoot } from 'react-dom/client';
+import App from './App.tsx';
 import './index.css';
 
 function StartupFailure() {
@@ -21,6 +22,14 @@ class StartupBoundary extends Component<React.PropsWithChildren, { failed: boole
 const container = document.getElementById('root');
 if (!container) throw new Error('CloudChem root element is missing.');
 const root = createRoot(container);
-import('./App.tsx')
-  .then(({ default: App }) => root.render(<StartupBoundary><App /></StartupBoundary>))
-  .catch(error => { console.error('CloudChem bootstrap failed', error); root.render(<StartupFailure />); });
+
+try {
+  root.render(
+    <StartupBoundary>
+      <App />
+    </StartupBoundary>
+  );
+} catch (error) {
+  console.error('CloudChem bootstrap failed', error);
+  root.render(<StartupFailure />);
+}
