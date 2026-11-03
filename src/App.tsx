@@ -24,6 +24,7 @@ import { ProgressPanel } from './components/ProgressPanel';
 import { SourceAuditModal } from './components/SourceAuditModal';
 import { PeriodicTableModal } from './components/PeriodicTableModal';
 import { SettingsModal } from './components/SettingsModal';
+import { getStandaloneHtml } from './utils/generateStandaloneHtml';
 
 export default function App() {
   // Stored state
@@ -249,11 +250,18 @@ export default function App() {
   };
 
   const handleDownloadStandaloneHtml = () => {
-    // Triggers download of chem-revision-app.html
+    // Generate self-contained standalone HTML completely in-memory as a Blob
+    // This avoids cross-origin or proxy authentication cookie issues when running inside iframes
+    const htmlContent = getStandaloneHtml();
+    const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
-    a.href = '/chem-revision-app.html';
+    a.href = url;
     a.download = 'chem-revision-app.html';
+    document.body.appendChild(a);
     a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
   };
 
   // Stats for header
