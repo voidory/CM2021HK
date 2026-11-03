@@ -30,18 +30,19 @@ jobs:
           updates = {}
           for path in paths:
               text = path.read_text()
-              match = re.search(r'\{\s*"id":\s*"AY25_26_Q01".*?\n  \}', text, re.S)
+              match = re.search(r'\{\s*"id":\s*"AY25_26_Q01"', text)
               assert match, f'Question not found in {path}'
-              question = json.loads(match.group())
+              question, length = json.JSONDecoder().raw_decode(text[match.start():])
+              end = match.start() + length
               assert question['acceptedAnswers'] in (['B'], ['D'])
               assert question['options']['D'] == 'dicyanotetrakis(methylamine)iron(II)'
-              block = match.group()
+              block = text[match.start():end]
               for field, value in [('acceptedAnswers', ['D']), ('explanation', explanation), ('notes', note)]:
                   pattern = r'("' + field + r'"\s*:\s*)' + (r'\[[^\]]*\]' if field == 'acceptedAnswers' else r'"(?:\\.|[^"\\])*"')
                   block, count = re.subn(pattern, lambda m: m.group(1) + json.dumps(value, ensure_ascii=False), block, count=1)
                   assert count == 1, f'Missing field {field}'
               assert text.count(old_audit) == 1 or text.count(new_audit) == 1
-              updates[path] = (text[:match.start()] + block + text[match.end():]).replace(old_audit, new_audit)
+              updates[path] = (text[:match.start()] + block + text[end:]).replace(old_audit, new_audit)
           ts_questions = json.loads(updates[paths[0]].split('export const QUESTIONS: Question[] = ', 1)[1].strip().removesuffix(';'))
           json_data = json.loads(updates[paths[1]])
           assert ts_questions == json_data['questions']
