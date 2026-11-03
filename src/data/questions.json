@@ -43,7 +43,7 @@
       "verifiedUsableQuestions": 20,
       "quarantinedCount": 0,
       "alternativeKeyCount": 0,
-      "notes": "20 questions verified; Q01 key authority selects B (dimethylamine) despite formula CH3NH2."
+      "notes": "20 questions verified; Q01 corrected to D after validation of the methylamine ligand formula CH3NH2."
     }
   ],
   "questions": [
@@ -2846,17 +2846,15 @@
         "C": "dicholortetramethylamineiron(IV)",
         "D": "dicyanotetrakis(methylamine)iron(II)"
       },
-      "acceptedAnswers": [
-        "B"
-      ],
+      "acceptedAnswers": ["D"],
       "isAlternativeKey": false,
       "primaryTheme": "Coordination Nomenclature & Formulas",
       "secondaryTags": [
         "IUPAC Naming",
         "Oxidation State"
       ],
-      "explanation": "The complex contains neutral methylamine ligands (CH3NH2) and two cyanide ligands (CN-), with iron in oxidation state +2. The official key marks option B (which writes dimethylamine instead of methylamine); chemically, option D is the standard systematic name, but the official answer key designates option B.",
-      "notes": "Official key lists B despite the ligand formula CH3NH2 representing methylamine rather than dimethylamine. Option D represents the exact chemical transcription, but B is marked correct in the authority key."
+      "explanation": "The neutral ligand CH3NH2 is methylamine, and the four methylamine ligands are named tetrakis(methylamine). The two cyanide ligands contribute a total charge of -2, so iron is in the +2 oxidation state in the neutral complex. The name is therefore dicyanotetrakis(methylamine)iron(II), corresponding to option D.",
+      "notes": "CH3NH2 is methylamine, not dimethylamine; four methylamine ligands require tetrakis(methylamine), and iron is in oxidation state +2."
     },
     {
       "id": "AY25_26_Q02",
