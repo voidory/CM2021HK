@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Question } from '../data/questions';
 import { ChemicalText } from './ChemicalText';
+import { getIsomerProfileForQuestion } from '../utils/isomerEngine';
+import { IsomerExplainer } from './IsomerExplainer';
 
 interface QuizCardProps {
   question: Question;
@@ -59,6 +61,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({
 
   const optionKeys: ('A' | 'B' | 'C' | 'D')[] = ['A', 'B', 'C', 'D'];
   const isCorrect = selectedOption ? question.acceptedAnswers.includes(selectedOption) : false;
+  const isomerProfile = getIsomerProfileForQuestion(question.id, question.questionText);
 
   return (
     <div className="w-full max-w-3xl mx-auto px-4 py-6">
@@ -226,31 +229,53 @@ export const QuizCard: React.FC<QuizCardProps> = ({
               </div>
             )}
 
-            {/* Notes or Discrepancy Flag */}
-            {question.notes && (
-              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 text-xs leading-relaxed">
-                <strong>Source Authority Note: </strong>
-                <ChemicalText text={question.notes} />
-              </div>
-            )}
-
-            {/* Chemically Accurate Explanation */}
-            <div className="p-5 rounded-2xl bg-sky-50/60 border border-sky-100 text-slate-800 space-y-2">
+            {/* Core Concept Explanation */}
+            <div className="p-5 rounded-2xl bg-sky-50/70 border border-sky-200/80 text-slate-800 space-y-2">
               <div className="flex items-center justify-between">
                 <div className="text-xs font-bold text-sky-800 uppercase tracking-wider flex items-center gap-1.5">
                   <span>📖</span>
-                  <span>Chemical Principle & Explanation</span>
+                  <span>Core Concept</span>
                 </div>
-                <span className="text-[10px] text-slate-400 bg-white px-2 py-0.5 rounded-full border border-sky-100">
-                  Pre-compiled
+                <span className="text-[10px] text-sky-700 bg-sky-100/80 px-2 py-0.5 rounded-full font-medium">
+                  Direct Principle
                 </span>
               </div>
               <ChemicalText
                 as="p"
                 text={question.explanation}
-                className="text-sm leading-relaxed text-slate-700"
+                className="text-sm leading-relaxed text-slate-800 font-medium"
               />
             </div>
+
+            {/* Dynamic Isomer Feature for Relevant Questions */}
+            {isomerProfile && (
+              <div className="pt-1">
+                <IsomerExplainer profile={isomerProfile} />
+              </div>
+            )}
+
+            {/* Dedicated Caveats, Nuances & Traps Container */}
+            {question.caveat && (
+              <div className="p-4 rounded-2xl bg-amber-50/90 border border-amber-200 text-amber-950 space-y-1.5">
+                <div className="text-xs font-bold text-amber-900 uppercase tracking-wider flex items-center gap-1.5">
+                  <span>⚠️</span>
+                  <span>Key Caveat & Nuances</span>
+                </div>
+                <ChemicalText
+                  as="p"
+                  text={question.caveat}
+                  className="text-xs leading-relaxed text-amber-900"
+                />
+              </div>
+            )}
+
+            {/* Source Authority Note (Discrepancy / Key Note) */}
+            {question.notes && question.notes !== question.caveat && (
+              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 text-xs leading-relaxed">
+                <strong>Source Authority Note: </strong>
+                <ChemicalText text={question.notes} />
+              </div>
+            )}
           </div>
         )}
       </div>

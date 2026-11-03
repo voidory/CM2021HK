@@ -208,6 +208,27 @@ export function getStandaloneHtml(): string {
       font-weight: 700; font-size: 11px; text-transform: uppercase; color: #0369a1;
       letter-spacing: 0.05em; margin-bottom: 6px; display: flex; justify-content: space-between;
     }
+    .caveat-card {
+      padding: 14px 16px; border-radius: 14px; background: #fffbeb; border: 1px solid #fde68a;
+      color: #78350f; font-size: 12.5px; line-height: 1.5;
+    }
+    .caveat-head {
+      font-weight: 700; font-size: 11px; text-transform: uppercase; color: #b45309;
+      letter-spacing: 0.05em; margin-bottom: 4px; display: flex; align-items: center; gap: 4px;
+    }
+    .isomer-card {
+      padding: 14px 16px; border-radius: 16px; background: #ffffff; border: 1px solid #bae6fd;
+      color: #0f172a; font-size: 12.5px; box-shadow: 0 2px 6px rgba(2, 132, 199, 0.06);
+    }
+    .isomer-head {
+      font-weight: 700; font-size: 11px; text-transform: uppercase; color: #0369a1;
+      display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;
+    }
+    .btn-3d {
+      padding: 3px 8px; border-radius: 6px; background: #f8fafc; border: 1px solid #cbd5e1;
+      font-size: 11px; font-weight: 600; color: #334155; cursor: pointer; transition: all 0.1s;
+    }
+    .btn-3d:hover { background: #e0f2fe; border-color: #38bdf8; color: #0369a1; }
 
     /* Modals */
     .modal-backdrop {
@@ -339,10 +360,17 @@ export function getStandaloneHtml(): string {
 
         <div class="explanation-card">
           <div class="explanation-head">
-            <span>Chemical Principle & Explanation</span>
-            <span>Pre-compiled</span>
+            <span>📖 Core Concept</span>
+            <span style="font-size:10px; background:#e0f2fe; color:#0369a1; padding:2px 8px; border-radius:9999px;">Direct Principle</span>
           </div>
-          <div id="explanation-text"></div>
+          <div id="explanation-text" style="font-weight:500;"></div>
+        </div>
+
+        <div class="isomer-card" id="isomer-card" style="display:none;"></div>
+
+        <div class="caveat-card" id="caveat-card" style="display:none;">
+          <div class="caveat-head">⚠️ Key Caveat & Exam Nuances</div>
+          <div id="caveat-text"></div>
         </div>
       </div>
     </div>
@@ -847,15 +875,85 @@ export function getStandaloneHtml(): string {
         altAlert.style.display = 'none';
       }
 
+      document.getElementById('explanation-text').innerHTML = formatChemHtml(currentQuestion.explanation);
+
+      const caveatBox = document.getElementById('caveat-card');
+      if (currentQuestion.caveat) {
+        caveatBox.style.display = 'block';
+        document.getElementById('caveat-text').innerHTML = formatChemHtml(currentQuestion.caveat);
+      } else {
+        caveatBox.style.display = 'none';
+      }
+
       const noteBox = document.getElementById('note-box');
-      if (currentQuestion.notes) {
+      if (currentQuestion.notes && currentQuestion.notes !== currentQuestion.caveat) {
         noteBox.style.display = 'block';
         noteBox.innerHTML = '<strong>Source Authority Note: </strong>' + formatChemHtml(currentQuestion.notes);
       } else {
         noteBox.style.display = 'none';
       }
 
-      document.getElementById('explanation-text').innerHTML = formatChemHtml(currentQuestion.explanation);
+      const isomerBox = document.getElementById('isomer-card');
+      const countIds = ['AY21_22_Q11','AY21_22_Q13','AY21_22_Q17','AY21_22_Q20','AY22_23_Q01','AY22_23_Q06','AY22_23_Q13','AY23_24_Q03','AY23_24_Q11','AY23_24_Q13','AY23_24_Q15','AY24_25_Q05','AY24_25_Q08','AY25_26_Q05','AY25_26_Q07','AY25_26_Q08'];
+      const qText = (currentQuestion.questionText || '').toLowerCase();
+      const isIsomerCountQ = countIds.includes(currentQuestion.id) ||
+        ((qText.includes('how many') || qText.includes('number of') || qText.includes('most number') || qText.includes('highest number') || qText.includes('least number') || qText.includes('exactly three isomers') || qText.includes('total number') || qText.includes('stereoisomeric forms')) && (qText.includes('isomer') || qText.includes('stereoisomeric')));
+
+      if (isIsomerCountQ) {
+        isomerBox.style.display = 'block';
+        let detail = currentQuestion.caveat || currentQuestion.explanation;
+        let g3d = 'Oh';
+        let l3d = ['a', 'a', 'b', 'b', 'a', 'a'];
+        let e3d = [];
+        let m3d = 'M';
+
+        if (qText.includes('[mx2y4]') || qText.includes('ma4b2') || qText.includes('[co(nh3)4cl2]')) {
+          detail = '[Ma4b2] Octahedral geometry: 2 geometrical isomers (cis 90° and trans 180°). Both possess planes of symmetry, so 0 optical isomers.';
+          g3d = 'Oh'; l3d = ['Cl', 'Cl', 'NH3', 'NH3', 'NH3', 'NH3']; m3d = 'Co';
+        } else if (qText.includes('[co(en)2cl2]') || qText.includes('exactly three isomers')) {
+          detail = '[M(AA)2b2] Octahedral geometry: 3 stereoisomers in total (1 trans achiral with inversion center + 2 cis chiral enantiomers Δ and Λ).';
+          g3d = 'Oh'; l3d = ['N', 'N', 'Cl', 'Cl', 'N', 'N']; e3d = [[0, 4], [1, 5]]; m3d = 'Co';
+        } else if (qText.includes('m(a-a)2') && qText.includes('tetrahedral')) {
+          detail = 'Tetrahedral [M(A-A)2] with symmetric chelates: D2d symmetry with S4 improper rotation axis prevents chirality, yielding exactly 1 isomer.';
+          g3d = 'Td'; l3d = ['A', 'A', 'A', 'A']; e3d = [[0, 1], [2, 3]]; m3d = 'M';
+        } else if (qText.includes('[cr(scn)2(nh3)4]') || qText.includes('[cu(scn)2(nh3)4]') || qText.includes('most number of isomers') || qText.includes('highest number of isomers')) {
+          detail = '[Ma4b2] with 2 ambidentate SCN- ligands: 2 geometrical (cis/trans) × 3 linkage combinations (S/S, S/N, N/N) = 6 total isomers.';
+          g3d = 'Oh'; l3d = ['SCN', 'NH3', 'SCN', 'NH3', 'NH3', 'NH3']; m3d = 'Cu';
+        } else if (qText.includes('[ptcl(no2)(no3)(scn)]') || qText.includes('[pt(nh3)(h2o)(scn)(no2)]')) {
+          detail = 'Square planar [Mabcd] with 2 ambidentate ligands: 3 geometrical arrangements × 2 linkage (NO2) × 2 linkage (SCN) = 12 total isomers.';
+          g3d = 'SP'; l3d = ['NO2', 'Cl', 'NO3', 'SCN']; m3d = 'Pt';
+        } else if (qText.includes('glycinato') || qText.includes('[m(a-b)3]')) {
+          detail = 'Tris(unsymmetrical chelate) [M(A-B)3]: 2 geometrical isomers (fac and mer), each existing as a chiral pair (Δ and Λ) = 2 × 2 = 4 total stereoisomers.';
+          g3d = 'Oh'; l3d = ['N', 'O', 'N', 'O', 'N', 'O']; e3d = [[0, 2], [4, 1], [3, 5]]; m3d = 'Co';
+        } else if (qText.includes('[pt(en)(no3)(scn)]')) {
+          detail = 'Square planar with chelating en: en cannot span trans (180°), so 0 geometrical isomers. 2 linkage modes (S, N) of SCN- give 2 isomers.';
+          g3d = 'SP'; l3d = ['en', 'NO3', 'en', 'SCN']; e3d = [[0, 2]]; m3d = 'Pt';
+        }
+
+        isomerBox.innerHTML =
+          '<div class="isomer-head"><span>🔬 Isomer Counting Sketchbook (3D View)</span><span style="font-size:10px; background:#e0f2fe; color:#0369a1; padding:2px 8px; border-radius:9999px; font-weight:700;">Rotatable 3D</span></div>' +
+          '<div style="background:#fff; border-radius:14px; border:1px solid #bae6fd; padding:10px; margin-bottom:10px; text-align:center;">' +
+            '<canvas id="standalone-isomer-canvas" style="width:100%; height:190px; touch-action:none; cursor:grab; border-radius:10px;"></canvas>' +
+            '<div style="display:flex; justify-content:center; gap:6px; margin-top:8px; flex-wrap:wrap;">' +
+              '<button type="button" class="btn-3d" onclick="window.stepStandalone3D(\'v\')">↻ Vertical</button>' +
+              '<button type="button" class="btn-3d" onclick="window.stepStandalone3D(\'h\')">↻ Horizontal</button>' +
+              '<button type="button" class="btn-3d" onclick="window.stepStandalone3D(\'z\')">⟲ Page</button>' +
+              '<button type="button" class="btn-3d" onclick="window.shuffleStandalone3D()">⤮ Shuffle</button>' +
+              '<button type="button" class="btn-3d" onclick="window.toggleMirrorStandalone3D()">⧉ Mirror</button>' +
+              '<button type="button" class="btn-3d" onclick="window.resetStandalone3D()">⌂ Reset</button>' +
+            '</div>' +
+          '</div>' +
+          '<div style="font-size:12.5px; line-height:1.55; color:#1e293b;">' + formatChemHtml(detail) + '</div>';
+
+        if (window.initStandaloneIsomer3D) {
+          setTimeout(function() {
+            window.initStandaloneIsomer3D(g3d, l3d, e3d, m3d);
+          }, 30);
+        }
+      } else {
+        isomerBox.style.display = 'none';
+      }
+
       updateHeaderPill();
     }
 
@@ -1030,6 +1128,272 @@ export function getStandaloneHtml(): string {
         nextQuestion();
       }
     }
+
+    // Standalone 3D Coordination ChemDraw Engine (from voidory/isomers)
+    class Vec3D {
+      constructor(x=0, y=0, z=0) { this.x=x; this.y=y; this.z=z; }
+      set(x, y, z) { this.x=x; this.y=y; this.z=z; return this; }
+      clone() { return new Vec3D(this.x, this.y, this.z); }
+      dot(v) { return this.x*v.x + this.y*v.y + this.z*v.z; }
+      cross(v) { return this.set(this.y*v.z - this.z*v.y, this.z*v.x - this.x*v.z, this.x*v.y - this.y*v.x); }
+      normalize() { const l = Math.hypot(this.x, this.y, this.z) || 1; return this.set(this.x/l, this.y/l, this.z/l); }
+      applyQuaternion(q) {
+        const x=this.x, y=this.y, z=this.z, qx=q.x, qy=q.y, qz=q.z, qw=q.w;
+        const ix=qw*x + qy*z - qz*y, iy=qw*y + qz*x - qx*z, iz=qw*z + qx*y - qy*x, iw=-qx*x - qy*y - qz*z;
+        return this.set(ix*qw + iw*-qx + iy*-qz - iz*-qy, iy*qw + iw*-qy + iz*-qx - ix*-qz, iz*qw + iw*-qz + ix*-qy - iy*-qx);
+      }
+    }
+
+    class QuatD {
+      constructor(x=0, y=0, z=0, w=1) { this.x=x; this.y=y; this.z=z; this.w=w; }
+      set(x, y, z, w) { this.x=x; this.y=y; this.z=z; this.w=w; return this; }
+      clone() { return new QuatD(this.x, this.y, this.z, this.w); }
+      dot(q) { return this.x*q.x + this.y*q.y + this.z*q.z + this.w*q.w; }
+      invert() { return this.set(-this.x, -this.y, -this.z, this.w); }
+      mul(a, b) {
+        const ax=a.x, ay=a.y, az=a.z, aw=a.w, bx=b.x, by=b.y, bz=b.z, bw=b.w;
+        return this.set(ax*bw + aw*bx + ay*bz - az*by, ay*bw + aw*by + az*bx - ax*bz, az*bw + aw*bz + ax*by - ay*bx, aw*bw - ax*bx - ay*by - az*bz);
+      }
+      multiply(q) { return this.mul(this, q); }
+      premultiply(q) { return this.mul(q, this); }
+      setFromAxisAngle(a, ang) { const s = Math.sin(ang/2); return this.set(a.x*s, a.y*s, a.z*s, Math.cos(ang/2)); }
+      setFromMat3(m) {
+        const m11=m[0][0], m12=m[0][1], m13=m[0][2], m21=m[1][0], m22=m[1][1], m23=m[1][2], m31=m[2][0], m32=m[2][1], m33=m[2][2], t=m11+m22+m33;
+        let s;
+        if(t > 0){ s = 0.5/Math.sqrt(t+1); return this.set((m32-m23)*s, (m13-m31)*s, (m21-m12)*s, 0.25/s); }
+        if(m11 > m22 && m11 > m33){ s = 2*Math.sqrt(1+m11-m22-m33); return this.set(0.25*s, (m12+m21)/s, (m13+m31)/s, (m32-m23)/s); }
+        if(m22 > m33){ s = 2*Math.sqrt(1+m22-m11-m33); return this.set((m12+m21)/s, 0.25*s, (m23+m32)/s, (m13-m31)/s); }
+        s = 2*Math.sqrt(1+m33-m11-m22); return this.set((m13+m31)/s, (m23+m32)/s, 0.25*s, (m21-m12)/s);
+      }
+      slerpQuaternions(a, b, t) {
+        let bx=b.x, by=b.y, bz=b.z, bw=b.w, c=a.dot(b);
+        if(c < 0){ c = -c; bx = -bx; by = -by; bz = -bz; bw = -bw; }
+        if(c > 0.9995){ this.set(a.x+(bx-a.x)*t, a.y+(by-a.y)*t, a.z+(bz-a.z)*t, a.w+(bw-a.w)*t); const l = Math.hypot(this.x, this.y, this.z, this.w); return this.set(this.x/l, this.y/l, this.z/l, this.w/l); }
+        const th = Math.acos(c), sn = Math.sin(th), k0 = Math.sin((1-t)*th)/sn, k1 = Math.sin(t*th)/sn;
+        return this.set(a.x*k0 + bx*k1, a.y*k0 + by*k1, a.z*k0 + bz*k1, a.w*k0 + bw*k1);
+      }
+    }
+
+    const V3 = {
+      norm: a => { const l = Math.hypot(a[0], a[1], a[2]) || 1; return [a[0]/l, a[1]/l, a[2]/l]; },
+      scale: (a, s) => [a[0]*s, a[1]*s, a[2]*s],
+      add: (a, b) => [a[0]+b[0], a[1]+b[1], a[2]+b[2]],
+      sub: (a, b) => [a[0]-b[0], a[1]-b[1], a[2]-b[2]]
+    };
+
+    function basisQuatD(toward, up) {
+      const z = new Vec3D(toward[0], toward[1], toward[2]).normalize();
+      const x = new Vec3D(up[0], up[1], up[2]).cross(z).normalize();
+      const y = z.clone().cross(x);
+      return new QuatD().setFromMat3([[x.x, x.y, x.z], [y.x, y.y, y.z], [z.x, z.y, z.z]]);
+    }
+
+    const sD = 2.3;
+    const GEOMSD = {
+      Oh: {
+        sites: [[sD,0,0], [-sD,0,0], [0,sD,0], [0,-sD,0], [0,0,sD], [0,0,-sD]],
+        unit: [[sD,0,0], [-sD,0,0], [0,sD,0], [0,-sD,0], [0,0,sD], [0,0,-sD]].map(V3.norm),
+        baseQ: basisQuatD([1, 0.553, 1], [0, 1, 0]),
+        axes: [
+          { axis: [1, 0, 0], order: 4 }, { axis: [0, 1, 0], order: 4 }, { axis: [0, 0, 1], order: 4 },
+          { axis: V3.norm([1, 1, 1]), order: 3 }, { axis: V3.norm([1, 1, 0]), order: 2 }
+        ]
+      },
+      SP: {
+        sites: [[sD,0,0], [-sD,0,0], [0,sD,0], [0,-sD,0]],
+        unit: [[sD,0,0], [-sD,0,0], [0,sD,0], [0,-sD,0]].map(V3.norm),
+        baseQ: basisQuatD([0.28, 0.34, 1], [0, 1, 0]),
+        axes: [{ axis: [0, 0, 1], order: 4 }, { axis: [1, 0, 0], order: 2 }, { axis: [0, 1, 0], order: 2 }]
+      },
+      Td: {
+        sites: [[0,sD,0], [0,-sD/3,sD*0.9428], [-sD*0.8165,-sD/3,-sD*0.4714], [sD*0.8165,-sD/3,-sD*0.4714]],
+        unit: [[0,sD,0], [0,-sD/3,sD*0.9428], [-sD*0.8165,-sD/3,-sD*0.4714], [sD*0.8165,-sD/3,-sD*0.4714]].map(V3.norm),
+        baseQ: basisQuatD([0.94, 0.279, -0.197], [0, 1, 0]),
+        axes: [{ axis: [0, 1, 0], order: 3 }, { axis: [1, 0, 0], order: 2 }]
+      }
+    };
+
+    let active3DState = null;
+
+    window.initStandaloneIsomer3D = function(geom, labels, edges, centralAtom) {
+      const cv = document.getElementById('standalone-isomer-canvas');
+      if (!cv) return;
+      const G = GEOMSD[geom] || GEOMSD.Oh;
+      active3DState = {
+        cv: cv,
+        ctx: cv.getContext('2d'),
+        G: G,
+        geom: geom,
+        labels: labels,
+        edges: edges || [],
+        centralAtom: centralAtom || 'M',
+        q: G.baseQ.clone(),
+        anim: null,
+        mirror: false,
+        drag: null,
+        styles: {}
+      };
+
+      const render = () => {
+        if (!active3DState || !active3DState.cv) return;
+        const s = active3DState;
+        const rect = s.cv.getBoundingClientRect();
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const W = Math.max(1, Math.round(rect.width * dpr));
+        const H = Math.max(1, Math.round(rect.height * dpr));
+        if (s.cv.width !== W || s.cv.height !== H) { s.cv.width = W; s.cv.height = H; }
+        const ctx = s.ctx;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        const wCss = W / dpr, hCss = H / dpr;
+        ctx.clearRect(0, 0, wCss, hCss);
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, wCss, hCss);
+
+        const fs = Math.max(10, Math.min(wCss, hCss) * 0.1);
+        const lw = Math.max(1.2, Math.min(wCss, hCss) * 0.012);
+        const clrL = fs * 0.58, clrM = fs * 0.62;
+        const _v = new Vec3D();
+
+        const panes = s.mirror ? [{ cx: wCss * 0.26, flip: false }, { cx: wCss * 0.74, flip: true }] : [{ cx: wCss / 2, flip: false }];
+        const pw = wCss / panes.length;
+        const L = Math.min(pw * 0.35, hCss * 0.36);
+
+        if (s.mirror) {
+          ctx.strokeStyle = '#0284c7'; ctx.lineWidth = 1.4; ctx.setLineDash([4, 4]);
+          ctx.beginPath(); ctx.moveTo(wCss/2, hCss*0.08); ctx.lineTo(wCss/2, hCss*0.92); ctx.stroke(); ctx.setLineDash([]);
+          ctx.fillStyle = '#0284c7'; ctx.font = 'bold 10px sans-serif'; ctx.textAlign = 'center'; ctx.fillText('mirror plane', wCss/2, hCss*0.06);
+        }
+
+        panes.forEach((pane, paneIdx) => {
+          const proj = v => {
+            _v.set(v[0], v[1], v[2]).applyQuaternion(s.q);
+            return { x: pane.cx + (pane.flip ? -_v.x : _v.x) * L, y: hCss/2 - _v.y * L, z: _v.z };
+          };
+          const P = s.G.unit.map(proj);
+          const items = [];
+
+          P.forEach((p, i) => {
+            const sk = paneIdx + ':' + i;
+            let st = s.styles[sk] || 'plain';
+            if (p.z > 0.45) st = 'wedge';
+            else if (p.z < -0.45) st = 'hash';
+            else if (Math.abs(p.z) < 0.38) st = 'plain';
+            s.styles[sk] = st;
+            items.push({ kind: 'bond', i, st, depth: p.z / 2 });
+            items.push({ kind: 'label', i, depth: p.z });
+          });
+          items.push({ kind: 'label', i: -1, depth: 0 });
+
+          if (s.edges) {
+            s.edges.forEach(([a, b]) => {
+              const pa = s.G.unit[a], pb = s.G.unit[b];
+              const n = V3.norm(V3.add(pa, pb)), e = V3.sub(pb, pa);
+              const c1 = V3.add(V3.add(pa, V3.scale(n, 0.42)), V3.scale(e, 0.14));
+              const c2 = V3.sub(V3.add(pb, V3.scale(n, 0.42)), V3.scale(e, 0.14));
+              const pts = [P[a], proj(c1), proj(c2), P[b]];
+              items.push({ kind: 'bridge', pts, depth: (pts[1].z + pts[2].z) / 2 });
+            });
+          }
+
+          items.sort((u, v) => (u.kind === 'label' ? 1 : 0) - (v.kind === 'label' ? 1 : 0) || u.depth - v.depth);
+          ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+
+          const inked = (drawFn, col='#334155') => {
+            ctx.save(); ctx.strokeStyle = '#fff'; ctx.fillStyle = '#fff'; ctx.lineWidth = lw * 3.8; drawFn(true); ctx.restore();
+            ctx.strokeStyle = col; ctx.fillStyle = col; ctx.lineWidth = lw; drawFn(false);
+          };
+
+          for (const it of items) {
+            if (it.kind === 'bond') {
+              const p = P[it.i], dx = p.x - pane.cx, dy = p.y - hCss/2, len = Math.hypot(dx, dy);
+              if (len < clrM + clrL + lw * 2) continue;
+              const ux = dx/len, uy = dy/len, nx = -uy, ny = ux;
+              const s0 = [pane.cx + ux * clrM, hCss/2 + uy * clrM], s1 = [p.x - ux * clrL, p.y - uy * clrL];
+              if (it.st === 'plain') {
+                inked(() => { ctx.beginPath(); ctx.moveTo(s0[0], s0[1]); ctx.lineTo(s1[0], s1[1]); ctx.stroke(); });
+              } else if (it.st === 'wedge') {
+                const w = L * 0.075, t0 = lw * 0.35;
+                inked(h => { ctx.beginPath(); ctx.moveTo(s0[0]+nx*t0, s0[1]+ny*t0); ctx.lineTo(s1[0]+nx*w, s1[1]+ny*w); ctx.lineTo(s1[0]-nx*w, s1[1]-ny*w); ctx.lineTo(s0[0]-nx*t0, s0[1]-ny*t0); ctx.closePath(); h ? ctx.stroke() : ctx.fill(); }, '#0284c7');
+              } else {
+                const numD = Math.max(4, Math.round(len / (lw * 3.2))), sl = Math.hypot(s1[0]-s0[0], s1[1]-s0[1]);
+                inked(() => { ctx.beginPath(); for(let k=0; k<numD; k++) { const t=(k+0.6)/numD, pt=[s0[0]+ux*sl*t, s0[1]+uy*sl*t], hw=L*(0.014+0.065*t); ctx.moveTo(pt[0]-nx*hw, pt[1]-ny*hw); ctx.lineTo(pt[0]+nx*hw, pt[1]+ny*hw); } ctx.stroke(); }, '#64748b');
+              }
+            } else if (it.kind === 'bridge' && it.pts) {
+              const p = it.pts.map(o => [o.x, o.y]);
+              const cut = (a, b) => { const dd = Math.hypot(b[0]-a[0], b[1]-a[1])||1, k = Math.min(clrL, dd*0.8); return [a[0]+(b[0]-a[0])/dd*k, a[1]+(b[1]-a[1])/dd*k]; };
+              const path = [cut(p[0], p[1]), p[1], p[2], cut(p[3], p[2])];
+              inked(() => { ctx.beginPath(); ctx.moveTo(path[0][0], path[0][1]); path.slice(1).forEach(pt => ctx.lineTo(pt[0], pt[1])); ctx.stroke(); }, '#6366f1');
+            } else {
+              const isM = it.i < 0, x = isM ? pane.cx : P[it.i].x, y = isM ? hCss/2 : P[it.i].y;
+              const X = isM ? s.centralAtom : (s.labels[it.i] || '?');
+              ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(x, y, fs * 0.6, 0, Math.PI * 2); ctx.fill();
+              ctx.strokeStyle = isM ? '#0284c7' : '#475569'; ctx.lineWidth = isM ? lw * 1.6 : lw * 1.2;
+              ctx.beginPath(); ctx.arc(x, y, fs * 0.55, 0, Math.PI * 2); ctx.stroke();
+              ctx.fillStyle = isM ? '#0369a1' : '#0f172a'; ctx.font = 'bold ' + Math.round(fs * 0.85) + 'px sans-serif';
+              ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(X, x, y + fs * 0.04);
+            }
+          }
+        });
+      };
+
+      // Pointer event listeners
+      cv.onpointerdown = e => {
+        try { cv.setPointerCapture(e.pointerId); } catch(_) {}
+        active3DState.drag = { x: e.clientX, y: e.clientY };
+        active3DState.anim = null;
+      };
+      cv.onpointermove = e => {
+        if (!active3DState || !active3DState.drag) return;
+        const dx = e.clientX - active3DState.drag.x, dy = e.clientY - active3DState.drag.y;
+        active3DState.drag.x = e.clientX; active3DState.drag.y = e.clientY;
+        const m = Math.hypot(dx, dy); if (m < 0.01) return;
+        const dq = new QuatD();
+        dq.setFromAxisAngle(new Vec3D(dy/m, dx/m, 0), m * 0.011);
+        active3DState.q.premultiply(dq);
+        render();
+      };
+      cv.onpointerup = () => { if (active3DState) active3DState.drag = null; };
+      cv.onpointercancel = () => { if (active3DState) active3DState.drag = null; };
+
+      render();
+    };
+
+    window.stepStandalone3D = function(kind) {
+      if (!active3DState) return;
+      const targetVec = { v: [0, 1, 0], h: [1, 0, 0], z: [0, 0, 1] }[kind];
+      const t = new Vec3D(targetVec[0], targetVec[1], targetVec[2]);
+      let best = null;
+      for (const a of active3DState.G.axes) {
+        const av = new Vec3D(a.axis[0], a.axis[1], a.axis[2]).applyQuaternion(active3DState.q);
+        const d = av.dot(t);
+        if (!best || Math.abs(d) > Math.abs(best.d) + 1e-5) best = { a, d };
+      }
+      const ax = V3.scale(best.a.axis, best.d < 0 ? -1 : 1);
+      const ang = (2 * Math.PI) / best.a.order;
+      const dq = new QuatD().setFromAxisAngle(new Vec3D(ax[0], ax[1], ax[2]).normalize(), ang);
+      active3DState.q.premultiply(dq);
+      window.initStandaloneIsomer3D(active3DState.geom, active3DState.labels, active3DState.edges, active3DState.centralAtom);
+    };
+
+    window.shuffleStandalone3D = function() {
+      if (!active3DState) return;
+      const dq = new QuatD().setFromAxisAngle(new Vec3D(Math.random()-0.5, Math.random()-0.5, Math.random()-0.5).normalize(), Math.PI/2);
+      active3DState.q.multiply(dq);
+      window.initStandaloneIsomer3D(active3DState.geom, active3DState.labels, active3DState.edges, active3DState.centralAtom);
+    };
+
+    window.toggleMirrorStandalone3D = function() {
+      if (!active3DState) return;
+      active3DState.mirror = !active3DState.mirror;
+      window.initStandaloneIsomer3D(active3DState.geom, active3DState.labels, active3DState.edges, active3DState.centralAtom);
+    };
+
+    window.resetStandalone3D = function() {
+      if (!active3DState) return;
+      active3DState.q = active3DState.G.baseQ.clone();
+      active3DState.mirror = false;
+      window.initStandaloneIsomer3D(active3DState.geom, active3DState.labels, active3DState.edges, active3DState.centralAtom);
+    };
 
     // Startup
     loadStorage();

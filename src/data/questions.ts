@@ -23,6 +23,7 @@ export interface Question {
   primaryTheme: string;
   secondaryTags: string[];
   explanation: string;
+  caveat?: string;
   notes?: string;
 }
 
@@ -118,8 +119,9 @@ export const QUESTIONS: Question[] = [
       "Coordination Definitions",
       "Bioinorganic"
     ],
-    "explanation": "Generated explanation; not an official solution. Urea, (NH2)2CO, is a simple organic diamide consisting solely of main-group elements without a central metal coordination center. In contrast, haemoglobin contains an iron porphyrin complex, chlorophyll contains magnesium, and cobalt(III) ammines are classic Werner coordination complexes.",
-    "notes": "Urea is an organic diamide, not a metal coordination compound."
+    "explanation": "Urea, (NH2)2CO, is a simple organic diamide consisting solely of main-group elements without a central metal coordination center.",
+    "notes": "Urea is an organic diamide, not a metal coordination compound.",
+    "caveat": "In contrast, haemoglobin contains an iron porphyrin complex, chlorophyll contains magnesium, and cobalt(III) ammines are classic Werner coordination complexes."
   },
   {
     "id": "AY21_22_Q02",
@@ -143,7 +145,7 @@ export const QUESTIONS: Question[] = [
       "Coordination Sphere",
       "Inner vs Outer Sphere"
     ],
-    "explanation": "Generated explanation; not an official solution. Ligands reside within the inner coordination sphere enclosed by the square brackets. In [Co(en)2(H2)Cl]Cl2, only 1 chlorine atom is inside the brackets acting as a chlorido ligand, while the 2 chloride atoms outside serve as counteranions.",
+    "explanation": "Ligands reside within the inner coordination sphere enclosed by the square brackets. In [Co(en)2(H2)Cl]Cl2, only 1 chlorine atom is inside the brackets acting as a chlorido ligand, while the 2 chloride atoms outside serve as counteranions.",
     "notes": "Only the single Cl atom inside the square brackets acts as an inner-sphere ligand."
   },
   {
@@ -169,7 +171,7 @@ export const QUESTIONS: Question[] = [
       "Oxidation State",
       "d-Electrons"
     ],
-    "explanation": "Generated explanation; not an official solution. In [Co(NH3)5(CO3)]ClO4, the cobalt center is coordinated to five monodentate NH3 ligands and one monodentate carbonato ligand, giving a coordination number of 6. Balancing charges with perchlorate (ClO4-) and carbonato (CO3 2-) gives Co3+ (x - 2 = +1 => x = +3). Neutral cobalt is [Ar] 4s2 3d7, so Co3+ has 6 d-electrons ([Ar] 3d6).",
+    "explanation": "In [Co(NH3)5(CO3)]ClO4, the cobalt center is coordinated to five monodentate NH3 ligands and one monodentate carbonato ligand, giving a coordination number of 6. Balancing charges with perchlorate (ClO4-) and carbonato (CO3 2-) gives Co3+ (x - 2 = +1 => x = +3). Neutral cobalt is [Ar] 4s2 3d7, so Co3+ has 6 d-electrons ([Ar] 3d6).",
     "notes": "Coordination number = 6; Co(III) oxidation state; d6 configuration."
   },
   {
@@ -194,8 +196,9 @@ export const QUESTIONS: Question[] = [
       "Linkage Isomerism",
       "Ionization Isomerism"
     ],
-    "explanation": "Generated explanation; not an official solution. [Co(NO2)Br(NH3)4]Cl contains the ambidentate NO2- ligand capable of binding via N (nitro) or O (nitrito), conferring linkage isomerism. It also possesses different anions inside and outside the sphere (inner Br-, outer Cl-), allowing ion exchange to yield the ionization isomer [Co(NO2)Cl(NH3)4]Br.",
-    "notes": "Shows linkage isomerism via NO2/ONO and ionization isomerism via Br-/Cl- exchange."
+    "explanation": "[Co(NO2)Br(NH3)4]Cl contains the ambidentate NO2- ligand capable of binding via N (nitro) or O (nitrito), conferring linkage isomerism. It also possesses different anions inside and outside the sphere (inner Br-, outer Cl-), allowing ion exchange to yield the ionization isomer [Co(NO2)Cl(NH3)4]Br.",
+    "notes": "Shows linkage isomerism via NO2/ONO and ionization isomerism via Br-/Cl- exchange.",
+    "caveat": "Shows linkage isomerism via NO2/ONO and ionization isomerism via Br-/Cl- exchange."
   },
   {
     "id": "AY21_22_Q05",
@@ -219,7 +222,7 @@ export const QUESTIONS: Question[] = [
       "Precipitation Test",
       "Sulfate Counterion"
     ],
-    "explanation": "Generated explanation; not an official solution. In [Co(NH3)5Br]SO4, sulfate (SO4 2-) is the free counteranion in solution. When treated with a lead(II) salt like PbCl2, Pb2+ reacts with free SO4 2- to precipitate insoluble white lead(II) sulfate (PbSO4). Silver nitrate does not precipitate because bromide is coordinated inside the inner sphere.",
+    "explanation": "In [Co(NH3)5Br]SO4, sulfate (SO4 2-) is the free counteranion in solution. When treated with a lead(II) salt like PbCl2, Pb2+ reacts with free SO4 2- to precipitate insoluble white lead(II) sulfate (PbSO4). Silver nitrate does not precipitate because bromide is coordinated inside the inner sphere.",
     "notes": "Free sulfate precipitates with Pb2+ as insoluble white PbSO4."
   },
   {
@@ -244,7 +247,7 @@ export const QUESTIONS: Question[] = [
       "IUPAC Naming",
       "Ammine Complex"
     ],
-    "explanation": "Generated explanation; not an official solution. Under IUPAC rules, the complex cation [Cu(NH3)4]2+ is named without a space as tetraamminecopper(II), followed by the counteranion \"nitrate\" without any Greek multiplying prefix (\"dinitrate\"), making tetraamminecopper(II) nitrate the correct systematic name.",
+    "explanation": "Under IUPAC rules, the complex cation [Cu(NH3)4]2+ is named without a space as tetraamminecopper(II), followed by the counteranion \"nitrate\" without any Greek multiplying prefix (\"dinitrate\"), making tetraamminecopper(II) nitrate the correct systematic name.",
     "notes": "No multiplying prefix on counterion nitrate; no space within complex cation name."
   },
   {
@@ -270,7 +273,7 @@ export const QUESTIONS: Question[] = [
       "Bis Prefix",
       "Methylamine"
     ],
-    "explanation": "Generated explanation; not an official solution. The neutral ligand CH3NH2 is methylamine. In IUPAC naming, ligands with compound names use the multiplicative prefix \"bis-\", and anionic ligands are named first (dicyano). The iron atom is in the +2 oxidation state, yielding dicyanobis(methylamine)iron(II).",
+    "explanation": "The neutral ligand CH3NH2 is methylamine. In IUPAC naming, ligands with compound names use the multiplicative prefix \"bis-\", and anionic ligands are named first (dicyano). The iron atom is in the +2 oxidation state, yielding dicyanobis(methylamine)iron(II).",
     "notes": "Multiplicative prefix bis- is required for the substituted amine ligand methylamine."
   },
   {
@@ -296,7 +299,7 @@ export const QUESTIONS: Question[] = [
       "Coordination Salt",
       "Alphabetical Order"
     ],
-    "explanation": "Generated explanation; not an official solution. In the cation [Pt(NH3)4Cl2]2+, ligands are listed alphabetically: \"ammine\" precedes \"dichloro\", and Pt is in the +4 oxidation state. In the anion [PtCl4]2-, Pt is in the +2 state and named tetrachloroplatinate(II). Naming the cation first gives tetraamminedichloroplatinum(IV) tetrachloroplatinate(II).",
+    "explanation": "In the cation [Pt(NH3)4Cl2]2+, ligands are listed alphabetically: \"ammine\" precedes \"dichloro\", and Pt is in the +4 oxidation state. In the anion [PtCl4]2-, Pt is in the +2 state and named tetrachloroplatinate(II). Naming the cation first gives tetraamminedichloroplatinum(IV) tetrachloroplatinate(II).",
     "notes": "Ligands arranged alphabetically: tetraammine before dichloro; cation named before anion."
   },
   {
@@ -321,7 +324,7 @@ export const QUESTIONS: Question[] = [
       "EDTA Chelate Effect",
       "Thermodynamic Stability"
     ],
-    "explanation": "Generated explanation; not an official solution. Ethylenediaminetetraacetate (EDTA4-) is a hexadentate chelating ligand that wraps around the metal center forming five fused five-membered chelate rings. The massive entropic gain upon displacing six monodentate water molecules confers extraordinary thermodynamic stability (log Kf ≈ 18.6) to [NiEDTA]2-.",
+    "explanation": "Ethylenediaminetetraacetate (EDTA4-) is a hexadentate chelating ligand that wraps around the metal center forming five fused five-membered chelate rings. The massive entropic gain upon displacing six monodentate water molecules confers extraordinary thermodynamic stability (log Kf ≈ 18.6) to [NiEDTA]2-.",
     "notes": "Hexadentate EDTA chelate effect produces the highest thermodynamic stability constant."
   },
   {
@@ -346,7 +349,7 @@ export const QUESTIONS: Question[] = [
       "Ambidentate Ligand",
       "Denticity"
     ],
-    "explanation": "Generated explanation; not an official solution. Although the thiocyanate ion (SCN-) possesses two potential donor atoms (sulfur and nitrogen), geometric constraints prevent it from binding simultaneously to the same metal center. It coordinates through only one donor atom at a time, classifying it as a monodentate (specifically ambidentate) ligand.",
+    "explanation": "Although the thiocyanate ion (SCN-) possesses two potential donor atoms (sulfur and nitrogen), geometric constraints prevent it from binding simultaneously to the same metal center. It coordinates through only one donor atom at a time, classifying it as a monodentate (specifically ambidentate) ligand.",
     "notes": "SCN- binds via either S or N, but only one at a time, making it monodentate."
   },
   {
@@ -371,8 +374,9 @@ export const QUESTIONS: Question[] = [
       "Isomer Counting",
       "Linkage Combinations"
     ],
-    "explanation": "Generated explanation; not an official solution. [Cr(SCN)2(NH3)4]4+ has cis and trans geometrical isomers, and each geometry can have three distinct linkage combinations for the two ambidentate thiocyanate ligands: (-SCN,-SCN), (-SCN,-NCS), and (-NCS,-NCS), producing 6 distinct isomers, the highest among the choices.",
-    "notes": "2 geometrical arrangements x 3 linkage combinations = 6 isomers."
+    "explanation": "[Cr(SCN)2(NH3)4]4+ has cis and trans geometrical isomers, and each geometry can have three distinct linkage combinations for the two ambidentate thiocyanate ligands: (-SCN,-SCN), (-SCN,-NCS), and (-NCS,-NCS), producing 6 distinct isomers, the highest among the choices.",
+    "notes": "2 geometrical arrangements x 3 linkage combinations = 6 isomers.",
+    "caveat": "2 geometrical arrangements x 3 linkage combinations = 6 isomers."
   },
   {
     "id": "AY21_22_Q12",
@@ -396,8 +400,9 @@ export const QUESTIONS: Question[] = [
       "Isomerism Types",
       "Achiral Octahedral"
     ],
-    "explanation": "Generated explanation; not an official solution. This complex shows linkage isomerism (NO2/ONO), geometrical isomerism (cis and trans [Ma4b2]), and ionization isomerism (exchange of inner NO2- with outer Cl- to give [Co(NH3)4Cl(NO2)]NO2). Because both cis and trans [Ma4b2] have mirror planes of symmetry, optical isomerism is absent, making D correct.",
-    "notes": "Optical isomerism is impossible for [Ma4b2] complexes because both cis and trans isomers have planes of symmetry."
+    "explanation": "This complex shows linkage isomerism (NO2/ONO), geometrical isomerism (cis and trans [Ma4b2]), and ionization isomerism (exchange of inner NO2- with outer Cl- to give [Co(NH3)4Cl(NO2)]NO2). Because both cis and trans [Ma4b2] have mirror planes of symmetry, optical isomerism is absent, making D correct.",
+    "notes": "Optical isomerism is impossible for [Ma4b2] complexes because both cis and trans isomers have planes of symmetry.",
+    "caveat": "Optical isomerism is impossible for [Ma4b2] complexes because both cis and trans isomers have planes of symmetry."
   },
   {
     "id": "AY21_22_Q13",
@@ -421,8 +426,9 @@ export const QUESTIONS: Question[] = [
       "Square Planar",
       "Isomer Multiplicity"
     ],
-    "explanation": "Generated explanation; not an official solution. A square planar complex with four different monodentate ligands [Mabcd] forms exactly 3 geometrical isomers. Among the four ligands, NO2- has 2 linkage modes (N, O) and SCN- has 2 linkage modes (S, N). Multiplying 3 geometrical arrangements by 2 (NO2) and 2 (SCN) gives 3 x 2 x 2 = 12 total isomers.",
-    "notes": "3 geometrical isomers x 2 linkage (NO2) x 2 linkage (SCN) = 12 total isomers."
+    "explanation": "A square planar complex with four different monodentate ligands [Mabcd] forms exactly 3 geometrical isomers. Among the four ligands, NO2- has 2 linkage modes (N, O) and SCN- has 2 linkage modes (S, N). Multiplying 3 geometrical arrangements by 2 (NO2) and 2 (SCN) gives 3 x 2 x 2 = 12 total isomers.",
+    "notes": "3 geometrical isomers x 2 linkage (NO2) x 2 linkage (SCN) = 12 total isomers.",
+    "caveat": "3 geometrical isomers x 2 linkage (NO2) x 2 linkage (SCN) = 12 total isomers."
   },
   {
     "id": "AY21_22_Q14",
@@ -446,7 +452,7 @@ export const QUESTIONS: Question[] = [
       "Optical Isomers",
       "Enantiomer Properties"
     ],
-    "explanation": "Generated explanation; not an official solution. Enantiomers share the same molecular formula and identical scalar physical properties (such as melting point, boiling point, density, and solubility in achiral solvents), but rotate the plane of polarized light in equal magnitude but opposite directions. Therefore, all of the statements are correct.",
+    "explanation": "Enantiomers share the same molecular formula and identical scalar physical properties (such as melting point, boiling point, density, and solubility in achiral solvents), but rotate the plane of polarized light in equal magnitude but opposite directions. Therefore, all of the statements are correct.",
     "notes": "Enantiomers have identical achiral physical properties and rotate plane-polarized light in opposite directions."
   },
   {
@@ -471,8 +477,9 @@ export const QUESTIONS: Question[] = [
       "Tris-chelate",
       "Chirality"
     ],
-    "explanation": "Generated explanation; not an official solution. The tris(oxalato)chromate(III) ion, [Cr(C2O4)3]3-, has D3 point group symmetry like a three-bladed propeller. It lacks any improper rotation axis (no plane of symmetry or inversion center) and exists as a pair of non-superimposable mirror-image enantiomers (Δ and Λ), demonstrating optical isomerism.",
-    "notes": "[Cr(C2O4)3]3- is a chiral tris-chelate showing optical activity."
+    "explanation": "The tris(oxalato)chromate(III) ion, [Cr(C2O4)3]3-, has D3 point group symmetry like a three-bladed propeller. It lacks any improper rotation axis (no plane of symmetry or inversion center) and exists as a pair of non-superimposable mirror-image enantiomers (Δ and Λ), demonstrating optical isomerism.",
+    "notes": "[Cr(C2O4)3]3- is a chiral tris-chelate showing optical activity.",
+    "caveat": "[Cr(C2O4)3]3- is a chiral tris-chelate showing optical activity."
   },
   {
     "id": "AY21_22_Q16",
@@ -497,8 +504,9 @@ export const QUESTIONS: Question[] = [
       "Spatial Rotation",
       "Chiral Congruence"
     ],
-    "explanation": "Generated explanation; not an official solution. In both depictions, the two monodentate ligands A are mutually cis (at 90 degrees), and the two chelating ethylenediamine (en) rings occupy the remaining four cis-coordinated positions. Rotating the first drawing by 90 degrees around an axis brings all atoms into identical spatial alignment with the second drawing; hence, they represent the identical complex.",
-    "notes": "The two figures depict the same cis isomer in different orientations, superimposable by simple rigid-body rotation."
+    "explanation": "In both depictions, the two monodentate ligands A are mutually cis (at 90 degrees), and the two chelating ethylenediamine (en) rings occupy the remaining four cis-coordinated positions. Rotating the first drawing by 90 degrees around an axis brings all atoms into identical spatial alignment with the second drawing; hence, they represent the identical complex.",
+    "notes": "The two figures depict the same cis isomer in different orientations, superimposable by simple rigid-body rotation.",
+    "caveat": "The two figures depict the same cis isomer in different orientations, superimposable by simple rigid-body rotation."
   },
   {
     "id": "AY21_22_Q17",
@@ -522,8 +530,9 @@ export const QUESTIONS: Question[] = [
       "Stereoisomer Counting",
       "fac/mer and Enantiomers"
     ],
-    "explanation": "Generated explanation; not an official solution. Complex i [Ma3b3] forms exactly two geometrical isomers: facial (fac) and meridional (mer), both achiral. Complex ii [M(A-A)3] forms exactly two optical isomers: the Δ and Λ enantiomeric pair. In contrast, complex iii forms three stereoisomers (trans and a pair of cis enantiomers). Thus, only i and ii have exactly two stereoisomeric forms.",
-    "notes": "i has 2 geometrical isomers (fac/mer); ii has 2 optical enantiomers (Δ/Λ); iii has 3 stereoisomers."
+    "explanation": "Complex i [Ma3b3] forms exactly two geometrical isomers: facial (fac) and meridional (mer), both achiral. Complex ii [M(A-A)3] forms exactly two optical isomers: the Δ and Λ enantiomeric pair.",
+    "notes": "i has 2 geometrical isomers (fac/mer); ii has 2 optical enantiomers (Δ/Λ); iii has 3 stereoisomers.",
+    "caveat": "In contrast, complex iii forms three stereoisomers (trans and a pair of cis enantiomers). Thus, only i and ii have exactly two stereoisomeric forms."
   },
   {
     "id": "AY21_22_Q18",
@@ -547,8 +556,9 @@ export const QUESTIONS: Question[] = [
       "Ionization Isomerism",
       "Precipitation Test"
     ],
-    "explanation": "Generated explanation; not an official solution. Isomer X reacts with AgNO3 to precipitate AgCl, meaning Cl- is the outer-sphere counterion: [Co(SO4)(NH3)5]Cl. Isomer Y reacts with BaCl2 to precipitate BaSO4, meaning SO4 2- is the counterion: [CoCl(NH3)5]SO4. Interchange of an anionic ligand with an outer counterion defines ionization isomerism.",
-    "notes": "Ionization isomers differing in which anion acts as the free counterion in aqueous solution."
+    "explanation": "Isomer X reacts with AgNO3 to precipitate AgCl, meaning Cl- is the outer-sphere counterion: [Co(SO4)(NH3)5]Cl. Isomer Y reacts with BaCl2 to precipitate BaSO4, meaning SO4 2- is the counterion: [CoCl(NH3)5]SO4. Interchange of an anionic ligand with an outer counterion defines ionization isomerism.",
+    "notes": "Ionization isomers differing in which anion acts as the free counterion in aqueous solution.",
+    "caveat": "Ionization isomers differing in which anion acts as the free counterion in aqueous solution."
   },
   {
     "id": "AY21_22_Q19",
@@ -572,7 +582,7 @@ export const QUESTIONS: Question[] = [
       "Chirality",
       "Symmetry Planes"
     ],
-    "explanation": "Generated explanation; not an official solution. [Co(NH3)3Cl3] is an [Ma3b3] complex that exists as facial (fac) and meridional (mer) geometrical isomers. The fac isomer possesses three planes of symmetry (C3v), and the mer isomer possesses a mirror plane of symmetry (C2v). Having planes of symmetry, neither isomer is chiral, so it has no optical isomers.",
+    "explanation": "[Co(NH3)3Cl3] is an [Ma3b3] complex that exists as facial (fac) and meridional (mer) geometrical isomers. The fac isomer possesses three planes of symmetry (C3v), and the mer isomer possesses a mirror plane of symmetry (C2v). Having planes of symmetry, neither isomer is chiral, so it has no optical isomers.",
     "notes": "Both fac and mer forms of [Ma3b3] contain mirror planes and are strictly achiral."
   },
   {
@@ -597,8 +607,9 @@ export const QUESTIONS: Question[] = [
       "Geometrical Isomers",
       "cis/trans"
     ],
-    "explanation": "Generated explanation; not an official solution. An octahedral complex with formula [MX2Y4] has exactly two geometrical arrangements for the two X ligands: cis, in which the two X ligands subtend an angle of 90 degrees at the metal center, and trans, in which they occupy opposite vertices at 180 degrees.",
-    "notes": "Exactly 2 geometrical isomers: cis and trans."
+    "explanation": "An octahedral complex with formula [MX2Y4] has exactly two geometrical arrangements for the two X ligands: cis, in which the two X ligands subtend an angle of 90 degrees at the metal center, and trans, in which they occupy opposite vertices at 180 degrees.",
+    "notes": "Exactly 2 geometrical isomers: cis and trans.",
+    "caveat": "Exactly 2 geometrical isomers: cis and trans."
   },
   {
     "id": "AY21_22_Q21",
@@ -622,7 +633,7 @@ export const QUESTIONS: Question[] = [
       "Transition Metal Chemistry",
       "Stability Factors"
     ],
-    "explanation": "Generated explanation; not an official solution. The propensity of transition metals to form exceptionally stable complexes stems collectively from their high charge density (large charge-to-radius ratio), their variable oxidation states allowing favorable redox tuning, and the presence of low-lying empty valence d-orbitals suitable for accepting ligand electron pairs.",
+    "explanation": "The propensity of transition metals to form exceptionally stable complexes stems collectively from their high charge density (large charge-to-radius ratio), their variable oxidation states allowing favorable redox tuning, and the presence of low-lying empty valence d-orbitals suitable for accepting ligand electron pairs.",
     "notes": "All listed properties contribute synergistically to complex stability in transition metals."
   },
   {
@@ -647,7 +658,7 @@ export const QUESTIONS: Question[] = [
       "CFT Postulates",
       "d Orbitals"
     ],
-    "explanation": "Generated explanation; not an official solution. Classic Crystal Field Theory focuses exclusively on the effect of the surrounding electrostatic ligand field on the five degenerate valence d orbitals of transition metal ions, describing how their energies split without considering s or p orbital hybridization.",
+    "explanation": "Classic Crystal Field Theory focuses exclusively on the effect of the surrounding electrostatic ligand field on the five degenerate valence d orbitals of transition metal ions, describing how their energies split without considering s or p orbital hybridization.",
     "notes": "CFT specifically addresses the energetic perturbation and splitting of d-orbitals."
   },
   {
@@ -672,7 +683,7 @@ export const QUESTIONS: Question[] = [
       "Oxidation State",
       "Charge Density"
     ],
-    "explanation": "Generated explanation; not an official solution. Iron(III) carries a +3 charge and has a significantly smaller ionic radius (64.5 pm) than divalent Fe2+ (78 pm) or Mn2+ (83 pm). Its much higher charge density creates stronger electrostatic attraction and greater covalent orbital overlap with water ligands, giving [Fe(H2O)6]3+ the highest stability.",
+    "explanation": "Iron(III) carries a +3 charge and has a significantly smaller ionic radius (64.5 pm) than divalent Fe2+ (78 pm) or Mn2+ (83 pm). Its much higher charge density creates stronger electrostatic attraction and greater covalent orbital overlap with water ligands, giving [Fe(H2O)6]3+ the highest stability.",
     "notes": "Fe3+ has much higher charge density than the divalent cations, maximizing thermodynamic stability."
   },
   {
@@ -697,7 +708,7 @@ export const QUESTIONS: Question[] = [
       "Stability Factors",
       "Chelation"
     ],
-    "explanation": "Generated explanation; not an official solution. The overall thermodynamic stability of a coordination complex depends on metal properties (higher charge and smaller radius increase stability), ligand properties (basicity, polarizability, and spectrochemical strength), and chelation (multidentate ring formation increases stability via entropy). Hence, all of the above factors are critical.",
+    "explanation": "The overall thermodynamic stability of a coordination complex depends on metal properties (higher charge and smaller radius increase stability), ligand properties (basicity, polarizability, and spectrochemical strength), and chelation (multidentate ring formation increases stability via entropy). Hence, all of the above factors are critical.",
     "notes": "Metal charge, ligand properties, and chelate formation all govern complex stability."
   },
   {
@@ -722,7 +733,7 @@ export const QUESTIONS: Question[] = [
       "Stability Constant",
       "Ligand Strength"
     ],
-    "explanation": "Generated explanation; not an official solution. The stability constant (Kf) directly quantifies the thermodynamic equilibrium for complex formation. A formation constant of order 10^27 for the cyanide complex is by far the largest value among the four ligands, establishing that CN- binds most strongly to the M2+ ion.",
+    "explanation": "The stability constant (Kf) directly quantifies the thermodynamic equilibrium for complex formation. A formation constant of order 10^27 for the cyanide complex is by far the largest value among the four ligands, establishing that CN- binds most strongly to the M2+ ion.",
     "notes": "Kf of 10^27 demonstrates that CN- forms the most thermodynamically stable complex."
   },
   {
@@ -747,7 +758,7 @@ export const QUESTIONS: Question[] = [
       "d-Orbital Degeneracy",
       "Ligand Field Splitting"
     ],
-    "explanation": "Generated explanation; not an official solution. The degeneracy of the five metal d-orbitals is lifted whenever ligands approach the central metal ion in any non-spherical coordination geometry. Whether the ligands are strong field, weak field, mixed, or chelating, their anisotropic electrostatic and covalent interactions inevitably break the five-fold d degeneracy.",
+    "explanation": "The degeneracy of the five metal d-orbitals is lifted whenever ligands approach the central metal ion in any non-spherical coordination geometry. Whether the ligands are strong field, weak field, mixed, or chelating, their anisotropic electrostatic and covalent interactions inevitably break the five-fold d degeneracy.",
     "notes": "Any non-spherical field (strong, weak, mixed, or chelated) lifts the 5-fold d orbital degeneracy."
   },
   {
@@ -774,7 +785,7 @@ export const QUESTIONS: Question[] = [
       "Stability Order",
       "Spectrochemical Series"
     ],
-    "explanation": "Generated explanation; not an official solution. The official answer key explicitly designates the parenthesised alternative (B/D) for this question. In option B, NO2- is a stronger-field and more stable ligand than NH3, making the sequence incorrect. In option D, a divalent Rh(II) aqua ion is placed between two trivalent ions (Co3+ and Ir3+), violating periodic and oxidation-state stability trends. Both B and D depict incorrect stability orders.",
+    "explanation": "The official answer key explicitly designates the parenthesised alternative (B/D) for this question. In option B, NO2- is a stronger-field and more stable ligand than NH3, making the sequence incorrect. In option D, a divalent Rh(II) aqua ion is placed between two trivalent ions (Co3+ and Ir3+), violating periodic and oxidation-state stability trends. Both B and D depict incorrect stability orders.",
     "notes": "The official answer key designates parenthesised alternative (B/D). Both option B and option D show flawed stability orders, so both answers are accepted."
   },
   {
@@ -799,7 +810,7 @@ export const QUESTIONS: Question[] = [
       "Irving-Williams Series",
       "Charge Density"
     ],
-    "explanation": "Generated explanation; not an official solution. Although both Cu2+ and Cd2+ carry a +2 formal charge, the 3d transition metal ion Cu2+ has a much smaller ionic radius (~73 pm) than the 4d metal ion Cd2+ (~95 pm). Consequently, Cu2+ possesses a substantially greater charge density (charge-to-radius ratio), leading to stronger electrostatic and covalent bond strengths.",
+    "explanation": "Although both Cu2+ and Cd2+ carry a +2 formal charge, the 3d transition metal ion Cu2+ has a much smaller ionic radius (~73 pm) than the 4d metal ion Cd2+ (~95 pm). Consequently, Cu2+ possesses a substantially greater charge density (charge-to-radius ratio), leading to stronger electrostatic and covalent bond strengths.",
     "notes": "Smaller ionic radius of Cu2+ gives higher charge density, explaining its higher stability."
   },
   {
@@ -825,7 +836,7 @@ export const QUESTIONS: Question[] = [
       "Alternative Key Entry",
       "Chelate vs Strong Field"
     ],
-    "explanation": "Generated explanation; not an official solution. The official answer key marks (A/B) as accepted alternatives. Chemically, [Fe(C2O4)3]3- derives immense thermodynamic stability from the chelate effect (three bidentate rings), whereas [Fe(CN)6]3- exhibits massive stability from strong-field covalent σ-bonding and π-backbonding with iron(III). Both represent exceptionally stable complex species.",
+    "explanation": "The official answer key marks (A/B) as accepted alternatives. Chemically, [Fe(C2O4)3]3- derives immense thermodynamic stability from the chelate effect (three bidentate rings), whereas [Fe(CN)6]3- exhibits massive stability from strong-field covalent σ-bonding and π-backbonding with iron(III). Both represent exceptionally stable complex species.",
     "notes": "The official answer key designates parenthesised alternative (A/B). Both the chelated tris(oxalato) complex (A) and hexacyanidoferrate(III) (B) are accepted."
   },
   {
@@ -850,7 +861,7 @@ export const QUESTIONS: Question[] = [
       "Synergic Bonding",
       "Iron Pentacarbonyl"
     ],
-    "explanation": "Generated explanation; not an official solution. In metal carbonyls like Fe(CO)5, bonding is synergic: CO donates its lone pair into empty iron hybrid orbitals to form a σ-bond, while filled iron d orbitals donate electron density into the empty π* orbitals of CO (π-backbonding). The Fe-C bond thus possesses both σ and π character.",
+    "explanation": "In metal carbonyls like Fe(CO)5, bonding is synergic: CO donates its lone pair into empty iron hybrid orbitals to form a σ-bond, while filled iron d orbitals donate electron density into the empty π* orbitals of CO (π-backbonding). The Fe-C bond thus possesses both σ and π character.",
     "notes": "Synergic bonding in metal carbonyls involves both sigma and pi character."
   },
   {
@@ -875,7 +886,7 @@ export const QUESTIONS: Question[] = [
       "High-Spin d5",
       "Unpaired Electrons"
     ],
-    "explanation": "Generated explanation; not an official solution. With a weak-field ligand, the crystal field splitting Δo is smaller than the electron pairing energy (Δo < P), resulting in a high-spin complex. For a d5 system, electrons occupy all five d-orbitals singly according to Hund's rule: configuration t2g^3 eg^2, giving exactly 5 unpaired electrons.",
+    "explanation": "With a weak-field ligand, the crystal field splitting Δo is smaller than the electron pairing energy (Δo < P), resulting in a high-spin complex. For a d5 system, electrons occupy all five d-orbitals singly according to Hund's rule: configuration t2g^3 eg^2, giving exactly 5 unpaired electrons.",
     "notes": "High-spin d5 has one electron in each of the 5 d-orbitals, giving 5 unpaired electrons."
   },
   {
@@ -900,7 +911,7 @@ export const QUESTIONS: Question[] = [
       "Orbital Inversion",
       "Octahedral vs Tetrahedral"
     ],
-    "explanation": "Generated explanation; not an official solution. In octahedral geometry, dz2 belongs to the higher-energy eg set pointing directly at ligands, whereas dxy is in the lower-energy t2g set, so E(dxy) < E(dz2). In tetrahedral geometry, the splitting pattern is reversed: t2 (including dxy) is higher in energy than the e set (including dz2), so E(dxy) > E(dz2).",
+    "explanation": "In octahedral geometry, dz2 belongs to the higher-energy eg set pointing directly at ligands, whereas dxy is in the lower-energy t2g set, so E(dxy) < E(dz2). In tetrahedral geometry, the splitting pattern is reversed: t2 (including dxy) is higher in energy than the e set (including dz2), so E(dxy) > E(dz2).",
     "notes": "In Oh: E(dxy) < E(dz2); in Td: E(dxy) > E(dz2)."
   },
   {
@@ -925,7 +936,7 @@ export const QUESTIONS: Question[] = [
       "High-Spin d4",
       "Electron Configuration"
     ],
-    "explanation": "Generated explanation; not an official solution. When Δo is smaller than the pairing energy, electrons prefer promoting to the higher-energy eg level rather than pairing in t2g. For a d4 metal ion, three electrons occupy the three degenerate t2g orbitals singly and the fourth electron enters the eg set, producing the high-spin configuration t2g^3 eg^1.",
+    "explanation": "When Δo is smaller than the pairing energy, electrons prefer promoting to the higher-energy eg level rather than pairing in t2g. For a d4 metal ion, three electrons occupy the three degenerate t2g orbitals singly and the fourth electron enters the eg set, producing the high-spin configuration t2g^3 eg^1.",
     "notes": "Δo < P produces high-spin t2g3 eg1."
   },
   {
@@ -950,7 +961,7 @@ export const QUESTIONS: Question[] = [
       "CFSE Ratio",
       "Octahedral vs Tetrahedral"
     ],
-    "explanation": "Generated explanation; not an official solution. Both complexes contain Ni(II), a d8 ion. For octahedral [NiCl6]4-, CFSE_oct = 1.2 Δo. For tetrahedral [NiCl4]2-, CFSE_tet = 0.8 Δt = 0.8 * (4/9)Δo = (16/45)Δo. Taking the ratio gives CFSE_oct / CFSE_tet = 1.2 / (16/45) = (6/5) * (45/16) = 27/8.",
+    "explanation": "Both complexes contain Ni(II), a d8 ion. For octahedral [NiCl6]4-, CFSE_oct = 1.2 Δo. For tetrahedral [NiCl4]2-, CFSE_tet = 0.8 Δt = 0.8 * (4/9)Δo = (16/45)Δo. Taking the ratio gives CFSE_oct / CFSE_tet = 1.2 / (16/45) = (6/5) * (45/16) = 27/8.",
     "notes": "1.2 / [0.8 * (4/9)] = 27/8."
   },
   {
@@ -975,7 +986,7 @@ export const QUESTIONS: Question[] = [
       "t2g Set",
       "Barycenter Stabilization"
     ],
-    "explanation": "Generated explanation; not an official solution. In an octahedral field, ligands approach along the x, y, and z axes. The t2g orbitals (dxy, dxz, and dyz/dyx) have lobes pointing between the Cartesian axes, experiencing less electrostatic repulsion and becoming stabilized by 0.4Δo relative to the barycenter.",
+    "explanation": "In an octahedral field, ligands approach along the x, y, and z axes. The t2g orbitals (dxy, dxz, and dyz/dyx) have lobes pointing between the Cartesian axes, experiencing less electrostatic repulsion and becoming stabilized by 0.4Δo relative to the barycenter.",
     "notes": "The t2g set (dxy, dxz, dyz) points between the axes and is stabilized by 0.4Δo."
   },
   {
@@ -1000,7 +1011,7 @@ export const QUESTIONS: Question[] = [
       "Tetrahedral Splitting",
       "Geometric Factor"
     ],
-    "explanation": "Generated explanation; not an official solution. The crystal field splitting in tetrahedral geometry is related to octahedral splitting by Δt = 4/9 Δo. This substantial reduction arises from two physical factors: having only 4 ligands instead of 6 (giving a factor of 4/6 = 2/3) and the fact that tetrahedral ligand trajectories do not point directly at any d orbital (giving another geometric factor of 2/3). Thus, both points are correct.",
+    "explanation": "The crystal field splitting in tetrahedral geometry is related to octahedral splitting by Δt = 4/9 Δo. This substantial reduction arises from two physical factors: having only 4 ligands instead of 6 (giving a factor of 4/6 = 2/3) and the fact that tetrahedral ligand trajectories do not point directly at any d orbital (giving another geometric factor of 2/3). Thus, both points are correct.",
     "notes": "Δt = (2/3) * (2/3) * Δo = 4/9 Δo, combining fewer ligands and indirect orbital orientation."
   },
   {
@@ -1025,7 +1036,7 @@ export const QUESTIONS: Question[] = [
       "Carbonyl Bonding",
       "Pi-Acceptor"
     ],
-    "explanation": "Generated explanation; not an official solution. Carbon monoxide coordinates through the lone pair on carbon by donating electron density into an empty metal hybrid orbital (σ-donation), while simultaneously accepting electron density from filled metal d-orbitals into its low-energy empty π* antibonding orbitals (π-backbonding). Thus, CO is a σ-donor and π-acceptor.",
+    "explanation": "Carbon monoxide coordinates through the lone pair on carbon by donating electron density into an empty metal hybrid orbital (σ-donation), while simultaneously accepting electron density from filled metal d-orbitals into its low-energy empty π* antibonding orbitals (π-backbonding). Thus, CO is a σ-donor and π-acceptor.",
     "notes": "Synergic bonding classifies CO as a sigma-donor and pi-acceptor."
   },
   {
@@ -1050,7 +1061,7 @@ export const QUESTIONS: Question[] = [
       "Medicinal Chemistry",
       "Cisplatin"
     ],
-    "explanation": "Generated explanation; not an official solution. Cisplatin, cis-[Pt(NH3)2Cl2], is an inorganic platinum-based chemotherapeutic drug widely used in the clinical treatment of various cancers, where it binds to DNA to form intrastrand crosslinks that inhibit DNA replication and trigger apoptosis in malignant cells.",
+    "explanation": "Cisplatin, cis-[Pt(NH3)2Cl2], is an inorganic platinum-based chemotherapeutic drug widely used in the clinical treatment of various cancers, where it binds to DNA to form intrastrand crosslinks that inhibit DNA replication and trigger apoptosis in malignant cells.",
     "notes": "Classic platinum anticancer chemotherapeutic."
   },
   {
@@ -1075,7 +1086,7 @@ export const QUESTIONS: Question[] = [
       "Spectrochemical Series",
       "Strong-Field Ligands"
     ],
-    "explanation": "Generated explanation; not an official solution. In the spectrochemical series, ligands are ordered by the magnitude of crystal field splitting Δo they induce: I- < Br- < Cl- < F- < OH- < H2O < NH3 < NO2- < CN- < CO. Carbon monoxide is the strongest π-acceptor ligand and sits at the highest end of the series, producing the strongest crystal field.",
+    "explanation": "In the spectrochemical series, ligands are ordered by the magnitude of crystal field splitting Δo they induce: I- < Br- < Cl- < F- < OH- < H2O < NH3 < NO2- < CN- < CO. Carbon monoxide is the strongest π-acceptor ligand and sits at the highest end of the series, producing the strongest crystal field.",
     "notes": "CO is at the extreme strong-field end of the spectrochemical series."
   },
   {
@@ -1100,7 +1111,7 @@ export const QUESTIONS: Question[] = [
       "Jahn-Teller Distortion",
       "Tetragonal Elongation"
     ],
-    "explanation": "Generated explanation; not an official solution. Cu(II) has a d9 electronic configuration with an unevenly occupied degenerate eg level (t2g^6 eg^3). According to the Jahn-Teller theorem, any non-linear molecule in a degenerate electronic state must undergo geometric distortion to remove degeneracy and lower the overall energy, resulting in four short equatorial and two long axial Cu-O bonds.",
+    "explanation": "Cu(II) has a d9 electronic configuration with an unevenly occupied degenerate eg level (t2g^6 eg^3). According to the Jahn-Teller theorem, any non-linear molecule in a degenerate electronic state must undergo geometric distortion to remove degeneracy and lower the overall energy, resulting in four short equatorial and two long axial Cu-O bonds.",
     "notes": "Jahn-Teller distortion in d9 copper(II) causes tetragonal elongation (two distinct bond lengths)."
   },
   {
@@ -1125,8 +1136,9 @@ export const QUESTIONS: Question[] = [
       "Stereoisomer Counting",
       "cis/trans and Enantiomers"
     ],
-    "explanation": "Generated explanation; not an official solution. [Co(en)2Cl2]Cl exists as a trans isomer (which has an inversion center and is optically inactive) and a cis isomer (which lacks a plane or center of inversion and exists as a pair of non-superimposable optical enantiomers: Δ and Λ). Together, these constitute exactly 3 stereoisomers.",
-    "notes": "Trans isomer (1) + cis enantiomeric pair (2) = 3 stereoisomers."
+    "explanation": "[Co(en)2Cl2]Cl exists as a trans isomer (which has an inversion center and is optically inactive) and a cis isomer (which lacks a plane or center of inversion and exists as a pair of non-superimposable optical enantiomers: Δ and Λ). Together, these constitute exactly 3 stereoisomers.",
+    "notes": "Trans isomer (1) + cis enantiomeric pair (2) = 3 stereoisomers.",
+    "caveat": "Trans isomer (1) + cis enantiomeric pair (2) = 3 stereoisomers."
   },
   {
     "id": "AY22_23_Q02",
@@ -1150,7 +1162,7 @@ export const QUESTIONS: Question[] = [
       "Hybridization",
       "Valence Bond Theory"
     ],
-    "explanation": "Generated explanation; not an official solution. Hybridization is defined as the quantum-mechanical mixing, combination, and spatial redistribution of atomic orbitals with similar energies to form new equivalent hybrid orbitals with specific directional geometries suitable for bonding.",
+    "explanation": "Hybridization is defined as the quantum-mechanical mixing, combination, and spatial redistribution of atomic orbitals with similar energies to form new equivalent hybrid orbitals with specific directional geometries suitable for bonding.",
     "notes": "Fundamental definition of orbital hybridization in chemical bonding theory."
   },
   {
@@ -1176,7 +1188,7 @@ export const QUESTIONS: Question[] = [
       "IUPAC Naming",
       "Nickelate"
     ],
-    "explanation": "Generated explanation; not an official solution. In a salt containing complex cation and anion, both nickel centers are in the +2 oxidation state ([Ni(NH3)4]2+ and [NiCl4]2-). The cation is named tetraamminenickel(II) and the anion uses the suffix \"-ate\" as tetrachloronickelate(II).",
+    "explanation": "In a salt containing complex cation and anion, both nickel centers are in the +2 oxidation state ([Ni(NH3)4]2+ and [NiCl4]2-). The cation is named tetraamminenickel(II) and the anion uses the suffix \"-ate\" as tetrachloronickelate(II).",
     "notes": "Anionic complex receives -ate suffix; both nickel centers have oxidation state +2."
   },
   {
@@ -1202,7 +1214,7 @@ export const QUESTIONS: Question[] = [
       "Tris Prefix",
       "Iridate"
     ],
-    "explanation": "Generated explanation; not an official solution. For the bidentate chelating ligand oxalato, the IUPAC rules prefer the multiplicative prefix \"tris(oxalato)\". Because the complex is an anion [Ir(C2O4)3]3-, the iridium center is named iridate(III), yielding potassium tris(oxalato)iridate(III).",
+    "explanation": "For the bidentate chelating ligand oxalato, the IUPAC rules prefer the multiplicative prefix \"tris(oxalato)\". Because the complex is an anion [Ir(C2O4)3]3-, the iridium center is named iridate(III), yielding potassium tris(oxalato)iridate(III).",
     "notes": "Tris prefix for bidentate oxalate; anionic metal name ends in -ate."
   },
   {
@@ -1227,7 +1239,7 @@ export const QUESTIONS: Question[] = [
       "Spectrochemical Series",
       "Delta Octahedral"
     ],
-    "explanation": "Generated explanation; not an official solution. According to the spectrochemical series, cyanide (CN-) is one of the strongest field ligands due to its potent π-acceptor capability. Therefore, [Co(CN)6]3- exhibits a substantially larger crystal field splitting parameter (Δo) than complexes with ammine, aqua, or chloride ligands.",
+    "explanation": "According to the spectrochemical series, cyanide (CN-) is one of the strongest field ligands due to its potent π-acceptor capability. Therefore, [Co(CN)6]3- exhibits a substantially larger crystal field splitting parameter (Δo) than complexes with ammine, aqua, or chloride ligands.",
     "notes": "CN- is at the strong-field end of the spectrochemical series, maximizing Δo."
   },
   {
@@ -1252,8 +1264,9 @@ export const QUESTIONS: Question[] = [
       "Tetrahedral Symmetry",
       "Symmetrical Chelate"
     ],
-    "explanation": "Generated explanation; not an official solution. In a tetrahedral complex [M(A-A)2] with symmetrical chelating ligands (such as bis(acetylacetonato) or bis(oxalato)), the geometry possesses D2d point group symmetry. This symmetry includes an improper rotation axis S4 and mirror planes, precluding both geometrical and optical isomerism; thus, only 1 unique isomer exists.",
-    "notes": "Symmetrical bis-chelate tetrahedral complex is achiral (D2d) with no cis/trans isomers."
+    "explanation": "In a tetrahedral complex [M(A-A)2] with symmetrical chelating ligands (such as bis(acetylacetonato) or bis(oxalato)), the geometry possesses D2d point group symmetry. This symmetry includes an improper rotation axis S4 and mirror planes, precluding both geometrical and optical isomerism; thus, only 1 unique isomer exists.",
+    "notes": "Symmetrical bis-chelate tetrahedral complex is achiral (D2d) with no cis/trans isomers.",
+    "caveat": "Symmetrical bis-chelate tetrahedral complex is achiral (D2d) with no cis/trans isomers."
   },
   {
     "id": "AY22_23_Q07",
@@ -1277,7 +1290,7 @@ export const QUESTIONS: Question[] = [
       "Molar Conductivity",
       "Number of Ions"
     ],
-    "explanation": "Generated explanation; not an official solution. Molar electrical conductivity of an electrolyte solution increases with the total number of ions produced per formula unit and their ionic charges. [Co(NH3)6]Cl3 dissociates into 4 ions (one [Co(NH3)6]3+ tri-cation and three Cl- anions), giving the highest conductance among all options.",
+    "explanation": "Molar electrical conductivity of an electrolyte solution increases with the total number of ions produced per formula unit and their ionic charges. [Co(NH3)6]Cl3 dissociates into 4 ions (one [Co(NH3)6]3+ tri-cation and three Cl- anions), giving the highest conductance among all options.",
     "notes": "Produces 4 ions in solution (1:3 electrolyte), giving the highest conductivity."
   },
   {
@@ -1302,8 +1315,9 @@ export const QUESTIONS: Question[] = [
       "Ionization Isomerism",
       "Exchange of Ions"
     ],
-    "explanation": "Generated explanation; not an official solution. Ionization isomers result from the exchange of an anionic ligand inside the coordination sphere with an outer-sphere counterion. Exchanging inner NO2- with outer Cl- gives [Cr(H2O)4Cl2](NO2), which releases nitrite rather than chloride in aqueous solution.",
-    "notes": "Option B is a linkage isomer; option C is a hydrate isomer."
+    "explanation": "Ionization isomers result from the exchange of an anionic ligand inside the coordination sphere with an outer-sphere counterion. Exchanging inner NO2- with outer Cl- gives [Cr(H2O)4Cl2](NO2), which releases nitrite rather than chloride in aqueous solution.",
+    "notes": "Option B is a linkage isomer; option C is a hydrate isomer.",
+    "caveat": "Option B is a linkage isomer; option C is a hydrate isomer."
   },
   {
     "id": "AY22_23_Q09",
@@ -1327,7 +1341,7 @@ export const QUESTIONS: Question[] = [
       "Pi Backbonding",
       "C-O Bond Length"
     ],
-    "explanation": "Generated explanation; not an official solution. Introducing a d electron into the metal valence shell enables metal-to-ligand π-backbonding into the empty antibonding π* orbitals of the carbonyl ligand. Populating these π* antibonding molecular orbitals weakens the C-O bond and lengthens the carbon-oxygen distance.",
+    "explanation": "Introducing a d electron into the metal valence shell enables metal-to-ligand π-backbonding into the empty antibonding π* orbitals of the carbonyl ligand. Populating these π* antibonding molecular orbitals weakens the C-O bond and lengthens the carbon-oxygen distance.",
     "notes": "Electron density into pi*(CO) weakens the internal C-O bond, increasing its bond length."
   },
   {
@@ -1352,7 +1366,7 @@ export const QUESTIONS: Question[] = [
       "Orbital Energies",
       "Tetrahedral vs Octahedral"
     ],
-    "explanation": "Generated explanation; not an official solution. In octahedral complexes, dz2 belongs to the higher-energy eg set pointing at ligands, while dxy is in the lower-energy t2g set, so E(dxy) < E(dz2). In tetrahedral complexes, the splitting is inverted: t2 (including dxy) is higher in energy than the e set (including dz2), meaning E(dxy) > E(dz2).",
+    "explanation": "In octahedral complexes, dz2 belongs to the higher-energy eg set pointing at ligands, while dxy is in the lower-energy t2g set, so E(dxy) < E(dz2). In tetrahedral complexes, the splitting is inverted: t2 (including dxy) is higher in energy than the e set (including dz2), meaning E(dxy) > E(dz2).",
     "notes": "In Oh: t2g (dxy) < eg (dz2); in Td: e (dz2) < t2 (dxy)."
   },
   {
@@ -1377,7 +1391,7 @@ export const QUESTIONS: Question[] = [
       "Medicinal Chemistry",
       "Cisplatin"
     ],
-    "explanation": "Generated explanation; not an official solution. Cisplatin, cis-diamminedichloroplatinum(II), is a widely utilized chemotherapy medication used in the clinical treatment of various cancers, including testicular, ovarian, and lung cancers, by crosslinking purine bases in DNA.",
+    "explanation": "Cisplatin, cis-diamminedichloroplatinum(II), is a widely utilized chemotherapy medication used in the clinical treatment of various cancers, including testicular, ovarian, and lung cancers, by crosslinking purine bases in DNA.",
     "notes": "Well-known platinum-based anticancer therapeutic agent."
   },
   {
@@ -1402,8 +1416,9 @@ export const QUESTIONS: Question[] = [
       "Isomer Definition",
       "Molecular Formula"
     ],
-    "explanation": "Generated explanation; not an official solution. By definition, all isomers must have the exact same chemical composition and molecular formula, differing only in the connectivity or spatial arrangement of atoms. Since no valid isomerism involves complexes with different molecular formulas, \"none of the above\" is correct.",
-    "notes": "Isomers must share identical molecular formulas by chemical definition."
+    "explanation": "By definition, all isomers must have the exact same chemical composition and molecular formula, differing only in the connectivity or spatial arrangement of atoms. Since no valid isomerism involves complexes with different molecular formulas, \"none of the above\" is correct.",
+    "notes": "Isomers must share identical molecular formulas by chemical definition.",
+    "caveat": "Isomers must share identical molecular formulas by chemical definition."
   },
   {
     "id": "AY22_23_Q13",
@@ -1427,8 +1442,9 @@ export const QUESTIONS: Question[] = [
       "Isomer Counting",
       "cis/trans Linkage"
     ],
-    "explanation": "Generated explanation; not an official solution. For an octahedral [Ma4b2] complex, there are 2 geometrical arrangements: cis and trans. The two thiocyanate ligands can coordinate in three distinct linkage combinations: (SCN, SCN), (NCS, NCS), and (SCN, NCS). Combining 2 geometries x 3 linkage combinations produces 6 total isomers.",
-    "notes": "3 linkage modes (S/S, N/N, S/N) x 2 geometrical isomers (cis/trans) = 6 isomers."
+    "explanation": "For an octahedral [Ma4b2] complex, there are 2 geometrical arrangements: cis and trans. The two thiocyanate ligands can coordinate in three distinct linkage combinations: (SCN, SCN), (NCS, NCS), and (SCN, NCS). Combining 2 geometries x 3 linkage combinations produces 6 total isomers.",
+    "notes": "3 linkage modes (S/S, N/N, S/N) x 2 geometrical isomers (cis/trans) = 6 isomers.",
+    "caveat": "3 linkage modes (S/S, N/N, S/N) x 2 geometrical isomers (cis/trans) = 6 isomers."
   },
   {
     "id": "AY22_23_Q14",
@@ -1452,7 +1468,7 @@ export const QUESTIONS: Question[] = [
       "Optical Activity",
       "Dextrorotatory"
     ],
-    "explanation": "Generated explanation; not an official solution. By standard convention in stereochemistry, a substance that rotates the plane of polarized light clockwise (to the right) is termed dextrorotatory and designated with the prefix \"d-\" or (+), whereas levorotatory rotates to the left and is designated \"l-\" or (-).",
+    "explanation": "By standard convention in stereochemistry, a substance that rotates the plane of polarized light clockwise (to the right) is termed dextrorotatory and designated with the prefix \"d-\" or (+), whereas levorotatory rotates to the left and is designated \"l-\" or (-).",
     "notes": "Dextrorotatory = right / d; Levorotatory = left / l."
   },
   {
@@ -1477,7 +1493,7 @@ export const QUESTIONS: Question[] = [
       "CFSE Calculation",
       "d8 Nickel"
     ],
-    "explanation": "Generated explanation; not an official solution. Ni2+ has a d8 electron configuration, giving the octahedral configuration t2g^6 eg^2. The CFSE is calculated as: CFSE = [6 * (-0.4) + 2 * (+0.6)] * Δo = -1.2 Δo. In magnitude, 1.2 * 81 kJ/mol = 97.2 kJ/mol, which rounds to 97 kJ/mol.",
+    "explanation": "Ni2+ has a d8 electron configuration, giving the octahedral configuration t2g^6 eg^2. The CFSE is calculated as: CFSE = [6 * (-0.4) + 2 * (+0.6)] * Δo = -1.2 Δo. In magnitude, 1.2 * 81 kJ/mol = 97.2 kJ/mol, which rounds to 97 kJ/mol.",
     "notes": "CFSE = 1.2 * 81 kJ/mol = 97.2 kJ/mol."
   },
   {
@@ -1502,7 +1518,7 @@ export const QUESTIONS: Question[] = [
       "Chelate Effect",
       "Thermodynamics"
     ],
-    "explanation": "Generated explanation; not an official solution. Ethylenediamine is a bidentate chelating ligand that forms a stable five-membered chelate ring upon coordination. The chelate effect provides enhanced thermodynamic stability driven predominantly by a favorable increase in entropy (ΔS > 0) upon displacement of monodentate ligands.",
+    "explanation": "Ethylenediamine is a bidentate chelating ligand that forms a stable five-membered chelate ring upon coordination. The chelate effect provides enhanced thermodynamic stability driven predominantly by a favorable increase in entropy (ΔS > 0) upon displacement of monodentate ligands.",
     "notes": "Enhanced stability of multidentate over monodentate ligands is the chelate effect."
   },
   {
@@ -1527,7 +1543,7 @@ export const QUESTIONS: Question[] = [
       "CFSE Calculation",
       "Low-Spin d7"
     ],
-    "explanation": "Generated explanation; not an official solution. A low-spin d7 octahedral complex has the configuration t2g^6 eg^1. The orbital energy contribution is 6(-0.4Δo) + 1(+0.6Δo) = -1.8Δo. In the spherical free-ion d7 ground state, there are 2 paired electrons and 3 unpaired electrons. In low-spin t2g^6 eg^1, there are 3 pairs, resulting in (3 - 2) = 1 extra electron pair. Accounting for pairing energy, CFSE = 1.8Δo - P.",
+    "explanation": "A low-spin d7 octahedral complex has the configuration t2g^6 eg^1. The orbital energy contribution is 6(-0.4Δo) + 1(+0.6Δo) = -1.8Δo. In the spherical free-ion d7 ground state, there are 2 paired electrons and 3 unpaired electrons. In low-spin t2g^6 eg^1, there are 3 pairs, resulting in (3 - 2) = 1 extra electron pair. Accounting for pairing energy, CFSE = 1.8Δo - P.",
     "notes": "Orbital stabilization is 1.8Δo with 1 net additional pairing energy penalty (-P)."
   },
   {
@@ -1552,7 +1568,7 @@ export const QUESTIONS: Question[] = [
       "Carbonyl Bonding",
       "Pi-Acceptor"
     ],
-    "explanation": "Generated explanation; not an official solution. Carbon monoxide coordinates to transition metals through synergic bonding: it donates electron density from its HOMO (a carbon-centered σ lone pair) into empty metal d orbitals, while simultaneously accepting electron density from filled metal d orbitals into its empty LUMO (π* antibonding orbitals). Thus, CO is a σ-donor and π-acceptor.",
+    "explanation": "Carbon monoxide coordinates to transition metals through synergic bonding: it donates electron density from its HOMO (a carbon-centered σ lone pair) into empty metal d orbitals, while simultaneously accepting electron density from filled metal d orbitals into its empty LUMO (π* antibonding orbitals). Thus, CO is a σ-donor and π-acceptor.",
     "notes": "Synergic bonding: sigma donation and pi back-acceptance."
   },
   {
@@ -1577,7 +1593,7 @@ export const QUESTIONS: Question[] = [
       "Jahn-Teller Distortion",
       "eg Degeneracy"
     ],
-    "explanation": "Generated explanation; not an official solution. Jahn-Teller distortions are strongest when degenerate eg orbitals are asymmetrically populated, because eg lobes point directly along the metal-ligand bond axes. Low-spin d7 has the configuration t2g^6 eg^1, giving an unevenly occupied eg level and yielding a pronounced Jahn-Teller effect.",
+    "explanation": "Jahn-Teller distortions are strongest when degenerate eg orbitals are asymmetrically populated, because eg lobes point directly along the metal-ligand bond axes. Low-spin d7 has the configuration t2g^6 eg^1, giving an unevenly occupied eg level and yielding a pronounced Jahn-Teller effect.",
     "notes": "Low-spin d7 (eg1) has degenerate eg electrons pointing directly at ligands, driving strong distortion."
   },
   {
@@ -1602,7 +1618,7 @@ export const QUESTIONS: Question[] = [
       "CFT Splitting Cause",
       "Orbital Directionality"
     ],
-    "explanation": "Generated explanation; not an official solution. In a purely spherical electrostatic field, all five d-orbitals remain degenerate. Degeneracy is lifted because metal d orbitals possess distinct spatial geometries and directional orientations: orbitals oriented along ligand directions experience greater electrostatic repulsion than those pointing between ligands.",
+    "explanation": "In a purely spherical electrostatic field, all five d-orbitals remain degenerate. Degeneracy is lifted because metal d orbitals possess distinct spatial geometries and directional orientations: orbitals oriented along ligand directions experience greater electrostatic repulsion than those pointing between ligands.",
     "notes": "Directional orientation of d-orbitals relative to incoming ligand charges drives crystal field splitting."
   },
   {
@@ -1627,7 +1643,7 @@ export const QUESTIONS: Question[] = [
       "Coordination Definitions",
       "Ligand vs Complex"
     ],
-    "explanation": "Generated explanation; not an official solution. 1,2-Diaminoethane (ethylenediamine) is an organic diamine that acts as a bidentate chelating ligand, rather than being a complete coordination compound itself. Transplatin, haemoglobin, and cobalt(III) ammines are all fully assembled coordination complexes.",
+    "explanation": "1,2-Diaminoethane (ethylenediamine) is an organic diamine that acts as a bidentate chelating ligand, rather than being a complete coordination compound itself. Transplatin, haemoglobin, and cobalt(III) ammines are all fully assembled coordination complexes.",
     "notes": "1,2-Diaminoethane is a free ligand, not a metal coordination complex."
   },
   {
@@ -1652,7 +1668,7 @@ export const QUESTIONS: Question[] = [
       "Coordination Sphere",
       "Counterions"
     ],
-    "explanation": "Generated explanation; not an official solution. In Werner-type formulas, species outside the square brackets serve as uncoordinated counterions balancing the charge. The formula [Co(en)2(H2)Cl]Cl2 explicitly places two chloride atoms outside the brackets, which act as counteranions in solution.",
+    "explanation": "In Werner-type formulas, species outside the square brackets serve as uncoordinated counterions balancing the charge. The formula [Co(en)2(H2)Cl]Cl2 explicitly places two chloride atoms outside the brackets, which act as counteranions in solution.",
     "notes": "Two Cl- outside square brackets act as outer-sphere counteranions."
   },
   {
@@ -1677,8 +1693,9 @@ export const QUESTIONS: Question[] = [
       "Structural Isomerism",
       "Ionization Isomerism"
     ],
-    "explanation": "Generated explanation; not an official solution. The complex exhibits ionization isomerism through interchange of the inner-sphere carbonato ligand and outer-sphere chloride: [Co(NH3)5(CO3)]Cl and [Co(NH3)5Cl]CO3. Because pentaammine complexes have only one geometrical arrangement, there are exactly 2 structural isomers.",
-    "notes": "Pair of ionization isomers: [Co(NH3)5(CO3)]Cl and [Co(NH3)5Cl]CO3."
+    "explanation": "The complex exhibits ionization isomerism through interchange of the inner-sphere carbonato ligand and outer-sphere chloride: [Co(NH3)5(CO3)]Cl and [Co(NH3)5Cl]CO3. Because pentaammine complexes have only one geometrical arrangement, there are exactly 2 structural isomers.",
+    "notes": "Pair of ionization isomers: [Co(NH3)5(CO3)]Cl and [Co(NH3)5Cl]CO3.",
+    "caveat": "Pair of ionization isomers: [Co(NH3)5(CO3)]Cl and [Co(NH3)5Cl]CO3."
   },
   {
     "id": "AY23_24_Q04",
@@ -1702,8 +1719,9 @@ export const QUESTIONS: Question[] = [
       "Linkage Isomerism",
       "Nitrito Isomers"
     ],
-    "explanation": "Generated explanation; not an official solution. Nitrite is an ambidentate ligand capable of M-NO2 (nitro) and M-ONO (nitrito) binding. In [Co(NO2)(NH3)3]NO2, exchanging inner and outer anions gives the same composition, so it exhibits purely linkage isomerism without distinct ionization isomers.",
-    "notes": "Exclusive linkage isomerism via the nitro/nitrito ambidentate group."
+    "explanation": "Nitrite is an ambidentate ligand capable of M-NO2 (nitro) and M-ONO (nitrito) binding. In [Co(NO2)(NH3)3]NO2, exchanging inner and outer anions gives the same composition, so it exhibits purely linkage isomerism without distinct ionization isomers.",
+    "notes": "Exclusive linkage isomerism via the nitro/nitrito ambidentate group.",
+    "caveat": "Exclusive linkage isomerism via the nitro/nitrito ambidentate group."
   },
   {
     "id": "AY23_24_Q05",
@@ -1727,7 +1745,7 @@ export const QUESTIONS: Question[] = [
       "Ionization Isomerism",
       "Precipitation Test"
     ],
-    "explanation": "Generated explanation; not an official solution. Addition of barium chloride tests for free sulfate counteranions in solution to precipitate insoluble white barium sulfate (BaSO4). Therefore, sulfate must reside in the outer coordination sphere as a counteranion, identifying the complex as [CoBr(NH3)5]SO4.",
+    "explanation": "Addition of barium chloride tests for free sulfate counteranions in solution to precipitate insoluble white barium sulfate (BaSO4). Therefore, sulfate must reside in the outer coordination sphere as a counteranion, identifying the complex as [CoBr(NH3)5]SO4.",
     "notes": "Outer-sphere SO4 2- precipitates with Ba2+ as white BaSO4."
   },
   {
@@ -1752,7 +1770,7 @@ export const QUESTIONS: Question[] = [
       "IUPAC Naming",
       "Cobaltate"
     ],
-    "explanation": "Generated explanation; not an official solution. In systematic inorganic nomenclature, multiplying prefixes such as \"di-\" are not applied to simple counterions, ruling out A and B. The complex anion [CoCl4]2- carries a negative charge, requiring the suffix \"-ate\" as cobaltate(II), making potassium tetrachlorocobaltate(II) the correct IUPAC name.",
+    "explanation": "In systematic inorganic nomenclature, multiplying prefixes such as \"di-\" are not applied to simple counterions, ruling out A and B. The complex anion [CoCl4]2- carries a negative charge, requiring the suffix \"-ate\" as cobaltate(II), making potassium tetrachlorocobaltate(II) the correct IUPAC name.",
     "notes": "No multiplying prefix on potassium; anionic complex requires -ate ending."
   },
   {
@@ -1777,7 +1795,7 @@ export const QUESTIONS: Question[] = [
       "IUPAC Naming",
       "Phosphine Ligand"
     ],
-    "explanation": "Generated explanation; not an official solution. (C6H5)3P is triphenylphosphine, a neutral ligand that takes the multiplying prefix \"bis-\" because its name already contains a numerical descriptor (\"tri-\"). Two anionic cyanido ligands balance an iron(II) center in a neutral complex: dicyanobis(triphenylphosphine)iron(II).",
+    "explanation": "(C6H5)3P is triphenylphosphine, a neutral ligand that takes the multiplying prefix \"bis-\" because its name already contains a numerical descriptor (\"tri-\"). Two anionic cyanido ligands balance an iron(II) center in a neutral complex: dicyanobis(triphenylphosphine)iron(II).",
     "notes": "Use bis- prefix for triphenylphosphine; oxidation state of Fe is +2."
   },
   {
@@ -1802,7 +1820,7 @@ export const QUESTIONS: Question[] = [
       "IUPAC Naming",
       "Chromate"
     ],
-    "explanation": "Generated explanation; not an official solution. The ligand OH- is named hydroxo (or hydroxido). For an anionic complex, the metal name ends in \"-ate\" (chromate), and chromium's oxidation state is +3 (x + 4(-1) = -1 => x = +3), giving tetrahydroxochromate(III).",
+    "explanation": "The ligand OH- is named hydroxo (or hydroxido). For an anionic complex, the metal name ends in \"-ate\" (chromate), and chromium's oxidation state is +3 (x + 4(-1) = -1 => x = +3), giving tetrahydroxochromate(III).",
     "notes": "Hydroxo ligands; anionic complex takes -ate suffix (chromate(III))."
   },
   {
@@ -1827,7 +1845,7 @@ export const QUESTIONS: Question[] = [
       "Chelate Effect",
       "Ethylenediamine"
     ],
-    "explanation": "Generated explanation; not an official solution. The chelate effect provides enhanced thermodynamic stability to complexes containing polydentate ring-forming ligands compared to analogous monodentate systems due to favorable entropy changes. [Ni(en)3]2+ features three five-membered chelate rings, making it far more stable than the monodentate amine or aqua analogues.",
+    "explanation": "The chelate effect provides enhanced thermodynamic stability to complexes containing polydentate ring-forming ligands compared to analogous monodentate systems due to favorable entropy changes. [Ni(en)3]2+ features three five-membered chelate rings, making it far more stable than the monodentate amine or aqua analogues.",
     "notes": "Chelate effect greatly enhances stability of tris(ethylenediamine) complex."
   },
   {
@@ -1852,7 +1870,7 @@ export const QUESTIONS: Question[] = [
       "Denticity",
       "Oxalate"
     ],
-    "explanation": "Generated explanation; not an official solution. Although the oxalate ion (C2O4 2-) contains four oxygen atoms, steric geometry and bite-angle constraints allow it to coordinate to a single metal center through only two oxygen donor atoms simultaneously, forming a stable five-membered chelate ring. It is therefore a bidentate ligand.",
+    "explanation": "Although the oxalate ion (C2O4 2-) contains four oxygen atoms, steric geometry and bite-angle constraints allow it to coordinate to a single metal center through only two oxygen donor atoms simultaneously, forming a stable five-membered chelate ring. It is therefore a bidentate ligand.",
     "notes": "Oxalate coordinates via two carboxylate oxygen atoms (bidentate)."
   },
   {
@@ -1877,8 +1895,9 @@ export const QUESTIONS: Question[] = [
       "Isomer Counting",
       "Bidentate Constraint"
     ],
-    "explanation": "Generated explanation; not an official solution. In [Ni(en)(NH3)4]2+, the bidentate ethylenediamine ligand can only span adjacent (cis) coordination sites, and all remaining four sites are occupied by identical monodentate NH3 ligands. Consequently, there is only 1 unique stereoisomer (no geometrical or optical isomers), giving the least number among all choices.",
-    "notes": "[Ni(en)(NH3)4]2+ has only a single isomer because en must coordinate cis."
+    "explanation": "In [Ni(en)(NH3)4]2+, the bidentate ethylenediamine ligand can only span adjacent (cis) coordination sites, and all remaining four sites are occupied by identical monodentate NH3 ligands. Consequently, there is only 1 unique stereoisomer (no geometrical or optical isomers), giving the least number among all choices.",
+    "notes": "[Ni(en)(NH3)4]2+ has only a single isomer because en must coordinate cis.",
+    "caveat": "[Ni(en)(NH3)4]2+ has only a single isomer because en must coordinate cis."
   },
   {
     "id": "AY23_24_Q12",
@@ -1902,8 +1921,9 @@ export const QUESTIONS: Question[] = [
       "Multiple Isomerisms",
       "Linkage & Ionization"
     ],
-    "explanation": "Generated explanation; not an official solution. This complex contains ambidentate NO2- (giving linkage isomerism), outer-sphere Cl- with inner-sphere anions (giving ionization isomerism), non-equivalent ligands in octahedral geometry (giving cis/trans geometrical isomers), and chiral arrangements of the bidentate en and monodentate ligands (giving optical enantiomers). Hence, all four types are exhibited.",
-    "notes": "Exhibits linkage (NO2/ONO), ionization (NO2/Cl exchange), geometrical, and optical isomerism."
+    "explanation": "This complex contains ambidentate NO2- (giving linkage isomerism), outer-sphere Cl- with inner-sphere anions (giving ionization isomerism), non-equivalent ligands in octahedral geometry (giving cis/trans geometrical isomers), and chiral arrangements of the bidentate en and monodentate ligands (giving optical enantiomers). Hence, all four types are exhibited.",
+    "notes": "Exhibits linkage (NO2/ONO), ionization (NO2/Cl exchange), geometrical, and optical isomerism.",
+    "caveat": "Exhibits linkage (NO2/ONO), ionization (NO2/Cl exchange), geometrical, and optical isomerism."
   },
   {
     "id": "AY23_24_Q13",
@@ -1927,8 +1947,9 @@ export const QUESTIONS: Question[] = [
       "Isomer Combinatorics",
       "Octahedral Linkage"
     ],
-    "explanation": "Generated explanation; not an official solution. For an octahedral complex of type [Ma4bc], there are 2 geometrical isomers: cis and trans. Both NO2- (N or O donor) and SCN- (S or N donor) are ambidentate ligands with 2 linkage modes each. Multiplying the 2 geometrical forms by 2 (NO2/ONO) and 2 (SCN/NCS) gives 2 x 2 x 2 = 8 distinct structural/linkage isomers.",
-    "notes": "2 geometrical arrangements (cis/trans) x 2 (NO2) x 2 (SCN) = 8 total isomers."
+    "explanation": "For an octahedral complex of type [Ma4bc], there are 2 geometrical isomers: cis and trans. Both NO2- (N or O donor) and SCN- (S or N donor) are ambidentate ligands with 2 linkage modes each. Multiplying the 2 geometrical forms by 2 (NO2/ONO) and 2 (SCN/NCS) gives 2 x 2 x 2 = 8 distinct structural/linkage isomers.",
+    "notes": "2 geometrical arrangements (cis/trans) x 2 (NO2) x 2 (SCN) = 8 total isomers.",
+    "caveat": "2 geometrical arrangements (cis/trans) x 2 (NO2) x 2 (SCN) = 8 total isomers."
   },
   {
     "id": "AY23_24_Q14",
@@ -1953,8 +1974,9 @@ export const QUESTIONS: Question[] = [
       "Optical Activity",
       "D3 Symmetry"
     ],
-    "explanation": "Generated explanation; not an official solution. Tris-chelate octahedral complexes of the type [M(A-A)3], such as [Cr(en)3]3+, have D3 symmetry like a propeller and lack any improper axis of rotation (no plane of symmetry or center of inversion). They exist as stable, non-superimposable enantiomeric pairs (Δ and Λ), demonstrating optical isomerism.",
-    "notes": "[Cr(en)3]3+ is chiral (D3 propeller geometry) and shows optical activity."
+    "explanation": "Tris-chelate octahedral complexes of the type [M(A-A)3], such as [Cr(en)3]3+, have D3 symmetry like a propeller and lack any improper axis of rotation (no plane of symmetry or center of inversion). They exist as stable, non-superimposable enantiomeric pairs (Δ and Λ), demonstrating optical isomerism.",
+    "notes": "[Cr(en)3]3+ is chiral (D3 propeller geometry) and shows optical activity.",
+    "caveat": "[Cr(en)3]3+ is chiral (D3 propeller geometry) and shows optical activity."
   },
   {
     "id": "AY23_24_Q15",
@@ -1978,8 +2000,9 @@ export const QUESTIONS: Question[] = [
       "Geometrical Isomers",
       "fac/mer"
     ],
-    "explanation": "Generated explanation; not an official solution. In an octahedral complex containing three identical unsymmetrical bidentate ligands [M(A-B)3], such as tris(glycinato)cobalt(III), there are exactly 2 geometrical isomers: the facial (fac) isomer, where like donor atoms occupy the corners of a triangular octahedral face, and the meridional (mer) isomer, where like donors define a meridian.",
-    "notes": "2 geometrical isomers: fac and mer (each also possesses enantiomeric forms)."
+    "explanation": "In an octahedral complex containing three identical unsymmetrical bidentate ligands [M(A-B)3], such as tris(glycinato)cobalt(III), there are exactly 2 geometrical isomers: the facial (fac) isomer, where like donor atoms occupy the corners of a triangular octahedral face, and the meridional (mer) isomer, where like donors define a meridian.",
+    "notes": "2 geometrical isomers: fac and mer (each also possesses enantiomeric forms).",
+    "caveat": "2 geometrical isomers: fac and mer (each also possesses enantiomeric forms)."
   },
   {
     "id": "AY23_24_Q16",
@@ -2003,7 +2026,7 @@ export const QUESTIONS: Question[] = [
       "Ligand Field Theory",
       "Valence Orbitals"
     ],
-    "explanation": "Generated explanation; not an official solution. Ligand Field Theory (LFT) adapts molecular orbital theory to transition metal complexes. It combines ligand group orbitals (LGOs) with all available metal valence atomic orbitals, which comprise the nd, (n+1)s, and (n+1)p orbitals (e.g. 3d, 4s, and 4p for first-row transition metals).",
+    "explanation": "Ligand Field Theory (LFT) adapts molecular orbital theory to transition metal complexes. It combines ligand group orbitals (LGOs) with all available metal valence atomic orbitals, which comprise the nd, (n+1)s, and (n+1)p orbitals (e.g. 3d, 4s, and 4p for first-row transition metals).",
     "notes": "LFT utilizes metal s, p, and d valence orbitals in symmetry-adapted MO construction."
   },
   {
@@ -2028,7 +2051,7 @@ export const QUESTIONS: Question[] = [
       "Pi Backbonding",
       "Bond Strength"
     ],
-    "explanation": "Generated explanation; not an official solution. Metal-to-ligand π donation (π-backbonding) transfers electron density from filled metal d-orbitals into empty π* acceptor orbitals of ligands such as CO or CN-. This process operates synergistically with ligand-to-metal σ-donation, substantially strengthening and shortening the metal-ligand coordinate bond.",
+    "explanation": "Metal-to-ligand π donation (π-backbonding) transfers electron density from filled metal d-orbitals into empty π* acceptor orbitals of ligands such as CO or CN-. This process operates synergistically with ligand-to-metal σ-donation, substantially strengthening and shortening the metal-ligand coordinate bond.",
     "notes": "Synergistic metal-to-ligand pi backbonding strengthens the overall M-L bond."
   },
   {
@@ -2053,7 +2076,7 @@ export const QUESTIONS: Question[] = [
       "LFT Mechanism",
       "LGO Mixing"
     ],
-    "explanation": "Generated explanation; not an official solution. In contrast to purely electrostatic CFT (which relies on point charges), Ligand Field Theory treats bonding via covalent orbital overlap. Degeneracy is lifted because metal atomic orbitals mix with symmetry-adapted Ligand Group Orbitals (LGOs), creating bonding, antibonding, and non-bonding molecular orbitals of differing energies.",
+    "explanation": "In contrast to purely electrostatic CFT (which relies on point charges), Ligand Field Theory treats bonding via covalent orbital overlap. Degeneracy is lifted because metal atomic orbitals mix with symmetry-adapted Ligand Group Orbitals (LGOs), creating bonding, antibonding, and non-bonding molecular orbitals of differing energies.",
     "notes": "LFT splits d-orbitals via covalent mixing with ligand group orbitals (LGOs)."
   },
   {
@@ -2078,7 +2101,7 @@ export const QUESTIONS: Question[] = [
       "d0 Metal Carbonyl",
       "Sigma Character"
     ],
-    "explanation": "Generated explanation; not an official solution. In [Ti(CO)6]4+, titanium is in the +4 oxidation state, which corresponds to a completely empty 3d0 electronic shell. Without valence d electrons, the metal cannot donate electron density back into the π* orbitals of CO, meaning the Ti-C bonding consists solely of σ-character from the carbonyl lone pair.",
+    "explanation": "In [Ti(CO)6]4+, titanium is in the +4 oxidation state, which corresponds to a completely empty 3d0 electronic shell. Without valence d electrons, the metal cannot donate electron density back into the π* orbitals of CO, meaning the Ti-C bonding consists solely of σ-character from the carbonyl lone pair.",
     "notes": "Ti(IV) has a d0 electron configuration, eliminating any possibility of pi backbonding."
   },
   {
@@ -2103,7 +2126,7 @@ export const QUESTIONS: Question[] = [
       "Low-Spin d6",
       "Unpaired Electrons"
     ],
-    "explanation": "Generated explanation; not an official solution. A high-field ligand produces a large crystal field splitting (Δo > P), forcing electrons to pair in the lower-energy set before populating eg. For a d6 metal ion, all 6 electrons completely fill the t2g orbitals (configuration t2g^6 eg^0), resulting in zero unpaired electrons (diamagnetic).",
+    "explanation": "A high-field ligand produces a large crystal field splitting (Δo > P), forcing electrons to pair in the lower-energy set before populating eg. For a d6 metal ion, all 6 electrons completely fill the t2g orbitals (configuration t2g^6 eg^0), resulting in zero unpaired electrons (diamagnetic).",
     "notes": "Low-spin d6 in octahedral geometry is completely paired (t2g6, 0 unpaired)."
   },
   {
@@ -2128,7 +2151,7 @@ export const QUESTIONS: Question[] = [
       "Axial Removal",
       "dz2 Stabilization"
     ],
-    "explanation": "Generated explanation; not an official solution. When the two axial ligands positioned along the z-axis of an octahedral complex are removed, electrostatic repulsion directly along the z-axis drops to zero. The dz2 orbital, which points head-on at the axial ligands, experiences the largest stabilization energy drop.",
+    "explanation": "When the two axial ligands positioned along the z-axis of an octahedral complex are removed, electrostatic repulsion directly along the z-axis drops to zero. The dz2 orbital, which points head-on at the axial ligands, experiences the largest stabilization energy drop.",
     "notes": "dz2 loses direct axial electrostatic ligand repulsion, dropping sharply in energy."
   },
   {
@@ -2153,7 +2176,7 @@ export const QUESTIONS: Question[] = [
       "Electron Configuration",
       "Low-Spin d4"
     ],
-    "explanation": "Generated explanation; not an official solution. If Δo exceeds the pairing energy, electrons pair in the lower t2g set rather than promoting to the higher-energy eg set. For a d4 system, this leads to a low-spin configuration with all 4 electrons placed in t2g: t2g^4 eg^0.",
+    "explanation": "If Δo exceeds the pairing energy, electrons pair in the lower t2g set rather than promoting to the higher-energy eg set. For a d4 system, this leads to a low-spin configuration with all 4 electrons placed in t2g: t2g^4 eg^0.",
     "notes": "Δo > P yields low-spin state (t2g4 eg0)."
   },
   {
@@ -2178,7 +2201,7 @@ export const QUESTIONS: Question[] = [
       "CFSE Ratio",
       "Octahedral vs Tetrahedral"
     ],
-    "explanation": "Generated explanation; not an official solution. Both complexes feature Ni(II), a d8 ion. For octahedral [NiCl6]4-, CFSE_oct = 1.2 Δo. For tetrahedral [NiCl4]2- (configuration e^4 t2^4), CFSE_tet = 0.8 Δt. Using the geometric relationship Δt = (4/9)Δo, CFSE_tet = 0.8 * (4/9) Δo = (3.2/9) Δo. The ratio CFSE_oct / CFSE_tet is 1.2 / (3.2 / 9) = 10.8 / 3.2 = 27/8.",
+    "explanation": "Both complexes feature Ni(II), a d8 ion. For octahedral [NiCl6]4-, CFSE_oct = 1.2 Δo. For tetrahedral [NiCl4]2- (configuration e^4 t2^4), CFSE_tet = 0.8 Δt. Using the geometric relationship Δt = (4/9)Δo, CFSE_tet = 0.8 * (4/9) Δo = (3.2/9) Δo. The ratio CFSE_oct / CFSE_tet is 1.2 / (3.2 / 9) = 10.8 / 3.2 = 27/8.",
     "notes": "Ratio = 1.2 / [0.8 * (4/9)] = 1.2 / (16/45) = 27/8."
   },
   {
@@ -2203,7 +2226,7 @@ export const QUESTIONS: Question[] = [
       "Tetrahedral Splitting",
       "e Set"
     ],
-    "explanation": "Generated explanation; not an official solution. In a tetrahedral crystal field, the d-orbitals split inversely compared to octahedral geometry. The e orbitals (dx2-y2 and dz2) point toward the faces/edges of the cube rather than directly at the ligands, lying lower in energy and being stabilized by 0.6Δt below the barycenter.",
+    "explanation": "In a tetrahedral crystal field, the d-orbitals split inversely compared to octahedral geometry. The e orbitals (dx2-y2 and dz2) point toward the faces/edges of the cube rather than directly at the ligands, lying lower in energy and being stabilized by 0.6Δt below the barycenter.",
     "notes": "In Td symmetry, the e set (dx2-y2, dz2) is stabilized relative to the barycenter."
   },
   {
@@ -2228,7 +2251,7 @@ export const QUESTIONS: Question[] = [
       "Axial Compression",
       "Jahn-Teller Splitting"
     ],
-    "explanation": "Generated explanation; not an official solution. In axial compression (z-in distortion), the two axial ligands move closer along the z-axis while the four equatorial ligands in the xy plane move outward. This outward relaxation in the xy plane stabilizes the in-plane orbitals; among the t2g set, the dxy orbital experiences the least repulsion and reaches the lowest energy.",
+    "explanation": "In axial compression (z-in distortion), the two axial ligands move closer along the z-axis while the four equatorial ligands in the xy plane move outward. This outward relaxation in the xy plane stabilizes the in-plane orbitals; among the t2g set, the dxy orbital experiences the least repulsion and reaches the lowest energy.",
     "notes": "Outward equatorial movement stabilizes dxy to the lowest energy level."
   },
   {
@@ -2253,7 +2276,7 @@ export const QUESTIONS: Question[] = [
       "Halide Ligand",
       "Pi Donor"
     ],
-    "explanation": "Generated explanation; not an official solution. Fluoride (F-) is an electronegative halide ion with filled valence p orbitals. It donates one lone pair via a σ-bond to the metal and additional electron density from its filled pπ orbitals into empty or half-filled metal t2g orbitals, classifying it as both a σ-donor and a π-donor.",
+    "explanation": "Fluoride (F-) is an electronegative halide ion with filled valence p orbitals. It donates one lone pair via a σ-bond to the metal and additional electron density from its filled pπ orbitals into empty or half-filled metal t2g orbitals, classifying it as both a σ-donor and a π-donor.",
     "notes": "Halide ligands like F- act as sigma-donors and pi-donors, reducing Δo."
   },
   {
@@ -2278,8 +2301,9 @@ export const QUESTIONS: Question[] = [
       "Spectrochemical Series",
       "Pure Sigma Donor"
     ],
-    "explanation": "Generated explanation; not an official solution. Ammonia (NH3) has only a single lone pair on the sp3-hybridized nitrogen atom, which it uses exclusively for σ-bonding. With no additional filled p orbitals (unlike halides or water) and no low-energy empty π* antibonding orbitals (unlike CO or NO2-), NH3 is a pure σ-donor.",
-    "notes": "NH3 serves as the standard benchmark for pure sigma-donation in the spectrochemical series."
+    "explanation": "Ammonia (NH3) has only a single lone pair on the sp3-hybridized nitrogen atom, which it uses exclusively for σ-bonding. With no additional filled p orbitals (.",
+    "notes": "NH3 serves as the standard benchmark for pure sigma-donation in the spectrochemical series.",
+    "caveat": "unlike halides or water) and no low-energy empty π* antibonding orbitals (unlike CO or NO2-), NH3 is a pure σ-donor."
   },
   {
     "id": "AY23_24_Q28",
@@ -2303,7 +2327,7 @@ export const QUESTIONS: Question[] = [
       "d1 Spectrum",
       "Jahn-Teller Distortion"
     ],
-    "explanation": "Generated explanation; not an official solution. In a d1 complex such as [Ti(H2O)6]3+, excitation of the single d electron promotes it from the t2g ground state to the eg level (t2g^0 eg^1). Because the eg state is electronically degenerate, it undergoes Jahn-Teller distortion that splits the eg level, resolving the d-d transition into two overlapping absorption peaks.",
+    "explanation": "In a d1 complex such as [Ti(H2O)6]3+, excitation of the single d electron promotes it from the t2g ground state to the eg level (t2g^0 eg^1). Because the eg state is electronically degenerate, it undergoes Jahn-Teller distortion that splits the eg level, resolving the d-d transition into two overlapping absorption peaks.",
     "notes": "Excited state eg1 Jahn-Teller distortion splits the absorption band."
   },
   {
@@ -2328,7 +2352,7 @@ export const QUESTIONS: Question[] = [
       "Cu(II) Ammine",
       "Stepwise Stability"
     ],
-    "explanation": "Generated explanation; not an official solution. Due to the pronounced Jahn-Teller effect in Cu(II) (d9), the complex exhibits tetragonal elongation with four strongly bound equatorial bonds and two weakly bound elongated axial bonds. In aqueous ammonia, stepwise replacement readily substitutes the four equatorial aqua ligands to give [Cu(NH3)4(H2O)2]2+ as the predominant stable species.",
+    "explanation": "Due to the pronounced Jahn-Teller effect in Cu(II) (d9), the complex exhibits tetragonal elongation with four strongly bound equatorial bonds and two weakly bound elongated axial bonds. In aqueous ammonia, stepwise replacement readily substitutes the four equatorial aqua ligands to give [Cu(NH3)4(H2O)2]2+ as the predominant stable species.",
     "notes": "Jahn-Teller elongation causes a sharp drop in formation constant for the 5th and 6th ammonia ligands."
   },
   {
@@ -2353,7 +2377,7 @@ export const QUESTIONS: Question[] = [
       "Carbonyl IR / Bond Strength",
       "Pi Backbonding"
     ],
-    "explanation": "Generated explanation; not an official solution. Oxidation increases the positive charge on the chromium center, contracting the metal d orbitals and reducing metal-to-CO π-backbonding. Because less electron density is donated into the antibonding π* orbitals of the carbonyl ligands, the C-O bond order increases, making the C-O bond stronger (and shorter).",
+    "explanation": "Oxidation increases the positive charge on the chromium center, contracting the metal d orbitals and reducing metal-to-CO π-backbonding. Because less electron density is donated into the antibonding π* orbitals of the carbonyl ligands, the C-O bond order increases, making the C-O bond stronger (and shorter).",
     "notes": "Decreased backbonding into pi*(CO) strengthens and shortens the C-O triple bond."
   },
   {
@@ -2378,7 +2402,7 @@ export const QUESTIONS: Question[] = [
       "Coordination Compound",
       "Cisplatin"
     ],
-    "explanation": "Generated explanation; not an official solution. Cisplatin, cis-[Pt(NH3)2Cl2], is a neutral coordination complex featuring a central platinum(II) metal center coordinated by ammine and chlorido ligands. Platinum is an element, Fe2+ is a simple monatomic cation, and sulfuric acid is a covalent mineral acid.",
+    "explanation": "Cisplatin, cis-[Pt(NH3)2Cl2], is a neutral coordination complex featuring a central platinum(II) metal center coordinated by ammine and chlorido ligands. Platinum is an element, Fe2+ is a simple monatomic cation, and sulfuric acid is a covalent mineral acid.",
     "notes": "Cisplatin is the prototypical neutral coordination complex."
   },
   {
@@ -2403,7 +2427,7 @@ export const QUESTIONS: Question[] = [
       "Oxidation State",
       "Platinum"
     ],
-    "explanation": "Generated explanation; not an official solution. In [Pt(NH3)2Cl2], the ammine ligands are neutral (charge 0) and the two chloride ligands each carry a -1 charge. For a neutral complex, x + 2(0) + 2(-1) = 0, giving an oxidation state of +2 (Pt2+).",
+    "explanation": "In [Pt(NH3)2Cl2], the ammine ligands are neutral (charge 0) and the two chloride ligands each carry a -1 charge. For a neutral complex, x + 2(0) + 2(-1) = 0, giving an oxidation state of +2 (Pt2+).",
     "notes": "Standard square planar platinum(II) complex."
   },
   {
@@ -2428,7 +2452,7 @@ export const QUESTIONS: Question[] = [
       "Geometrical Isomerism",
       "Optical Isomerism"
     ],
-    "explanation": "Generated explanation; not an official solution. [Co(en)2Cl2]+ exists as cis and trans geometrical isomers. The cis isomer lacks an improper rotation axis and is chiral, existing as a pair of non-superimposable enantiomers (optical isomers), whereas [Cr(en)3]3+ has only optical (no geometrical) isomers.",
+    "explanation": "[Co(en)2Cl2]+ exists as cis and trans geometrical isomers. The cis isomer lacks an improper rotation axis and is chiral, existing as a pair of non-superimposable enantiomers (optical isomers), whereas [Cr(en)3]3+ has only optical (no geometrical) isomers.",
     "notes": "cis-[Co(en)2Cl2]+ is chiral while trans is achiral; thus the complex exhibits both types."
   },
   {
@@ -2453,7 +2477,7 @@ export const QUESTIONS: Question[] = [
       "Linkage Isomerism",
       "Nitrito Ligand"
     ],
-    "explanation": "Generated explanation; not an official solution. Nitrite is ambidentate, binding as nitro (-NO2) or nitrito (-ONO). In [Co(ONO)(NH3)3]NO2, exchanging the inner nitrito with outer nitrite produces an identical chemical entity, meaning it exhibits exclusively linkage isomerism.",
+    "explanation": "Nitrite is ambidentate, binding as nitro (-NO2) or nitrito (-ONO). In [Co(ONO)(NH3)3]NO2, exchanging the inner nitrito with outer nitrite produces an identical chemical entity, meaning it exhibits exclusively linkage isomerism.",
     "notes": "Other options permit ionization or coordination sphere exchange."
   },
   {
@@ -2478,8 +2502,9 @@ export const QUESTIONS: Question[] = [
       "Square Planar",
       "Isomer Combinatorics"
     ],
-    "explanation": "Generated explanation; not an official solution. A square planar complex [Mabcd] with four distinct ligands possesses 3 geometrical isomers. Here, two ligands are ambidentate: SCN- (2 modes: S, N) and NO2- (2 modes: N, O). Multiplying 3 geometrical arrangements by 2 (SCN/NCS) and by 2 (NO2/ONO) yields 3 x 2 x 2 = 12 distinct isomers.",
-    "notes": "3 geometrical isomers x 2 linkage (SCN) x 2 linkage (NO2) = 12 total isomers."
+    "explanation": "A square planar complex [Mabcd] with four distinct ligands possesses 3 geometrical isomers. Here, two ligands are ambidentate: SCN- (2 modes: S, N) and NO2- (2 modes: N, O). Multiplying 3 geometrical arrangements by 2 (SCN/NCS) and by 2 (NO2/ONO) yields 3 x 2 x 2 = 12 distinct isomers.",
+    "notes": "3 geometrical isomers x 2 linkage (SCN) x 2 linkage (NO2) = 12 total isomers.",
+    "caveat": "3 geometrical isomers x 2 linkage (SCN) x 2 linkage (NO2) = 12 total isomers."
   },
   {
     "id": "AY24_25_Q06",
@@ -2503,7 +2528,7 @@ export const QUESTIONS: Question[] = [
       "IUPAC Naming",
       "Coordination Salt"
     ],
-    "explanation": "Generated explanation; not an official solution. The cation is [Cu(H2O)6]2+ named hexaaquacopper(II). The counteranion must balance the +2 charge with a -2 charge, giving [Pt(CN)6]2-, where Pt is in the +4 oxidation state (x - 6 = -2 => x = +4), named hexacyanoplatinate(IV).",
+    "explanation": "The cation is [Cu(H2O)6]2+ named hexaaquacopper(II). The counteranion must balance the +2 charge with a -2 charge, giving [Pt(CN)6]2-, where Pt is in the +4 oxidation state (x - 6 = -2 => x = +4), named hexacyanoplatinate(IV).",
     "notes": "Anionic complex of platinum uses -ate suffix and roman numeral (IV)."
   },
   {
@@ -2528,7 +2553,7 @@ export const QUESTIONS: Question[] = [
       "IUPAC Naming",
       "Bis Prefix"
     ],
-    "explanation": "Generated explanation; not an official solution. For complex ligand names containing prefixes or parentheses, such as trimethylphosphine, the multiplicative prefix \"bis\" is used instead of \"di\". Iron is in the +2 oxidation state (two anionic cyanides balance Fe2+), yielding dicyanobis(trimethylphosphine)iron(II).",
+    "explanation": "For complex ligand names containing prefixes or parentheses, such as trimethylphosphine, the multiplicative prefix \"bis\" is used instead of \"di\". Iron is in the +2 oxidation state (two anionic cyanides balance Fe2+), yielding dicyanobis(trimethylphosphine)iron(II).",
     "notes": "Use bis- prefix for ligands with composite names like trimethylphosphine."
   },
   {
@@ -2553,8 +2578,9 @@ export const QUESTIONS: Question[] = [
       "Isomer Counting",
       "Linkage Combinations"
     ],
-    "explanation": "Generated explanation; not an official solution. [Cr(SCN)2(NH3)4]4+ combines cis and trans geometrical isomers with ambidentate linkage isomers for two SCN- ligands (cis/trans of -SCN/-SCN, -SCN/-NCS, and -NCS/-NCS), yielding the highest isomer multiplicity among the listed complexes.",
-    "notes": "Geometrical isomerism coupled with two ambidentate ligands generates the largest set of isomers."
+    "explanation": "[Cr(SCN)2(NH3)4]4+ combines cis and trans geometrical isomers with ambidentate linkage isomers for two SCN- ligands (cis/trans of -SCN/-SCN, -SCN/-NCS, and -NCS/-NCS), yielding the highest isomer multiplicity among the listed complexes.",
+    "notes": "Geometrical isomerism coupled with two ambidentate ligands generates the largest set of isomers.",
+    "caveat": "Geometrical isomerism coupled with two ambidentate ligands generates the largest set of isomers."
   },
   {
     "id": "AY24_25_Q09",
@@ -2578,7 +2604,7 @@ export const QUESTIONS: Question[] = [
       "IUPAC Naming",
       "Zincate"
     ],
-    "explanation": "Generated explanation; not an official solution. The ligand OH- is designated as hydroxo (or hydroxido). Since the overall complex carries a 2- charge and four hydroxide ions (-4), the oxidation state of zinc is +2 (x - 4 = -2 => x = +2), and the anionic metal name takes the -ate suffix as zincate(II): tetrahydroxozincate(II).",
+    "explanation": "The ligand OH- is designated as hydroxo (or hydroxido). Since the overall complex carries a 2- charge and four hydroxide ions (-4), the oxidation state of zinc is +2 (x - 4 = -2 => x = +2), and the anionic metal name takes the -ate suffix as zincate(II): tetrahydroxozincate(II).",
     "notes": "Hydroxo ligand, zincate root with oxidation state +2."
   },
   {
@@ -2603,7 +2629,7 @@ export const QUESTIONS: Question[] = [
       "IUPAC Naming",
       "Ferrate"
     ],
-    "explanation": "Generated explanation; not an official solution. The cation sodium is stated without multiplying prefix. Two oxalato ligands (C2O4 2-) carry a total charge of -4 and two neutral aqua ligands carry 0; to balance two Na+ cations (+2), iron must be in oxidation state +2 (x - 4 = -2 => x = +2), giving sodium diaquabis(oxalato)ferrate(II).",
+    "explanation": "The cation sodium is stated without multiplying prefix. Two oxalato ligands (C2O4 2-) carry a total charge of -4 and two neutral aqua ligands carry 0; to balance two Na+ cations (+2), iron must be in oxidation state +2 (x - 4 = -2 => x = +2), giving sodium diaquabis(oxalato)ferrate(II).",
     "notes": "Oxidation state +2 on iron; anionic complex named ferrate."
   },
   {
@@ -2628,7 +2654,7 @@ export const QUESTIONS: Question[] = [
       "CFT Foundations",
       "d Orbitals"
     ],
-    "explanation": "Generated explanation; not an official solution. Classical Crystal Field Theory (CFT) is an electrostatic model that focuses exclusively on the splitting of the five degenerate metal valence d-orbitals under the influence of an electric field generated by point-charge ligands, ignoring s and p orbital hybridization.",
+    "explanation": "Classical Crystal Field Theory (CFT) is an electrostatic model that focuses exclusively on the splitting of the five degenerate metal valence d-orbitals under the influence of an electric field generated by point-charge ligands, ignoring s and p orbital hybridization.",
     "notes": "CFT treats only the d-orbitals as perturbed by the electrostatic ligand field; s and p are incorporated in Ligand Field / MO theory."
   },
   {
@@ -2653,7 +2679,7 @@ export const QUESTIONS: Question[] = [
       "Point Charge Model",
       "Degeneracy Loss"
     ],
-    "explanation": "Generated explanation; not an official solution. In CFT, ligands are modeled as point charges (or point dipoles) arranged in a specific geometry (e.g. octahedral or tetrahedral). The non-spherical, directional electrostatic repulsion from these point charges breaks the degeneracy of the metal d-orbitals.",
+    "explanation": "In CFT, ligands are modeled as point charges (or point dipoles) arranged in a specific geometry (e.g. octahedral or tetrahedral). The non-spherical, directional electrostatic repulsion from these point charges breaks the degeneracy of the metal d-orbitals.",
     "notes": "Point charges at specific coordinate positions create the anisotropic field that splits d-orbitals."
   },
   {
@@ -2678,7 +2704,7 @@ export const QUESTIONS: Question[] = [
       "d0 Metal Carbonyl",
       "Sigma Character"
     ],
-    "explanation": "Generated explanation; not an official solution. In [V(CO)6]5+, vanadium is in the +5 oxidation state, giving a d0 electronic configuration. Because there are no valence d electrons on V(V) to engage in π-backbonding into the empty π* orbitals of CO, the V-C interaction is limited strictly to σ-donation from the carbonyl ligands.",
+    "explanation": "In [V(CO)6]5+, vanadium is in the +5 oxidation state, giving a d0 electronic configuration. Because there are no valence d electrons on V(V) to engage in π-backbonding into the empty π* orbitals of CO, the V-C interaction is limited strictly to σ-donation from the carbonyl ligands.",
     "notes": "V(V) has a 3d0 configuration; with no d electrons available, metal-to-ligand pi backbonding cannot occur."
   },
   {
@@ -2703,7 +2729,7 @@ export const QUESTIONS: Question[] = [
       "Octahedral to Square Planar",
       "dz2 Stabilization"
     ],
-    "explanation": "Generated explanation; not an official solution. Removing the two trans axial ligands along the z-axis transitions an octahedral complex into a square planar geometry. Because the dz2 orbital points directly along the z-axis, eliminating electrostatic repulsion from these ligands stabilizes dz2 more than any other orbital.",
+    "explanation": "Removing the two trans axial ligands along the z-axis transitions an octahedral complex into a square planar geometry. Because the dz2 orbital points directly along the z-axis, eliminating electrostatic repulsion from these ligands stabilizes dz2 more than any other orbital.",
     "notes": "Removal of axial ligands relieves direct head-on electrostatic repulsion on dz2."
   },
   {
@@ -2728,7 +2754,7 @@ export const QUESTIONS: Question[] = [
       "High-Spin d4",
       "Hund's Rule"
     ],
-    "explanation": "Generated explanation; not an official solution. When pairing energy P > Δo, the energy cost to pair electrons in the t2g set exceeds the crystal field splitting energy, favoring a high-spin ground state. According to Hund's rule, three electrons enter t2g singly and the fourth promotes to eg, giving t2g^3 eg^1.",
+    "explanation": "When pairing energy P > Δo, the energy cost to pair electrons in the t2g set exceeds the crystal field splitting energy, favoring a high-spin ground state. According to Hund's rule, three electrons enter t2g singly and the fourth promotes to eg, giving t2g^3 eg^1.",
     "notes": "P > Δo defines the high-spin weak-field condition."
   },
   {
@@ -2753,7 +2779,7 @@ export const QUESTIONS: Question[] = [
       "Axial Elongation",
       "d Orbital Energies"
     ],
-    "explanation": "Generated explanation; not an official solution. In axial elongation (z-out distortion), the equatorial ligands in the xy plane are drawn slightly closer to compensate, maximizing repulsion with orbitals lying purely in the xy plane. Consequently, the dx2-y2 orbital rises to the highest energy level among all five d-orbitals.",
+    "explanation": "In axial elongation (z-out distortion), the equatorial ligands in the xy plane are drawn slightly closer to compensate, maximizing repulsion with orbitals lying purely in the xy plane. Consequently, the dx2-y2 orbital rises to the highest energy level among all five d-orbitals.",
     "notes": "Axial elongation lowers z-containing orbitals (dz2, dxz, dyz) and leaves dx2-y2 at highest energy."
   },
   {
@@ -2778,7 +2804,7 @@ export const QUESTIONS: Question[] = [
       "Ammine Ligand",
       "Pure Sigma Donor"
     ],
-    "explanation": "Generated explanation; not an official solution. Ammonia (NH3) acts purely as a σ-donor ligand through the lone pair on nitrogen. It has no low-lying empty π* orbitals to act as a π-acceptor and no additional lone pairs to act as a π-donor. Because it is a σ-donor only, \"None of the above\" is the correct choice.",
+    "explanation": "Ammonia (NH3) acts purely as a σ-donor ligand through the lone pair on nitrogen. It has no low-lying empty π* orbitals to act as a π-acceptor and no additional lone pairs to act as a π-donor. Because it is a σ-donor only, \"None of the above\" is the correct choice.",
     "notes": "NH3 is a classic pure sigma-donor ligand with no pi acid or pi base character."
   },
   {
@@ -2803,7 +2829,7 @@ export const QUESTIONS: Question[] = [
       "LFSE Calculation",
       "High-Spin Aqua"
     ],
-    "explanation": "Generated explanation; not an official solution. Water is a weak-field ligand, giving high-spin complexes. For Cr2+ (d4 high-spin, t2g^3 eg^1), LFSE = 3(0.4) - 1(0.6) = 0.6Δo. For Cu2+ (d9, t2g^6 eg^3), LFSE = 6(0.4) - 3(0.6) = 0.6Δo. Therefore, both Cr and Cu satisfy the condition, making D correct.",
+    "explanation": "Water is a weak-field ligand, giving high-spin complexes. For Cr2+ (d4 high-spin, t2g^3 eg^1), LFSE = 3(0.4) - 1(0.6) = 0.6Δo. For Cu2+ (d9, t2g^6 eg^3), LFSE = 6(0.4) - 3(0.6) = 0.6Δo. Therefore, both Cr and Cu satisfy the condition, making D correct.",
     "notes": "Both high-spin d4 (Cr2+) and d9 (Cu2+) yield LFSE magnitude of 0.6Δo."
   },
   {
@@ -2828,7 +2854,7 @@ export const QUESTIONS: Question[] = [
       "CFSE Calculation",
       "Pairing Energy"
     ],
-    "explanation": "Generated explanation; not an official solution. In a low-spin d6 octahedral complex, all 6 electrons reside in t2g: configuration t2g^6 eg^0, with 3 electron pairs. In the spherical free-ion ground state for d6, Hund's rule gives 1 paired electron and 4 unpaired electrons. The net increase in paired electrons is 3 - 1 = 2, so the CFSE is 2.4Δo - 2P (or stabilization with 2 extra pairing energies).",
+    "explanation": "In a low-spin d6 octahedral complex, all 6 electrons reside in t2g: configuration t2g^6 eg^0, with 3 electron pairs. In the spherical free-ion ground state for d6, Hund's rule gives 1 paired electron and 4 unpaired electrons. The net increase in paired electrons is 3 - 1 = 2, so the CFSE is 2.4Δo - 2P (or stabilization with 2 extra pairing energies).",
     "notes": "Low-spin d6 has two additional electron pairs beyond the free ion ground state (3 vs 1), leading to 2P in the CFSE expression."
   },
   {
@@ -2853,8 +2879,9 @@ export const QUESTIONS: Question[] = [
       "d1 Spectrum",
       "Jahn-Teller Splitting"
     ],
-    "explanation": "Generated explanation; not an official solution. For a d1 octahedral ion such as [Ti(H2O)6]3+, CFT predicts a single 2T2g -> 2Eg electronic transition. However, the excited state (eg^1) has an unevenly filled eg set and undergoes significant Jahn-Teller distortion, splitting the eg level and producing two closely spaced absorption bands (or a split peak).",
-    "notes": "Jahn-Teller distortion in the excited eg1 state splits the absorption peak into a doublet."
+    "explanation": "For a d1 octahedral ion such as [Ti(H2O)6]3+, CFT predicts a single 2T2g -> 2Eg electronic transition.",
+    "notes": "Jahn-Teller distortion in the excited eg1 state splits the absorption peak into a doublet.",
+    "caveat": "However, the excited state (eg^1) has an unevenly filled eg set and undergoes significant Jahn-Teller distortion, splitting the eg level and producing two closely spaced absorption bands (or a split peak)."
   },
   {
     "id": "AY25_26_Q01",
@@ -2878,7 +2905,7 @@ export const QUESTIONS: Question[] = [
       "IUPAC Naming",
       "Oxidation State"
     ],
-    "explanation": "Generated explanation; not an official solution. The complex contains neutral methylamine ligands (CH3NH2) and two cyanide ligands (CN-), with iron in oxidation state +2. The official key marks option B (which writes dimethylamine instead of methylamine); chemically, option D is the standard systematic name, but the official answer key designates option B.",
+    "explanation": "The complex contains neutral methylamine ligands (CH3NH2) and two cyanide ligands (CN-), with iron in oxidation state +2. The official key marks option B (which writes dimethylamine instead of methylamine); chemically, option D is the standard systematic name, but the official answer key designates option B.",
     "notes": "Official key lists B despite the ligand formula CH3NH2 representing methylamine rather than dimethylamine. Option D represents the exact chemical transcription, but B is marked correct in the authority key."
   },
   {
@@ -2903,7 +2930,7 @@ export const QUESTIONS: Question[] = [
       "Coordination Number",
       "Permanganate"
     ],
-    "explanation": "Generated explanation; not an official solution. In potassium permanganate (KMnO4), the permanganate anion MnO4- features a manganese(VII) center coordinated to four oxido ligands in a tetrahedral geometry. Therefore, the coordination number of manganese is 4.",
+    "explanation": "In potassium permanganate (KMnO4), the permanganate anion MnO4- features a manganese(VII) center coordinated to four oxido ligands in a tetrahedral geometry. Therefore, the coordination number of manganese is 4.",
     "notes": "Coordination number reflects the 4 surrounding oxido groups in the tetrahedral MnO4- anion."
   },
   {
@@ -2928,7 +2955,7 @@ export const QUESTIONS: Question[] = [
       "Oxidation State",
       "Dinuclear Complex"
     ],
-    "explanation": "Generated explanation; not an official solution. Neutral triphenylphosphine ligands (PPh3) contribute zero charge, while the two chloride ligands contribute a total of -2. For a neutral dinuclear complex [Ni2Cl2(PPh3)2], 2x + 2(-1) = 0, giving an average oxidation state of +1 for each nickel center.",
+    "explanation": "Neutral triphenylphosphine ligands (PPh3) contribute zero charge, while the two chloride ligands contribute a total of -2. For a neutral dinuclear complex [Ni2Cl2(PPh3)2], 2x + 2(-1) = 0, giving an average oxidation state of +1 for each nickel center.",
     "notes": "Dinuclear nickel(I) species."
   },
   {
@@ -2953,8 +2980,9 @@ export const QUESTIONS: Question[] = [
       "Linkage Isomerism",
       "Ambidentate Ligand"
     ],
-    "explanation": "Generated explanation; not an official solution. Thiocyanate (SCN-) is an ambidentate ligand capable of coordinating via S or N. In [Co(NCS)(NH3)3]SCN, exchange of counterion does not yield a chemically distinct ionization isomer because the inner and outer ions are identical, so it exhibits only linkage isomerism.",
-    "notes": "Other options exhibit ionization or geometrical isomerism alongside linkage."
+    "explanation": "Thiocyanate (SCN-) is an ambidentate ligand capable of coordinating via S or N. In [Co(NCS)(NH3)3]SCN, exchange of counterion does not yield a chemically distinct ionization isomer because the inner and outer ions are identical, so it exhibits only linkage isomerism.",
+    "notes": "Other options exhibit ionization or geometrical isomerism alongside linkage.",
+    "caveat": "Other options exhibit ionization or geometrical isomerism alongside linkage."
   },
   {
     "id": "AY25_26_Q05",
@@ -2978,8 +3006,9 @@ export const QUESTIONS: Question[] = [
       "Square Planar",
       "Linkage Isomers"
     ],
-    "explanation": "Generated explanation; not an official solution. Platinum(II) complexes with coordination number 4 adopt square planar geometry. Because ethylenediamine is a chelating bidentate ligand occupying adjacent cis positions, no cis/trans geometrical isomerism is possible; only linkage isomerism of the ambidentate SCN- ligand (M-SCN vs M-NCS) gives 2 distinct isomers.",
-    "notes": "Chelating en prevents geometrical trans placement; 2 linkage isomers."
+    "explanation": "Platinum(II) complexes with coordination number 4 adopt square planar geometry. Because ethylenediamine is a chelating bidentate ligand occupying adjacent cis positions, no cis/trans geometrical isomerism is possible; only linkage isomerism of the ambidentate SCN- ligand (M-SCN vs M-NCS) gives 2 distinct isomers.",
+    "notes": "Chelating en prevents geometrical trans placement; 2 linkage isomers.",
+    "caveat": "Chelating en prevents geometrical trans placement; 2 linkage isomers."
   },
   {
     "id": "AY25_26_Q06",
@@ -3003,7 +3032,7 @@ export const QUESTIONS: Question[] = [
       "Coordination Salt",
       "IUPAC Naming"
     ],
-    "explanation": "Generated explanation; not an official solution. The complex salt consists of the cation [Cu(H2O)6]2+ and the anion [Pt(CN)6]2-. Copper in aqueous hexaaqua is Cu(II), while Pt with six cyanides in a 2- anion has oxidation state +4 (x - 6 = -2 => x = +4), named hexacyanoplatinate(IV).",
+    "explanation": "The complex salt consists of the cation [Cu(H2O)6]2+ and the anion [Pt(CN)6]2-. Copper in aqueous hexaaqua is Cu(II), while Pt with six cyanides in a 2- anion has oxidation state +4 (x - 6 = -2 => x = +4), named hexacyanoplatinate(IV).",
     "notes": "Cation named first, then anionic complex with -ate suffix."
   },
   {
@@ -3029,8 +3058,9 @@ export const QUESTIONS: Question[] = [
       "Enantiomers",
       "fac/mer"
     ],
-    "explanation": "Generated explanation; not an official solution. Glycinate is an unsymmetrical bidentate ligand (N,O donor, represented as A-B). An octahedral complex [M(A-B)3] has 2 geometrical isomers (facial and meridional), both of which are chiral and exist as enantiomeric pairs (Δ and Λ), resulting in a total of 4 stereoisomers.",
-    "notes": "Facial and meridional isomers each have a non-superimposable mirror image (2 x 2 = 4 stereoisomers)."
+    "explanation": "Glycinate is an unsymmetrical bidentate ligand (N,O donor, represented as A-B). An octahedral complex [M(A-B)3] has 2 geometrical isomers (facial and meridional), both of which are chiral and exist as enantiomeric pairs (Δ and Λ), resulting in a total of 4 stereoisomers.",
+    "notes": "Facial and meridional isomers each have a non-superimposable mirror image (2 x 2 = 4 stereoisomers).",
+    "caveat": "Facial and meridional isomers each have a non-superimposable mirror image (2 x 2 = 4 stereoisomers)."
   },
   {
     "id": "AY25_26_Q08",
@@ -3054,7 +3084,7 @@ export const QUESTIONS: Question[] = [
       "Isomer Counting",
       "Linkage & Geometry"
     ],
-    "explanation": "Generated explanation; not an official solution. [Cr(SCN)2(NH3)4]4+ (often written with ambidentate SCN-) possesses both cis/trans geometrical isomerism and multiple linkage combinations (SCN/SCN, SCN/NCS, NCS/NCS), generating the highest total number of isomers among the choices.",
+    "explanation": "[Cr(SCN)2(NH3)4]4+ (often written with ambidentate SCN-) possesses both cis/trans geometrical isomerism and multiple linkage combinations (SCN/SCN, SCN/NCS, NCS/NCS), generating the highest total number of isomers among the choices.",
     "notes": "Combination of cis/trans geometrical and multiple linkage modes yields the greatest count."
   },
   {
@@ -3079,7 +3109,7 @@ export const QUESTIONS: Question[] = [
       "Tetrahedral Chirality",
       "Optical Isomerism"
     ],
-    "explanation": "Generated explanation; not an official solution. A tetrahedral complex lacks a center of inversion or plane of symmetry when all four coordinated donor atoms are distinct or arranged asymmetrically. Complex [M(A-B)(C-D)] has four non-equivalent coordination sites without an improper rotation axis Sn, rendering it chiral and optically active.",
+    "explanation": "A tetrahedral complex lacks a center of inversion or plane of symmetry when all four coordinated donor atoms are distinct or arranged asymmetrically. Complex [M(A-B)(C-D)] has four non-equivalent coordination sites without an improper rotation axis Sn, rendering it chiral and optically active.",
     "notes": "Asymmetrical chelate coordination in tetrahedral geometry removes symmetry planes."
   },
   {
@@ -3104,7 +3134,7 @@ export const QUESTIONS: Question[] = [
       "IUPAC Naming",
       "Ferrate"
     ],
-    "explanation": "Generated explanation; not an official solution. In IUPAC naming, counterions do not use numerical prefixes (hence \"sodium\", not \"disodium\"). Because the coordination entity is an anion [Fe(C2O4)2(H2O)2]2-, the iron metal takes the suffix \"-ate\" as ferrate(II), arranged alphabetically: diaquabis(oxalato)ferrate(II).",
+    "explanation": "In IUPAC naming, counterions do not use numerical prefixes (hence \"sodium\", not \"disodium\"). Because the coordination entity is an anion [Fe(C2O4)2(H2O)2]2-, the iron metal takes the suffix \"-ate\" as ferrate(II), arranged alphabetically: diaquabis(oxalato)ferrate(II).",
     "notes": "No multiplying prefix on simple cation counterion; anionic complex uses ferrate."
   },
   {
@@ -3130,7 +3160,7 @@ export const QUESTIONS: Question[] = [
       "Sigma Bonding",
       "eg Orbitals"
     ],
-    "explanation": "Generated explanation; not an official solution. In octahedral symmetry (Oh), the ligand donor lone pairs point directly along the Cartesian axes (x, y, z). Only metal orbitals with eg symmetry pointing directly along these axes (dx2-y2 and dz2), along with s (a1g) and p (t1u) orbitals, participate in σ-bonding.",
+    "explanation": "In octahedral symmetry (Oh), the ligand donor lone pairs point directly along the Cartesian axes (x, y, z). Only metal orbitals with eg symmetry pointing directly along these axes (dx2-y2 and dz2), along with s (a1g) and p (t1u) orbitals, participate in σ-bonding.",
     "notes": "The t2g set (dxy, dyz, dxz) points between axes and is strictly non-bonding with respect to sigma interactions."
   },
   {
@@ -3155,7 +3185,7 @@ export const QUESTIONS: Question[] = [
       "Stability Constant",
       "Thermodynamics"
     ],
-    "explanation": "Generated explanation; not an official solution. A thermodynamically stable metal complex is characterised by a high formation constant (Kf), a low dissociation constant (Kd = 1/Kf), and strong metal-ligand binding affinity. Since options A, B, and C all describe unstable complexes, D (\"None of the above\") is the correct statement.",
+    "explanation": "A thermodynamically stable metal complex is characterised by a high formation constant (Kf), a low dissociation constant (Kd = 1/Kf), and strong metal-ligand binding affinity. Since options A, B, and C all describe unstable complexes, D (\"None of the above\") is the correct statement.",
     "notes": "High Kf and low Kd correspond to stability; options A-C all indicate instability."
   },
   {
@@ -3180,7 +3210,7 @@ export const QUESTIONS: Question[] = [
       "d10 Complex",
       "Sigma Bonding"
     ],
-    "explanation": "Generated explanation; not an official solution. Zn2+ has a completely filled d10 electronic configuration. Because its d orbitals are fully occupied, it cannot accept π donation from fluoride into its d-shell, nor does fluoride possess low-lying empty π* orbitals for backbonding, making the bonding predominantly σ in character.",
+    "explanation": "Zn2+ has a completely filled d10 electronic configuration. Because its d orbitals are fully occupied, it cannot accept π donation from fluoride into its d-shell, nor does fluoride possess low-lying empty π* orbitals for backbonding, making the bonding predominantly σ in character.",
     "notes": "Zn(II) d10 configuration limits metal-ligand orbital overlap primarily to sigma interactions in this question model."
   },
   {
@@ -3205,7 +3235,7 @@ export const QUESTIONS: Question[] = [
       "Square Pyramidal",
       "Orbital Splitting"
     ],
-    "explanation": "Generated explanation; not an official solution. Adding an axial ligand along the z-axis introduces direct electrostatic repulsion and orbital overlap along the z direction. The dz2 orbital, which points directly along the z-axis, experiences the greatest increase in energy and is therefore most destabilized.",
+    "explanation": "Adding an axial ligand along the z-axis introduces direct electrostatic repulsion and orbital overlap along the z direction. The dz2 orbital, which points directly along the z-axis, experiences the greatest increase in energy and is therefore most destabilized.",
     "notes": "Direct approach of axial ligand destabilizes dz2 significantly compared to in-plane orbitals."
   },
   {
@@ -3230,7 +3260,7 @@ export const QUESTIONS: Question[] = [
       "Low-Spin d4",
       "Electron Configuration"
     ],
-    "explanation": "Generated explanation; not an official solution. When pairing energy P < Δo, the crystal field splitting is larger than the energy required to pair electrons, resulting in a low-spin complex. For a d4 ion, all 4 electrons populate the lower-energy t2g orbitals, giving the configuration t2g^4 eg^0.",
+    "explanation": "When pairing energy P < Δo, the crystal field splitting is larger than the energy required to pair electrons, resulting in a low-spin complex. For a d4 ion, all 4 electrons populate the lower-energy t2g orbitals, giving the configuration t2g^4 eg^0.",
     "notes": "P < Δo favors pairing in lower t2g set (low-spin state)."
   },
   {
@@ -3255,7 +3285,7 @@ export const QUESTIONS: Question[] = [
       "Jahn-Teller Distortion",
       "eg Degeneracy"
     ],
-    "explanation": "Generated explanation; not an official solution. The Jahn-Teller effect is strongest when the degenerate eg orbitals are unevenly occupied, because eg orbitals point directly at the ligands. High-spin d4 has the configuration t2g^3 eg^1, featuring an asymmetrically occupied eg set and resulting in a strong Jahn-Teller distortion.",
+    "explanation": "The Jahn-Teller effect is strongest when the degenerate eg orbitals are unevenly occupied, because eg orbitals point directly at the ligands. High-spin d4 has the configuration t2g^3 eg^1, featuring an asymmetrically occupied eg set and resulting in a strong Jahn-Teller distortion.",
     "notes": "Uneven eg occupancy (eg1 or eg3) yields pronounced geometric distortion."
   },
   {
@@ -3280,7 +3310,7 @@ export const QUESTIONS: Question[] = [
       "Phosphines",
       "Pi-Acceptor"
     ],
-    "explanation": "Generated explanation; not an official solution. Tertiary phosphines (PR3) donate a lone pair from phosphorus via a σ-bond to the metal and accept electron density from filled metal d orbitals into low-lying empty σ*(P-R) orbitals (π-backbonding). Thus, phosphines act as σ-donors and π-acceptors.",
+    "explanation": "Tertiary phosphines (PR3) donate a lone pair from phosphorus via a σ-bond to the metal and accept electron density from filled metal d orbitals into low-lying empty σ*(P-R) orbitals (π-backbonding). Thus, phosphines act as σ-donors and π-acceptors.",
     "notes": "PR3 donates via P lone pair and accepts into sigma*(P-C/P-R) orbitals."
   },
   {
@@ -3305,7 +3335,7 @@ export const QUESTIONS: Question[] = [
       "Tetrahedral CFT",
       "d Configuration"
     ],
-    "explanation": "Generated explanation; not an official solution. In K2[MF4], the complex anion is tetrahedral [MF4]2-, so the metal M is in the +2 oxidation state. In a tetrahedral field, the lower set is the doubly degenerate e set (e^2 is half-filled). For Ti2+ (a d2 transition metal), both electrons occupy the e set: e^2 t2^0, giving half-filled doubly degenerate e orbitals.",
+    "explanation": "In K2[MF4], the complex anion is tetrahedral [MF4]2-, so the metal M is in the +2 oxidation state. In a tetrahedral field, the lower set is the doubly degenerate e set (e^2 is half-filled). For Ti2+ (a d2 transition metal), both electrons occupy the e set: e^2 t2^0, giving half-filled doubly degenerate e orbitals.",
     "notes": "Ti(II) is 3d2. In tetrahedral [TiF4]2-, e orbitals are half-filled (e2)."
   },
   {
@@ -3330,7 +3360,7 @@ export const QUESTIONS: Question[] = [
       "CFSE Calculation",
       "d8 Octahedral"
     ],
-    "explanation": "Generated explanation; not an official solution. An octahedral d8 complex has the configuration t2g^6 eg^2 regardless of field strength. The CFSE is calculated as: [6 * (-0.4) + 2 * (+0.6)] Δo = -1.2Δo. Expressed as stabilization magnitude without changing the pairing energy relative to free ion, it equals 1.2Δo.",
+    "explanation": "An octahedral d8 complex has the configuration t2g^6 eg^2 regardless of field strength. The CFSE is calculated as: [6 * (-0.4) + 2 * (+0.6)] Δo = -1.2Δo. Expressed as stabilization magnitude without changing the pairing energy relative to free ion, it equals 1.2Δo.",
     "notes": "CFSE magnitude = 1.2Δo; pairing energy correction is zero relative to spherical field for d8."
   },
   {
@@ -3356,7 +3386,7 @@ export const QUESTIONS: Question[] = [
       "Jahn-Teller Effect",
       "Equatorial Substitution"
     ],
-    "explanation": "Generated explanation; not an official solution. Cu(II) is a d9 system with strong Jahn-Teller elongation along the z-axis. The four equatorial water ligands are tightly bound and readily replaced by ammonia, but the two elongated axial positions remain occupied by weaker water molecules in aqueous solution, yielding [Cu(NH3)4(H2O)2]2+ as the predominant product.",
+    "explanation": "Cu(II) is a d9 system with strong Jahn-Teller elongation along the z-axis. The four equatorial water ligands are tightly bound and readily replaced by ammonia, but the two elongated axial positions remain occupied by weaker water molecules in aqueous solution, yielding [Cu(NH3)4(H2O)2]2+ as the predominant product.",
     "notes": "Jahn-Teller axial elongation prevents easy replacement of the 5th and 6th axial ligands in water."
   }
 ];

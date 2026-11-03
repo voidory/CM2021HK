@@ -136,6 +136,7 @@ export interface Question {
   primaryTheme: string;
   secondaryTags: string[];
   explanation: string;
+  caveat?: string;
   notes?: string;
 }
 
