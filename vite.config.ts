@@ -13,7 +13,11 @@ function standaloneApp(): Plugin {
   const resolvedId = '\0' + virtualId;
   const marker = '${dataPayload}';
   let outputDir = resolve(rootDir, 'dist');
-  const readTemplate = () => readFileSync(resolve(rootDir, 'public/chem-revision-app.html'), 'utf8');
+  const readTemplate = () => readFileSync(resolve(rootDir, 'public/chem-revision-app.html'), 'utf8')
+    // These handlers occur inside single-quoted JavaScript HTML strings.
+    // HTML entities preserve the handler argument without ending that string.
+    .replace(/window\.stepStandalone3D\('([vhz])'\)/g,
+      (_match, axis: string) => `window.stepStandalone3D(&#39;${axis}&#39;)`);
   return {
     name: 'cloudchem-standalone',
     configResolved(config) { outputDir = resolve(config.root, config.build.outDir); },
