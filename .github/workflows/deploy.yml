@@ -33,15 +33,7 @@ jobs:
       - name: Build project
         run: npm run build
       - name: Verify Pages output
-        run: |
-          test -s dist/index.html
-          test -d dist/assets
-          test -s dist/chem-revision-app.html
-          if grep -q '/src/main.tsx' dist/index.html; then
-            echo 'Uncompiled source entry found in Pages output' >&2
-            exit 1
-          fi
-          touch dist/.nojekyll
+        run: python3 scripts/verify-pages.py
       - name: Install browser smoke-test tools
         run: |
           npm install --no-save --package-lock=false --legacy-peer-deps playwright
