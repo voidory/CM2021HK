@@ -13,27 +13,14 @@
   </head>
   <body class="bg-sky-50 text-slate-800 antialiased selection:bg-sky-200">
     <div id="root">
-      <div id="static-github-fallback" style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: system-ui, -apple-system, sans-serif; background: #f0f9ff; color: #0369a1; padding: 24px; text-align: center;">
-        <div style="font-size: 52px; margin-bottom: 16px;">☁️</div>
-        <h1 style="font-size: 24px; font-weight: 700; color: #0c4a6e; margin-bottom: 8px;">CloudChem Revision App</h1>
-        <p style="color: #0369a1; font-size: 15px; max-width: 480px; margin-bottom: 20px;">
-          Loading chemistry question bank... If this screen does not advance automatically on GitHub Pages, open the pre-built application below:
-        </p>
-        <a href="./docs/" style="display: inline-block; background: #0284c7; color: white; padding: 12px 24px; border-radius: 9999px; text-decoration: none; font-weight: 600; font-size: 15px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
-          Open CloudChem (Compiled Version) →
-        </a>
-      </div>
+      <main style="min-height:100vh;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:system-ui,sans-serif;background:#f0f9ff;color:#0369a1;padding:24px;text-align:center">
+        <h1>CloudChem Revision App</h1>
+        <p role="status">Loading chemistry question bank...</p>
+        <p>If the app does not load, use the standalone revision app below.</p>
+        <a href="./chem-revision-app.html" style="background:#0284c7;color:white;padding:12px 24px;border-radius:24px;text-decoration:none">Open standalone revision app</a>
+        <noscript><p>JavaScript must be enabled to use this application.</p></noscript>
+      </main>
     </div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-      // Fallback for GitHub Pages when repo root is served without building:
-      // If /src/main.tsx cannot be parsed or root remains unmounted, navigate to the pre-built ./docs/ folder.
-      setTimeout(function() {
-        if (document.getElementById('static-github-fallback') && window.location.hostname.endsWith('github.io') && !window.location.pathname.includes('/docs')) {
-          var target = window.location.pathname.replace(/\/+$/, '') + '/docs/';
-          window.location.replace(target);
-        }
-      }, 1000);
-    </script>
   </body>
 </html>

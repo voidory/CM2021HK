@@ -27,13 +27,25 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
+          cache: npm
 
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
+      - name: Install locked dependencies
+        run: npm ci --legacy-peer-deps
 
       - name: Build project
         run: npm run build
+
+      - name: Verify Pages output
+        run: |
+          test -s dist/index.html
+          test -d dist/assets
+          test -s dist/chem-revision-app.html
+          if grep -q '/src/main.tsx' dist/index.html; then
+            echo 'Uncompiled source entry found in Pages output' >&2
+            exit 1
+          fi
+          touch dist/.nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
