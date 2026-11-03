@@ -23,19 +23,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-
       - name: Install locked dependencies
         run: npm ci --legacy-peer-deps
-
       - name: Build project
         run: npm run build
-
       - name: Verify Pages output
         run: |
           test -s dist/index.html
@@ -46,15 +42,18 @@ jobs:
             exit 1
           fi
           touch dist/.nojekyll
-
+      - name: Install browser smoke-test tools
+        run: |
+          npm install --no-save --package-lock=false --legacy-peer-deps playwright
+          npx playwright install --with-deps chromium
+      - name: Test main and standalone apps under Pages subpath
+        run: node scripts/smoke-pages.mjs
       - name: Setup Pages
         uses: actions/configure-pages@v5
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
