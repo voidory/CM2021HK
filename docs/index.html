@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CloudChem - Inorganic Chemistry Adaptive Revision</title>
+    <meta name="description" content="Complete local adaptive revision app for Inorganic Chemistry Mid-Term Tests with 130 exam questions, authority grading, and spaced repetition." />
+    <meta property="og:title" content="CloudChem - Inorganic Chemistry Adaptive Revision" />
+    <meta property="og:description" content="Complete local adaptive revision app for Inorganic Chemistry Mid-Term Tests with 130 exam questions, authority grading, and spaced repetition." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☁️</text></svg>">
+    <script type="module" crossorigin src="./assets/index-gXDYgNCZ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B9Y6THnF.css">
+  </head>
+  <body class="bg-sky-50 text-slate-800 antialiased selection:bg-sky-200">
+    <div id="root">
+      <div id="static-github-fallback" style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: system-ui, -apple-system, sans-serif; background: #f0f9ff; color: #0369a1; padding: 24px; text-align: center;">
+        <div style="font-size: 52px; margin-bottom: 16px;">☁️</div>
+        <h1 style="font-size: 24px; font-weight: 700; color: #0c4a6e; margin-bottom: 8px;">CloudChem Revision App</h1>
+        <p style="color: #0369a1; font-size: 15px; max-width: 480px; margin-bottom: 20px;">
+          Loading chemistry question bank... If this screen does not advance automatically on GitHub Pages, open the pre-built application below:
+        </p>
+        <a href="./docs/" style="display: inline-block; background: #0284c7; color: white; padding: 12px 24px; border-radius: 9999px; text-decoration: none; font-weight: 600; font-size: 15px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+          Open CloudChem (Compiled Version) →
+        </a>
+      </div>
+    </div>
+    <script>
+      // Fallback for GitHub Pages when repo root is served without building:
+      // If /src/main.tsx cannot be parsed or root remains unmounted, navigate to the pre-built ./docs/ folder.
+      setTimeout(function() {
+        if (document.getElementById('static-github-fallback') && window.location.hostname.endsWith('github.io') && !window.location.pathname.includes('/docs')) {
+          var target = window.location.pathname.replace(/\/+$/, '') + '/docs/';
+          window.location.replace(target);
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
