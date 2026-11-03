@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { ALL_THEMES, QUESTIONS, Question } from '../data/questions';
+import { ChemicalText } from './ChemicalText';
 import { QuestionLearningState, calculateRetention, DEFAULT_CONFIG } from '../utils/scheduler';
 import {
   isLocalStorageAvailable,
@@ -371,7 +372,7 @@ export const ProgressPanel: React.FC<ProgressPanelProps> = ({
                     <span className="font-bold text-rose-900 mr-2">
                       {question.academicYear} Q{question.originalQNum}
                     </span>
-                    <span className="text-slate-600 truncate">{question.questionText}</span>
+                    <ChemicalText text={question.questionText} className="text-slate-600 truncate inline-block max-w-[400px]" />
                   </div>
                   <button
                     onClick={() => {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ChemicalText } from './ChemicalText';
 
 interface PeriodicTableModalProps {
   isOpen: boolean;
@@ -130,7 +131,7 @@ export const PeriodicTableModal: React.FC<PeriodicTableModalProps> = ({ isOpen, 
                 <div className="text-xs text-slate-600">
                   Group {selectedEl.group} • Period {selectedEl.period} • Ground State:{' '}
                   <code className="font-mono bg-white px-1.5 py-0.5 rounded-sm border border-slate-200">
-                    {selectedEl.config}
+                    <ChemicalText text={selectedEl.config} />
                   </code>
                 </div>
               </div>
@@ -139,7 +140,9 @@ export const PeriodicTableModal: React.FC<PeriodicTableModalProps> = ({ isOpen, 
               <div className="text-xs font-semibold text-sky-700 mb-1">
                 Common Oxidation States & d-Configurations in Coordination Complexes:
               </div>
-              <div className="text-slate-800 font-medium">{selectedEl.commonOx}</div>
+              <div className="text-slate-800 font-medium">
+                <ChemicalText text={selectedEl.commonOx} />
+              </div>
             </div>
           </div>
         )}

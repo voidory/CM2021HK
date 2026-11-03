@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Question } from '../data/questions';
+import { ChemicalText } from './ChemicalText';
 
 interface QuizCardProps {
   question: Question;
@@ -83,9 +84,11 @@ export const QuizCard: React.FC<QuizCardProps> = ({
         </div>
 
         {/* Question Text */}
-        <div className="text-slate-800 text-lg sm:text-xl font-medium leading-relaxed mb-6 whitespace-pre-line">
-          {question.questionText}
-        </div>
+        <ChemicalText
+          as="div"
+          text={question.questionText}
+          className="text-slate-800 text-lg sm:text-xl font-medium leading-relaxed mb-6 whitespace-pre-line"
+        />
 
         {/* Visual Asset if Present (e.g. AY21_22 Q16) */}
         {question.visualAsset && (
@@ -160,7 +163,11 @@ export const QuizCard: React.FC<QuizCardProps> = ({
                   {key}
                 </div>
                 <div className="flex-1 pt-0.5">
-                  <div className="text-sm sm:text-base leading-relaxed break-words">{text}</div>
+                  <ChemicalText
+                    as="div"
+                    text={text}
+                    className="text-sm sm:text-base leading-relaxed break-words"
+                  />
                   {indicatorText && <div className="mt-1">{indicatorText}</div>}
                 </div>
                 <span className="text-[10px] text-slate-400 font-mono px-1.5 py-0.5 rounded-md bg-white/70 border border-slate-200 shrink-0 hidden sm:inline">
@@ -222,7 +229,8 @@ export const QuizCard: React.FC<QuizCardProps> = ({
             {/* Notes or Discrepancy Flag */}
             {question.notes && (
               <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 text-xs leading-relaxed">
-                <strong>Source Authority Note:</strong> {question.notes}
+                <strong>Source Authority Note: </strong>
+                <ChemicalText text={question.notes} />
               </div>
             )}
 
@@ -237,9 +245,11 @@ export const QuizCard: React.FC<QuizCardProps> = ({
                   Pre-compiled
                 </span>
               </div>
-              <p className="text-sm leading-relaxed text-slate-700">
-                {question.explanation}
-              </p>
+              <ChemicalText
+                as="p"
+                text={question.explanation}
+                className="text-sm leading-relaxed text-slate-700"
+              />
             </div>
           </div>
         )}

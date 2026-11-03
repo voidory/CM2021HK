@@ -436,20 +436,20 @@ export function getStandaloneHtml(): string {
         <button class="close-btn" onclick="closeModals()">✕</button>
       </div>
       <div style="font-size:12px; line-height:1.6; color:#334155;">
-        <p><strong>First-Row (3d):</strong></p>
-        <p>• Sc (21): [Ar] 3d1 4s2 | Sc3+ (d0)<br>
-        • Ti (22): [Ar] 3d2 4s2 | Ti4+ (d0), Ti3+ (d1), Ti2+ (d2)<br>
-        • V (23): [Ar] 3d3 4s2 | V5+ (d0), V4+ (d1), V3+ (d2), V2+ (d3)<br>
-        • Cr (24): [Ar] 3d5 4s1 | Cr6+ (d0), Cr3+ (d3), Cr2+ (d4)<br>
-        • Mn (25): [Ar] 3d5 4s2 | Mn7+ (d0), Mn4+ (d3), Mn3+ (d4), Mn2+ (d5)<br>
-        • Fe (26): [Ar] 3d6 4s2 | Fe3+ (d5), Fe2+ (d6)<br>
-        • Co (27): [Ar] 3d7 4s2 | Co3+ (d6), Co2+ (d7)<br>
-        • Ni (28): [Ar] 3d8 4s2 | Ni2+ (d8)<br>
-        • Cu (29): [Ar] 3d10 4s1 | Cu2+ (d9), Cu1+ (d10)<br>
-        • Zn (30): [Ar] 3d10 4s2 | Zn2+ (d10)</p>
+        <p><strong>First-Row Transition Metals (3d):</strong></p>
+        <p>• Sc (21): [Ar] 3d<sup>1</sup> 4s<sup>2</sup> | Sc<sup>3+</sup> (d<sup>0</sup>)<br>
+        • Ti (22): [Ar] 3d<sup>2</sup> 4s<sup>2</sup> | Ti<sup>4+</sup> (d<sup>0</sup>), Ti<sup>3+</sup> (d<sup>1</sup>), Ti<sup>2+</sup> (d<sup>2</sup>)<br>
+        • V (23): [Ar] 3d<sup>3</sup> 4s<sup>2</sup> | V<sup>5+</sup> (d<sup>0</sup>), V<sup>4+</sup> (d<sup>1</sup>), V<sup>3+</sup> (d<sup>2</sup>), V<sup>2+</sup> (d<sup>3</sup>)<br>
+        • Cr (24): [Ar] 3d<sup>5</sup> 4s<sup>1</sup> | Cr<sup>6+</sup> (d<sup>0</sup>), Cr<sup>3+</sup> (d<sup>3</sup>), Cr<sup>2+</sup> (d<sup>4</sup>)<br>
+        • Mn (25): [Ar] 3d<sup>5</sup> 4s<sup>2</sup> | Mn<sup>7+</sup> (d<sup>0</sup>), Mn<sup>4+</sup> (d<sup>3</sup>), Mn<sup>3+</sup> (d<sup>4</sup>), Mn<sup>2+</sup> (d<sup>5</sup>)<br>
+        • Fe (26): [Ar] 3d<sup>6</sup> 4s<sup>2</sup> | Fe<sup>3+</sup> (d<sup>5</sup>), Fe<sup>2+</sup> (d<sup>6</sup>)<br>
+        • Co (27): [Ar] 3d<sup>7</sup> 4s<sup>2</sup> | Co<sup>3+</sup> (d<sup>6</sup>), Co<sup>2+</sup> (d<sup>7</sup>)<br>
+        • Ni (28): [Ar] 3d<sup>8</sup> 4s<sup>2</sup> | Ni<sup>2+</sup> (d<sup>8</sup>)<br>
+        • Cu (29): [Ar] 3d<sup>10</sup> 4s<sup>1</sup> | Cu<sup>2+</sup> (d<sup>9</sup>), Cu<sup>+</sup> (d<sup>10</sup>)<br>
+        • Zn (30): [Ar] 3d<sup>10</sup> 4s<sup>2</sup> | Zn<sup>2+</sup> (d<sup>10</sup>)</p>
         <p style="margin-top:10px;"><strong>Heavier Platinum Group:</strong><br>
-        • Rh (45): Rh3+ (d6) | Pd (46): Pd2+ (d8)<br>
-        • Ir (77): Ir3+ (d6) | Pt (78): Pt2+ (d8, square planar), Pt4+ (d6, octahedral)</p>
+        • Rh (45): Rh<sup>3+</sup> (d<sup>6</sup>) | Pd (46): Pd<sup>2+</sup> (d<sup>8</sup>)<br>
+        • Ir (77): Ir<sup>3+</sup> (d<sup>6</sup>) | Pt (78): Pt<sup>2+</sup> (d<sup>8</sup>, square planar), Pt<sup>4+</sup> (d<sup>6</sup>, octahedral)</p>
         <p style="margin-top:10px; background:#f0f9ff; padding:8px; border-radius:8px;">
           <strong>Spectrochemical Series:</strong><br>
           I⁻ &lt; Br⁻ &lt; S²⁻ &lt; SCN⁻ &lt; Cl⁻ &lt; NO₃⁻ &lt; F⁻ &lt; OH⁻ &lt; C₂O₄²⁻ &lt; H₂O &lt; NCS⁻ &lt; NH₃ &lt; en &lt; NO₂⁻ &lt; PPh₃ &lt; CN⁻ ≈ CO
@@ -493,9 +493,117 @@ export function getStandaloneHtml(): string {
 
   <script>
     // Embedded Data
-    const DATA = ${dataPayload};
+    const DATA = \${dataPayload};
     const QUESTIONS = DATA.questions;
     const AUDIT = DATA.audit;
+
+    function formatChemHtml(text) {
+      if (!text) return '';
+      let res = text;
+      res = res.replace(/\\bdx2-y2\\b/gi, 'd<sub>x<sup>2</sup>-y<sup>2</sup></sub>');
+      res = res.replace(/\\bdz\\s*2\\b/gi, 'd<sub>z<sup>2</sup></sub>');
+      res = res.replace(/\\bdz2\\b/gi, 'd<sub>z<sup>2</sup></sub>');
+      res = res.replace(/\\bdxy\\b/gi, 'd<sub>xy</sub>');
+      res = res.replace(/\\bdyz\\b/gi, 'd<sub>yz</sub>');
+      res = res.replace(/\\bdxz\\b/gi, 'd<sub>xz</sub>');
+      res = res.replace(/\\bdyx\\b/gi, 'd<sub>yx</sub>');
+      res = res.replace(/Δ[oO0]/g, 'Δ<sub>o</sub>');
+      res = res.replace(/Δt(?!\\w)/g, 'Δ<sub>t</sub>');
+      res = res.replace(/\\b([1-6])([spdf])(\\d+)\\b/g, '$1$2<sup>$3</sup>');
+      res = res.replace(/\\bsp([23])\\b/g, 'sp<sup>$1</sup>');
+      res = res.replace(/\\bt2g\\s*\\^?(\\d+)/gi, 't<sub>2g</sub><sup>$1</sup>');
+      res = res.replace(/\\beg\\s*\\^?(\\d+)/gi, 'e<sub>g</sub><sup>$1</sup>');
+      res = res.replace(/\\bt2g\\b/gi, 't<sub>2g</sub>');
+      res = res.replace(/\\beg\\b/gi, 'e<sub>g</sub>');
+      res = res.replace(/(^|[\\s\\(\\[\\-\\/\\>])d([0-9]|10)\\b/g, '$1d<sup>$2</sup>');
+      res = res.replace(/\\b10\\^([+\\-]?\\d+)/g, '10<sup>$1</sup>');
+      res = res.replace(/\\b10(11|27|15|18)\\b/g, '10<sup>$1</sup>');
+      res = res.replace(/\\]\\s*([2-6]?)([+\\-])/g, function(m, num, sign) {
+        return ']<sup>' + num + (sign === '-' ? '−' : '+') + '</sup>';
+      });
+      res = res.replace(/\\b(Na|K|Ba|Ca|Mg|Li)(\\d+)\\[/g, '$1<sub>$2</sub>[');
+      res = res.replace(/\\[([^\\]]+)\\]/g, function(wholeMatch, inner) {
+        var formattedInner = inner;
+        formattedInner = formattedInner.replace(/\\)([2-8])/g, ')<sub>$1</sub>');
+        formattedInner = formattedInner.replace(/H2O/g, 'H<sub>2</sub>O');
+        formattedInner = formattedInner.replace(/NH3/g, 'NH<sub>3</sub>');
+        formattedInner = formattedInner.replace(/CH3/g, 'CH<sub>3</sub>');
+        formattedInner = formattedInner.replace(/NH2/g, 'NH<sub>2</sub>');
+        formattedInner = formattedInner.replace(/PPh3/g, 'PPh<sub>3</sub>');
+        formattedInner = formattedInner.replace(/C2O4/g, 'C<sub>2</sub>O<sub>4</sub>');
+        formattedInner = formattedInner.replace(/C6H5/g, 'C<sub>6</sub>H<sub>5</sub>');
+        formattedInner = formattedInner.replace(/NO2/g, 'NO<sub>2</sub>');
+        formattedInner = formattedInner.replace(/NO3/g, 'NO<sub>3</sub>');
+        formattedInner = formattedInner.replace(/SO4/g, 'SO<sub>4</sub>');
+        formattedInner = formattedInner.replace(/CO3/g, 'CO<sub>3</sub>');
+        formattedInner = formattedInner.replace(/(Cl|Br|F|I|H|O|N|P|S|Pt|Pd|Ni|Co|Fe|Mn|Cr|V|Ti|Cu|Zn)(\\d+)/g, '$1<sub>$2</sub>');
+        return '[' + formattedInner + ']';
+      });
+      res = res.replace(/(\\]|<\\/sup>)(Cl|Br|I|F)(\\d+)/g, '$1$2<sub>$3</sub>');
+      res = res.replace(/(\\]|<\\/sup>)\\(NO3\\)(\\d+)/g, '$1(NO<sub>3</sub>)<sub>$2</sub>');
+      res = res.replace(/(\\]|<\\/sup>)\\(NO2\\)(\\d+)/g, '$1(NO<sub>2</sub>)<sub>$2</sub>');
+      res = res.replace(/(\\]|<\\/sup>)\\(SO4\\)/g, '$1SO<sub>4</sub>');
+      res = res.replace(/\\bML6\\b/g, 'ML<sub>6</sub>');
+      res = res.replace(/\\bML4\\b/g, 'ML<sub>4</sub>');
+      res = res.replace(/\\bMX2Y4\\b/g, 'MX<sub>2</sub>Y<sub>4</sub>');
+      res = res.replace(/\\bMa4b2\\b/g, 'Ma<sub>4</sub>b<sub>2</sub>');
+      res = res.replace(/\\bMa3b3\\b/g, 'Ma<sub>3</sub>b<sub>3</sub>');
+      res = res.replace(/\\bMa4bc\\b/g, 'Ma<sub>4</sub>bc');
+      res = res.replace(/\\bMa2b2c2\\b/g, 'Ma<sub>2</sub>b<sub>2</sub>c<sub>2</sub>');
+      res = res.replace(/M\\(A\\-B\\)3/g, 'M(A-B)<sub>3</sub>');
+      res = res.replace(/M\\(A\\-A\\)2/g, 'M(A-A)<sub>2</sub>');
+      res = res.replace(/M\\(A\\-A\\)3/g, 'M(A-A)<sub>3</sub>');
+      res = res.replace(/\\(A\\-B\\)3/g, '(A-B)<sub>3</sub>');
+      res = res.replace(/\\(A\\-A\\)2/g, '(A-A)<sub>2</sub>');
+      res = res.replace(/\\(A\\-A\\)3/g, '(A-A)<sub>3</sub>');
+      res = res.replace(/\\bKMnO4\\b/g, 'KMnO<sub>4</sub>');
+      res = res.replace(/\\bPbCl2\\b/g, 'PbCl<sub>2</sub>');
+      res = res.replace(/\\bBaCl2\\b/g, 'BaCl<sub>2</sub>');
+      res = res.replace(/\\bAgNO3\\b/g, 'AgNO<sub>3</sub>');
+      res = res.replace(/\\bNiCl2\\b/g, 'NiCl<sub>2</sub>');
+      res = res.replace(/\\bCoCl2\\b/g, 'CoCl<sub>2</sub>');
+      res = res.replace(/\\bFeCl3\\b/g, 'FeCl<sub>3</sub>');
+      res = res.replace(/\\bFeCl2\\b/g, 'FeCl<sub>2</sub>');
+      res = res.replace(/\\bCuSO4\\b/g, 'CuSO<sub>4</sub>');
+      res = res.replace(/\\bH2O\\b/g, 'H<sub>2</sub>O');
+      res = res.replace(/\\bNH3\\b/g, 'NH<sub>3</sub>');
+      res = res.replace(/\\bCH3NH2\\b/g, 'CH<sub>3</sub>NH<sub>2</sub>');
+      res = res.replace(/\\bPPh3\\b/g, 'PPh<sub>3</sub>');
+      res = res.replace(/\\)([2-8])(?!\\w)/g, ')<sub>$1</sub>');
+      res = res.replace(/\\bSO4(?!\\w)/g, 'SO<sub>4</sub>');
+      res = res.replace(/\\bCO3(?!\\w)/g, 'CO<sub>3</sub>');
+      res = res.replace(/\\bNO2(?!\\w)/g, 'NO<sub>2</sub>');
+      res = res.replace(/\\bNO3(?!\\w)/g, 'NO<sub>3</sub>');
+      res = res.replace(/\\bC2O4(?!\\w)/g, 'C<sub>2</sub>O<sub>4</sub>');
+
+      var metals = ['Fe', 'Co', 'Ni', 'Cu', 'Zn', 'Pt', 'Ti', 'Cr', 'Mn', 'V', 'Cd', 'Rh', 'Ir', 'Pd', 'Ba', 'Pb', 'Ag', 'Ca', 'Mg', 'Sc', 'Al'];
+      for (var i = 0; i < metals.length; i++) {
+        var mName = metals[i];
+        var reg = new RegExp('\\\\b' + mName + '([2-7]?)([+\\-])(?!\\\\w)', 'g');
+        res = res.replace(reg, function(match, num, sign) {
+          return mName + '<sup>' + num + (sign === '-' ? '−' : '+') + '</sup>';
+        });
+      }
+      res = res.replace(/\\bM([2-7]?)([+\\-])(?!\\w)/g, function(match, num, sign) {
+        return 'M<sup>' + num + (sign === '-' ? '−' : '+') + '</sup>';
+      });
+      res = res.replace(/\\bMn\\+(?!\\w)/g, 'M<sup>n+</sup>');
+      res = res.replace(/\\bPt0\\b/g, 'Pt<sup>0</sup>');
+      res = res.replace(/\\bSCN\\s*([+\\-])(?!\\w)/g, 'SCN<sup>−</sup>');
+      res = res.replace(/\\bCN\\s*([+\\-])(?!\\w)/g, 'CN<sup>−</sup>');
+      res = res.replace(/\\bOH\\s*([+\\-])(?!\\w)/g, 'OH<sup>−</sup>');
+      res = res.replace(/\\bNO2\\s*([+\\-])(?!\\w)/g, 'NO<sub>2</sub><sup>−</sup>');
+      res = res.replace(/\\bNO3\\s*([+\\-])(?!\\w)/g, 'NO<sub>3</sub><sup>−</sup>');
+      res = res.replace(/\\bSO4\\s*2\\-(?!\\w)/g, 'SO<sub>4</sub><sup>2−</sup>');
+      res = res.replace(/\\bCO3\\s*2\\-(?!\\w)/g, 'CO<sub>3</sub><sup>2−</sup>');
+      res = res.replace(/\\bC2O4\\s*2\\-(?!\\w)/g, 'C<sub>2</sub>O<sub>4</sub><sup>2−</sup>');
+      res = res.replace(/\\bCl\\s*([+\\-])(?!\\w)/g, 'Cl<sup>−</sup>');
+      res = res.replace(/\\bBr\\s*([+\\-])(?!\\w)/g, 'Br<sup>−</sup>');
+      res = res.replace(/\\bI\\s*([+\\-])(?!\\w)/g, 'I<sup>−</sup>');
+      res = res.replace(/\\bF\\s*([+\\-])(?!\\w)/g, 'F<sup>−</sup>');
+
+      return res;
+    }
 
     // State
     let currentQuestion = null;
@@ -625,7 +733,7 @@ export function getStandaloneHtml(): string {
       document.getElementById('q-page').textContent = 'Page ' + q.page;
       document.getElementById('q-theme').textContent = q.primaryTheme;
       document.getElementById('q-pool-info').textContent = 'Pool: ' + pool.length + ' (' + unseenCount + ' unseen)';
-      document.getElementById('q-text').textContent = q.questionText;
+      document.getElementById('q-text').innerHTML = formatChemHtml(q.questionText);
 
       const imgBox = document.getElementById('q-img-box');
       const img = document.getElementById('q-img');
@@ -646,7 +754,7 @@ export function getStandaloneHtml(): string {
         btn.onclick = () => selectOption(key);
         btn.innerHTML =
           '<div class="opt-key">' + key + '</div>' +
-          '<div class="opt-content">' + q.options[key] + '</div>' +
+          '<div class="opt-content">' + formatChemHtml(q.options[key]) + '</div>' +
           '<div class="opt-kbd">[' + (idx + 1) + ']</div>';
         optContainer.appendChild(btn);
       });
@@ -742,12 +850,12 @@ export function getStandaloneHtml(): string {
       const noteBox = document.getElementById('note-box');
       if (currentQuestion.notes) {
         noteBox.style.display = 'block';
-        noteBox.innerHTML = '<strong>Source Authority Note:</strong> ' + currentQuestion.notes;
+        noteBox.innerHTML = '<strong>Source Authority Note: </strong>' + formatChemHtml(currentQuestion.notes);
       } else {
         noteBox.style.display = 'none';
       }
 
-      document.getElementById('explanation-text').textContent = currentQuestion.explanation;
+      document.getElementById('explanation-text').innerHTML = formatChemHtml(currentQuestion.explanation);
       updateHeaderPill();
     }
 
