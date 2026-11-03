@@ -1,0 +1,221 @@
+Matriculation number:
+Instructions for CM2021 Mid-term Test
+1. This test paper contains forty (40) multiple-choice questions
+2. Answer ALL questions (1 mark each)
+3. Time allowed: 1 hour
+4. Do not turn over the test paper until told to do so
+/ 40
+Name:
+
+-- 1 of 7 --
+
+1) Which of the following is not a coordination compound?
+a. Urea b. Haemoglobin
+c. Chlorophyll II d. Cobalt(III) ammines
+2) The number of chlorine atoms acting as ligands in the complex [Co(en)2(H2)Cl]Cl2 is:
+a. 1 b. 3
+c. 2 d. None of these
+3)
+a. 6, 3, 6 b. 6, 2, 7
+c. 5, 3, 6 d. 5, 3, 7
+4) Which of the following compound shows both linkage and ionization isomerism?
+a. [Co(NH3)5NO2](NO2) b. [Co(NO2)(py)2(NH3)2]NO2
+c. [Co(NH3)6]Cl2 d. [Co(NO2)Br(NH3)4]Cl
+5) The complex [Co(NH3)5Br]SO4 will give white precipitate with:
+a. PbCl2 b. AgNO3
+c. KI d. None
+6) The name of the coordination compound [Cu(NH3)4](NO3)2 is:
+a. cuprammonium nitrate b. tetraammine copper(II) dinitrate
+c. tetraamminecopper(II) nitrate d. tetraammine copper(III) dinitrate
+7) The name of [Fe(CN)2(CH3NH2)2] is:
+a. dicyanobis(methylamine)iron(II) b. dicyanodimethylamineiron(II)
+c. dicyanodimethylamineiron(IV) d. dimethylaminedicyanoiron(II)
+8) The name of [Pt(NH3)4Cl2][PtCl4] is:
+Consider the complex [Co(NH3)5CO3]ClO4, in which coordination number, oxidation
+number, and the number of d-electrons on the metal are respectively?
+a. tetraamminedichloroplatinum(IV)
+tetrachloroplatinate(II)
+b. dichlorotetraammineplatinum(IV)
+tetrachloroplatinate(II)
+c. tetrachloroplatinum(II)
+tetraammineplatinate(IV)
+d. tetrachloroplatinum(II)
+dichlorotetraammineplatinate(IV)
+
+-- 2 of 7 --
+
+9) Which of the following coordination complexes is most stable?
+a. [Ni(NH3)6]2+ b. NiCl2
+c. [Ni(H2O)6]2+ d. [NiEDTA]2-
+10) SCN- has two possible donor atoms. It is a/an
+a. monodentate ligand b. bidentate ligand
+c. tridentate ligand d. tetradentate ligand
+11) Which of the following gives the most number of isomers?
+a. [Co(NH3)4Cl2] b. Ni(en)(NH3)4]2+
+c. [Ni(C2O4)(en)2] d. [Cr(SCN)2(NH3)4]4+
+12) [Co(NH3)4(NO2)2]Cl exhibits:
+13)
+a. 12 b. 8
+c. 16 d. 24
+14) Optical isomers have:
+a. same physical properties b. same molecular formula
+d. all of the above
+15) Which of the following compound shows optical isomerism?
+a. [Co(CN)6]3- b. [Cr(C2O4)3]3-
+b. [ZnCl4]2- d. [Cu(NH3)4]2+
+16) Two complexes given below are:
+a. geometrical isomers b. position isomers
+c. optical isomers d. identical
+The total number of possible isomers for the square planar [PtCl(NO2)(NO3)(SCN)]2- is:
+c. difference in action towards
+plane polarized light
+d. linkage, geometrical
+and ionization isomerisms
+a. ionization, geometrical
+and optical isomerisms
+b. linkage, geometrical
+and optical isomerisms
+c. linkage, ionization
+and optical isomerisms
+
+-- 3 of 7 --
+
+17)
+a. i only b. i and ii
+c. iii and iv d. all of these
+18)
+a. ionization isomers b. linkage isomers
+c. coordinating isomers d. solvent isomers
+19) Which of the following does not have optical isomer?
+a. [Co(NH3)3Cl3] b. [Co(en)3]Cl3
+b. [Co(en)2Cl2]Cl d. [Co(en)(NH3)2Cl2]Cl
+20) Number of geometrical isomers shown by the octahedral complex of the type [MX2Y4] is
+a. 4 b. 6
+c. 8 d. 2
+21) Transition metals form most stable complex ions as:
+b. they have large charge to radius ratio
+d. all of these
+22) Which of the following metal atomic orbital is considered in crystal field theory?
+a. s b. p
+c. d d. f
+23) The more stable complex among the following is:
+a. [Fe(H2O)6]2+ b. [Mn(H2O)6]2+
+c. [Fe(H2O)6]3+ d. None of these
+Which of the following will have two stereoisomeric forms?
+i. [Cr(NO3)3(NH3)3]
+ii. K3[Fe(C2O4)3]
+iii. [CoCl2(en)2]+
+iv. [CoBrCl(ox)2]3-
+The octahedral complex CoSO4Cl5NH3 exists in two isomeric forms X and Y. Isomers X
+reacts with AgNO3 to give a white precipitate, but does not react with BaCl2. Isomer Y
+gives white precipitate with BaCl2 but does not react with AgNO3. Isomers X and Y are:
+a. they exhibit multiple oxidation
+states
+c. vacant orbitals to accommodate
+electrons are present
+
+-- 4 of 7 --
+
+24) Stability of a metal complex depends upon:
+a. charge on the central metal ion b. nature of the ligand
+c. chelation d. all of the above
+25)
+26) The degeneracy of d-orbitals is lost under:
+i. strong field ligand
+ii. weak field ligand
+iii. mixed field ligand
+iv. chelated ligand field
+a. i, ii and iv b. i and ii
+c. i, ii, iii and iv d. i, ii and iii
+27) Choose the incorrect order of stability:
+a. [Cu(NH3)4]2+ < [Cu(en)2]2+ < [Cu(trien)]2+
+b. [Fe(H2O)6]3+ < [Fe(NO2)6]3- < (Fe(NH3)6]3+
+c. [Fe(H2O)6]2+ < [Fe(H2O)6]3+ < [Co(NH3)6]3+
+d. [Co(H2O)6]3+ < [Rh(H2O)6]2+ < [Ir(H2O)6]3+
+28 The complexes formed by Cu2+ ion are more stable than those formed by Cd2+ ion because:
+a. the value of the stability constant for Cd2+ complexes is greater than that of Cu2+ ions
+b. the charge density on Cu2+ is greater than that of Cd2+ ion
+c. the ionic radius of Cu2+ ion is more than that of Cd2+ ion
+d. Cu2+ ion forms chelate compounds
+29) The most stable complex species is:
+a. [Fe(C2O4)3]3- b. [Fe(CN)6]3-
+c. [Fe(CN)6]4- d. [Fe(H2O)6]3+
+c. these values cannot predict the
+strength of the ligand
+d. all the ligands are equally strong
+The stability constant of the complexes formed by a metal ion M2+ with NH3, CN-, H2O,
+and en are of the order of 1011, 1027, 1015, and 1018, respectively. Which of the
+following is true:
+a. CN- is the strongest ligand b. en is the strongest ligand
+
+-- 5 of 7 --
+
+30) In Fe(CO)5, the Fe-C bond possesses:
+a. π character only b. σ character only
+c. ionic character only d. both π and σ character
+31)
+a. 0 b. 5
+c. 2 d. 3
+32)
+a. E(dxy) > E(dz
+2) in both tetrahedral and octahedral complexes
+b. E(dxy) < E(dz
+2) in both tetrahedral and octahedral complexes
+c. E(dxy) > E(dz
+2) in tetrahedral but E(dxy) < E(dz
+2) in octahedral complexes
+d. E(dxy) < E(dz
+2) in tetrahedral but E(dxy) < E(dz
+2) in octahedral complexes
+33)
+a. t2g
+4eg
+0 b. eg
+4t2g
+0
+c. t2g
+3eg
+1 d. eg
+2t2g
+2
+34) The ratio of CFSE for [NiCl6]4- and [NiCl4]2- will be nearly:
+a. 3/2 b. 4/9
+c. 9/4 d. 27/8
+35) The d orbitals that are stabilized in an octahedral magnetic field are:
+a. dxy and dz2 b. dx2-y2 and dz2
+c. dxy, dxz and dyx d. dz2 only
+36)
+a. there are only four ligands instead of six
+b. the direction of the orbitals does not coincide with the direction of the ligands
+c. Both points (a) and (b) are correct
+d. Both points (a) and (b) are wrong
+In the complex ion ML6
+n+ ,Mn+ has five d-electrons and L is weak field ligand. According
+to crystal field theory, how many unpaired electrons are there in this complex ion?
+The energies of dxy and dz
+2 orbitals in octahedral and tetrahedral transition metal
+complexes are such that:
+What is the electronic arrangement of metal atom/ion in octahedral complex with d4
+configuration, if Δo < pairing energy
+The magnitude of crystal field stabilization energy in tetrahedral complexes is
+considerably less than in the octahedral field because:
+
+-- 6 of 7 --
+
+37) Which of the following on CO ligand is true?
+a. σ-donor, π-acceptor b. σ-donor, π-donor
+c. σ-acceptor, π-acceptor d. σ-acceptor, π-acceptor
+38) Cisplatin compounds are used in the treatment of:
+a. malaria b. cancer
+c. AIDS d. yellow fever
+39) In the spectrochemical series, which ligand produces strongest field?
+a. Cl- b. H2O
+c. NO2 d. CO
+40)
+a. Jahn-Teller effect b. Crystal Field Theory
+c. Ligand Field Theory d. Valence Bond Theory
+Which effect/theory could account for the presence of two different M-L bond lengths in
+[Cu(H2O)6]2+?
+
+-- 7 of 7 --
+

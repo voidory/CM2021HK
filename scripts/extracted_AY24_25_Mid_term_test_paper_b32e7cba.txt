@@ -1,0 +1,100 @@
+Matriculation number:
+Instructions for CM2021 Mid-Term Test
+1. This test paper contains Twenty (20) multiple-choice questions
+2. Answer ALL questions (1 mark each)
+3. Time allowed: 1 hour
+4. Do not turn over the test paper until told to do so
+/ 20
+Name:
+
+-- 1 of 3 --
+
+1) Which of the following is a coordination compound?
+a. Platinum 	b. Fe2+ ion
+c. Cisplatin 	d. Sulfuric acid
+2) The central metal atom in [Pt(NH3)2Cl2] is:
+a. Pt2+ b. Pt0
+c. Pt4+ 	d. None of the above
+3)
+a. [Pt(NH3)2Cl2] 	b. [Cr(en)3]3+
+c. [Co(en)2Cl2]+ 	d. Both b and c are correct
+4) Which of the following compound shows only linkage isomerism?
+a. [Co(NH3)5(SCN)](NO2) 	b. [Co(ONO)(NH3)3]NO2
+c. [Co(en)3]Cl2 	d. [Co(NO2)Br(NH3)4]Cl
+5)
+a. 4 	b. 8
+c. 12 	d. None of the above
+6) Which of the following is the correct name for [Cu(H2O)6][Pt(CN)6]:
+a. Hexaaquacopper(II) hexacyanoplatinate(II) 	b. Hexaaquacopper(II) hexacyanoplatinate(IV)
+c. Hexaaquacopper(I) hexacyanoplatinate(II) 	d. Hexaaquacopper(II) hexacyanoplatinum(IV)
+7) The name of [Fe(CN)2((CH3)3P)2] is:
+a. Dicyanobis(trimethylphosphine)iron(II) 	b. Dicyanodi(trimethylphosphine)iron(II)
+c. Dicyanobis(triphenylphosphine)iron(IV) 	d. Dicyanotris(methyl)bis(phosphine)iron(IV)
+8) Which of the following gives the highest number of isomers?
+a. [Co(NH3)4Cl2] 	b. [Ni(en)(NH3)4]2+
+c. [Ni(C2O4)(en)2] 	d. [Cr(SCN)2(NH3)4]4+
+9) What is the name for [Zn(OH)4]2-?
+a. Tetrahydroxozincate(II) 	b. Tetrahydroxozincate(IV)
+c. Tetrahydroxyzincate(II) 	d. Zinc tetrahydroxide
+10) What is the name for Na2[Fe(C2O4)2(H2O)2]?
+a. Sodium diaquabis(oxalato)ferrate(III) 	b. Sodium diaquabis(oxalato)ferrate(II)
+c. Sodium oxalatoferrate(III) 	d. Sodium diaquabis(oxalate)iron(III)
+Which of the following complexes can exhibit both geometrical and optical isomerism?
+How many isomers are possible for the complex [Pt(NH3)(H2O)(SCN)(NO2)]
+
+-- 2 of 3 --
+
+11) Which of the following metal atomic orbitals are considered in crystal field theory?
+a. d only 	b. p and d
+c. s and d 	d. s, p, and d
+12) What causes the metal d-orbitals to lose their degeneracy in the crystal field theory?
+a. Spherical field 	b. Point charges
+d. None of the above
+13) In [V(CO)6]5+, the V-C bond possesses:
+a. π character only 	b. σ character only
+c. ionic character only 	d. both π and σ character
+14)
+a. dxz 	b. dyz
+c. dz
+2 	d. dxy
+15)
+a. t2g
+4eg
+0 b. eg
+4t2g
+0
+c. t2g
+3eg
+1 d. eg
+2t2g
+2
+16)
+a. dxy orbital has the lowest energy
+b. dx2-y2 orbital has the highest energy
+c. Metal d-orbitals with lobes pointing towards the Z axis are destablized
+d. All of the above
+17) Which of the following on ammine ligand is true?
+a. σ-donor, π-acceptor 	b. σ-donor, π-donor
+c. σ-acceptor, π-acceptor 	d. None of the above
+18)
+a. Cr 	b. Cu
+c. Co 	d. Both (a) and (b) are correct
+a. 2.4Δo - 3P 	b. 2.4Δo - 2P
+c. 2.4Δo - P 	d. 2.4Δo
+20)
+a. Jahn-Teller effect 	b. Metal-to-ligand pi back bonding
+c. Ligand-to-metal pi bonding 	d. None of the above
+End of test paper.
+Which effect/theory could account for the presence of two absorption peaks for a d1 metal complex?
+Which of the following is true when an octahedral metal complex undergoes axial elongation?
+c. Repulsion between metal's d and p orbitals
+19) What is the CFSE of a low-spin d6 metal complex?
+Identify the first-row transition metal M that satisfies the requirements given (more than one answer
+may be possible).
+[M(H2O)6]2+ having LFSE = 0.6Δo.
+Which of the orbital will be most stablized if two axial ligands (i.e., along the z-axis) are removed?
+What is the electronic arrangement of metal atom/ion in octahedral complex with d4
+configuration? Assume pairing energy > Δo
+
+-- 3 of 3 --
+

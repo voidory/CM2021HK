@@ -1,0 +1,110 @@
+Matriculation number:
+Instructions for CM2021 Mid-Term Test
+1. This test paper contains Twenty (20) multiple-choice questions
+2. Answer ALL questions (1 mark each)
+3. Time allowed: 1 hour
+4. Do not turn over the test paper until told to do so
+/ 20
+Name:
+
+-- 1 of 4 --
+
+1) Give the chemical name of [Fe(CN)2(CH3NH2)4].
+a. dichlorotetramethylamineiron(II) 	b. dicyanotetrakis(dimethylamine)iron(II)
+c. dicholortetramethylamineiron(IV) 	d. dicyanotetrakis(methylamine)iron(II)
+2) What is the coordination number of the metal center in KMnO4?
+a. 4 	b. 5
+c. 8 	d. None of the above
+3)
+a. 0 	b. +1
+c. +2 	d. +4
+4) Which of the following compound shows only linkage isomerism?
+a. [Co(NH3)5(SO4)](NO2) 	b. [Co(NCS)(NH3)3]SCN
+c. [Co(en)2(SCN)2] 	d. [Co(NO2)Br(NH3)4]Cl
+5)
+a. 2 	b. 8
+c. 12 	d. None of the above
+6) Which of the following is the correct name for [Cu(H2O)6][Pt(CN)6]:
+a. Hexaaquacopper(II) hexacyanoplatinate(II) 	b. Hexaaquacopper(II) hexacyanoplatinate(IV)
+c. Hexaaquacopper(I) hexacyanoplatinate(II) 	d. Hexaaquacopper(II) hexacyanoplatinum(IV)
+7) How many distinct isomers are possible for a metal complex containing three glycinato ligands?
+a. 1 	b. 2
+c. 4 	d. None of the above
+8) Which of the following gives the highest number of isomers?
+a. [Co(NH3)4Cl2] 	b. [Ni(en)(NH3)4]2+
+c. [Ni(C2O4)(en)2] 	d. [Cr(SCN)2(NH3)4]4+
+9)
+a. [M(A-A)2] 	b. [M(A-A)(B-B)]
+c. [M(A-A)(B-C)] 	d. [M(A-B)(C-D)]
+What is the oxidation state of the nickel metal centers in [Ni2Cl2(PPh3)2]?
+How many isomers are possible for the complex [Pt(en)(NO3)(SCN)]?
+Which of the following tetrahedral metal complex shows optical isomerism? M denotes a metal center.
+A, B, C, and D indicate different types of donor atom. A hypen "-" indicates bond between donor
+atoms (i.e., multidentate ligand).
+
+-- 2 of 4 --
+
+10) What is the name for Na2[Fe(C2O4)2(H2O)2]?
+a. Sodium diaquabis(oxalato)iron(III) 	b. Sodium diaquabis(oxalato)ferrate(II)
+c. Disodium diaquabis(oxalato)ferrate(II) 	d. Disodium diaquabis(oxalato)iron(II)
+11)
+a. No use of metal orbitals 	b. all d orbitals
+c. dxy, dyz, dxz orbitals 	d. dx2-y2, dz2 orbitals
+12) Which of the following statement indicates a stable metal complex?
+a. Low formation constant 	b. High dissociation constant
+d. None of the above
+13) In the metal complex [Zn(F)6]4-, what type of bonding interaction(s) is/are present in the Zn-F bond?
+a. Ligand-to-metal π character only 	b. σ character only
+d. Both (a) and (b) are present
+14)
+a. dxz 	b. dyz
+c. dz
+2 	d. dxy
+15)
+a. t2g
+4eg
+0 b. eg
+4t2g
+0
+c. t2g
+3eg
+1 d. eg
+2t2g
+2
+16)
+a. High-spin d4 b. Low-spin d4
+c. High-spin d5 d. Low-spin d5
+17) Which of the following on phosphine ligand is true?
+a. σ-donor, π-acceptor 	b. σ-donor, π-donor
+c. σ-acceptor, π-acceptor 	d. None of the above
+18)
+a. Ti 	b. Fe
+c. Co 	d. Both (b) and (c) are correct
+Which of the following octahedral metal complex exhibits the strongest Jahn-Teller effect?
+c. Weak metal-ligand binding affinity
+Identify the first-row transition metal M that satisfies the requirements given (more than one answer
+may be possible).
+K2[MF4] having half-filled doubly degenerate e orbitals.
+Which of the orbital will be most destablized when we convert a square planar metal complex into a
+square pyramidal metal complex by adding one additional ligand to the metal complex?
+What is the electronic arrangement of metal atom/ion in octahedral metal complex with d4
+configuration? Assume pairing energy < Δo
+In ligand field theory, which of the following metal atomic orbitals are used for sigma bonding with
+ligands in an octahedral complex ?
+c. Both ligand-to-metal and
+metal-to-ligand π characters
+
+-- 3 of 4 --
+
+a. 1.2Δo 	b. 1.2Δo - P
+c. 1.2Δo - 2P 	d. 1.2Δo - 3P
+20)
+a. [Cu(NH3)2(H2O)4]2+ b. [Cu(NH3)4(H2O)2]2+
+c. [Cu(NH3)6]2+ d. None of the above
+End of test paper.
+The aqua ligands of [Cu(H2O)6]2+ can be replaced by ammine ligands. Which of the following is
+expected to be the major product?
+19) What is the CFSE of a d8 octahedral metal complex?
+
+-- 4 of 4 --
+

@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #f0f7ff;
+    color: #1e293b;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    overflow-x: hidden;
+  }
+}
+
+/* Cloud subtle animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-8px) translateX(6px);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(6px) translateX(-4px);
+  }
+}
+
+.cloud-float-1 {
+  animation: floatSlow 12s ease-in-out infinite;
+}
+
+.cloud-float-2 {
+  animation: floatGentle 16s ease-in-out infinite;
+}
+
+/* Disable animation when reduced-motion is requested or toggled */
+@media (prefers-reduced-motion: reduce) {
+  .cloud-float-1,
+  .cloud-float-2 {
+    animation: none !important;
+  }
+}
+
+.reduced-motion .cloud-float-1,
+.reduced-motion .cloud-float-2 {
+  animation: none !important;
+}

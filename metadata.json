@@ -1,0 +1,6 @@
+{
+  "name": "CloudChem - Inorganic Chemistry Adaptive Revision",
+  "description": "Complete local adaptive revision app for Inorganic Chemistry Mid-Term Tests with 130 exam questions, authority grading, and spaced repetition.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

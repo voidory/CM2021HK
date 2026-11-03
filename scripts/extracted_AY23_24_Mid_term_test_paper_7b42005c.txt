@@ -1,0 +1,147 @@
+Matriculation number:
+Instructions for CM2021 Mid-term Test
+1. This test paper contains THIRTY (30) multiple-choice questions
+2. Answer ALL questions (1 mark each)
+3. Time allowed: 1 hour
+4. Do not turn over the test paper until told to do so
+/ 30
+Name:
+
+-- 1 of 5 --
+
+1) Which of the following is not a coordination compound?
+a. Transplatin 	b. Haemoglobin
+c. 1,2-Diaminoethane 	d. Cobalt(III) ammines
+2) The number of chlorine atoms acting as counteranions in the complex [Co(en)2(H2)Cl]Cl2 is:
+a. 1 	b. 2
+c. 3 	d. None of these
+3)
+a. 1 	b. 2
+c. 3 	d. None of the above
+4) Which of the following compound shows only linkage isomerism?
+a. [Co(NH3)5(SCN)](NO2) 	b. [Co(NO2)(NH3)3]NO2
+c. [Co(NH3)6]Cl2 	d. [Co(NO2)Br(NH3)4]Cl
+5)
+a. CoBr(NH3)5(SO4) 	b. [CoBr(NH3)5]SO4
+c. [Co(NH3)5SO4]Br 	d. [CoBr(NH3)4SO4].NH3
+6) The name of the coordination compound K2[CoCl4] is:
+a. dipotassium tetrachlorocobaltate(II) 	b. dipotassium tetrachlorocobalt(IV)
+c. potassium tetrachlorocobaltate(II) 	d. potassium tetrachlorocobalt(II)
+7) The name of [Fe(CN)2((C6H5)3P)2] is:
+a. dicyanobis(triphenylphosphine)iron(II) 	b. dicyanodi(triphenylphosphine)iron(II)
+c. dicyanobis(triphenylphosphine)iron(IV) d. dicyanobis(tricyclohexylphosphine)iron(II)
+8) The name of [Cr(OH)4]- is:
+9) Which of the following coordination complexes is most stable?
+a. [Ni(NH3)6]2+ 	b. NiCl2
+c. [Ni(H2O)6]2+ d. [Ni(en)3]2+
+d. tetrahydroxochromium(III)
+A metal complex has a general formula of CoBr(NH3)5(SO4). What is the identity of this
+metal complex if it produces white precipitate when reacted with barium chloride?
+Determine the number of structural isomers for the octahedral complex [Co(NH3)5CO3]Cl.
+a. tetraaquachromate(III) 	b. tetrahydroxochromate(III)
+c. tetraaquachromate(I)
+
+-- 2 of 5 --
+
+10) An oxalato ligand has four oxygen atoms. It is a
+a. monodentate ligand 	b. bidentate ligand
+c. tridentate ligand 	d. tetradentate ligand
+11) Which of the following gives the least number of isomers?
+a. [Co(NH3)4Cl2] 	b. [Ni(en)(NH3)4]2+
+c. [Ni(C2O4)(en)2] 	d. [Cr(SCN)2(NH3)4]4+
+12) [Co(NH3)2(en)(NO2)2]Cl exhibits:
+13)
+a. 3 	b. 4
+c. 8 	d. 16
+14) Which of the following compound shows optical isomerism?
+a. [Co(CN)3(Cl)3]3- b. [Cr(en)3]3+
+c. [Zn(C2O4)2]2- d. [Cu(NH3)4]2+
+15) The number of geometrical isomers shown by the octahedral complex of the type [M(A-B)3] is
+a. 1 	b. 2
+c. 4 	d. None of the above
+16) Which of the following metal atomic orbitals are considered in ligand field theory?
+a. only d 	b. p and d
+c. s and d 	d. s, p, and d
+17) Which of the following can lead to stronger metal-ligand bond?
+a. ligand-to-metal pi donation 	b. metal-to-ligand pi donation
+c. lower charge-to-radii ratio of metal 	d. None of the above
+18) What causes the d-orbitals to lose their degeneracy in the ligand field theory?
+a. spherical field 	b. point charges
+d. anisotropic crystal field	c. mixing of metal atomic orbitals with
+ligand group orbitals
+The total number of possible isomers for this metal complex [M(NO2)(SCN)(NH3)4] is:
+d. linkage, geometrical, optical
+and ionization isomerisms
+a. ionization, geometrical
+and optical isomerisms
+b. linkage, geometrical
+and optical isomerisms
+c. linkage, ionization
+and optical isomerisms
+
+-- 3 of 5 --
+
+19) In [Ti(CO)6]4+, the Ti-C bond possesses:
+a. π character only 	b. σ character only
+c. ionic character only 	d. both π and σ character
+20)
+a. 0 	b. 1
+c. 2 	d. 4
+21)
+a. dxz 	b. dyz
+c. dz
+2 	d. dxy
+22)
+a. t2g
+4eg
+0 b. eg
+4t2g
+0
+c. t2g
+3eg
+1 d. eg
+2t2g
+2
+23) The ratio of CFSE for [NiCl6]4- and [NiCl4]2- will be nearly:
+a. 3/2 	b. 4/9
+c. 9/4 	d. 27/8
+24) The d orbitals that are stabilized in a tetrahedral magnetic field are:
+a. dxy and dz2 	b. dx2-y2 and dz2
+c. dxy, dxz and dyz 	d. dz2 only
+25)
+a. dxy orbital has the lowest energy
+b. dx2-y2 orbital has the highest energy
+c. Metal d-orbitals with lobes pointing towards the Z axis are stablized
+d. All of the above
+26) Which of the following on fluoro ligand is true?
+a. σ-donor, π-acceptor 	b. σ-donor, π-donor
+c. σ-acceptor, π-acceptor 	d. σ-acceptor, π-acceptor
+27) In the spectrochemical series, which ligand is neither a pi acceptor nor a pi donor?
+a. Cl- 	b. H2O
+c. NO2 	d. NH3
+In the complex ion ML6
+n+, Mn+ has six d-electrons and L is high field ligand. According
+to crystal field theory, how many unpaired electrons are there in this complex ion?
+Which of the orbital will be most stablized if two axial ligands (i.e., along the z-axis) are removed?
+What is the electronic arrangement of metal atom/ion in octahedral complex with d4
+configuration, if Δo > pairing energy
+Which of the following is true when an octahedral metal complex undergoes axial compression?
+
+-- 4 of 5 --
+
+28)
+a. Jahn-Teller effect 	b. Metal-to-ligand pi back bonding
+c. Ligand-to-metal pi bonding 	d. Mixing of metal atomic orbitals and LGO
+a. [Cu(NH3)3(H2O)3]2+ b. [Cu(NH3)4(H2O)2]2+
+c. [Cu(NH3)5(H2O)]2+ d. [Cu(NH3)6]2+
+30) When [Cr(CO)5(PH3)] is oxidized, what is the effect on the C-O bond?
+a. Becomes stronger 	b. Becomes longer
+c. Becomes weaker 	d. Both b and c
+End of test paper.
+29) In [Cu(H2O)6]2+, the original aqua ligands can be replaced by ammine ligands.
+Predict the major product.
+Which effect/theory could account for the presence of two absorption peaks for a d1 metal
+complex?
+
+-- 5 of 5 --
+

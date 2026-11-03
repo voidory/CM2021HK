@@ -1,0 +1,111 @@
+Matriculation number:
+Instructions for CM2021 Mid-term Test
+1. This test paper contains twenty (20) multiple-choice questions
+2. Answer ALL questions (1 mark each)
+3. Time allowed: 1 hour
+4. Do not turn over the test paper until told to do so
+/ 20
+Name:
+
+-- 1 of 4 --
+
+1) Which of the coordination compounds will give exactly three isomers?
+a. [Fe(en)3]Cl3 	b. [Co(en)2Cl2]Cl
+c. [Fe(PPh3)3(NH3)ClBr]Cl 	d. [Co(PPh3)3Cl]Cl3
+2) Hybridization involves:
+a. addition of an electron pair 	b. combination and redistribution of atomic orbitals
+c. removal of an electron pair 	d. separation of orbitals
+3)
+a. tetraamminenickel(II) tetrachloronickelate(II)
+b. tetraamminenickel(II) tetrachloronickel(II)
+c. tetraamminenickel(0) tetrachloronickelate(0)
+b. tetraamminenickel(0) tetrachloronickel(0)
+4) The name of K3[Ir(C2O4)3] is:
+a. potassium trioxalatoiridium(III) 	b. potassium trioxalatoiridate(III)
+c. potassium tris(oxalato)iridium(III) 	d. potassium tris(oxalato)iridate(III)
+5) Which of the following octahedral complexes will have the highest Δo?
+a. [Co(H2O)6]3+ b. [Co(NH3)6]3+
+c. [Co(CN)6]3- d. [CoCl6]3-
+6)
+a. 1 	b. 2
+c. 3 	d. 4
+7) Which of the following has the highest molar conductivity?
+a. [Co(NH3)6]Cl3 	b. [Co(NH3)5Cl]Cl2
+c. [Co(NH3)4Cl2]Cl 	d. [Co(NH3)4BrF]Cl
+How many isomer(s) is/are possible for a tetrahedral complex with the formula [M(A-A)2]?
+Note that A-A refers to a symmetrical bidentate ligand.
+The name of [Ni(NH3)4][NiCl4] is:
+
+-- 2 of 4 --
+
+8) The ionization isomer of [Cr(H2O)4Cl(NO2)]Cl is:
+9)
+a. ligand-to-metal π bonding 	b. metal-to-ligand π-back bonding
+c. σ bonding 	d. none of the above
+10)
+a. E(dxy) > E(dz
+2) in both tetrahedral and octahedral complexes
+b. E(dxy) < E(dz
+2) in both square planar and octahedral complexes
+c. E(dxy) > E(dz
+2) in tetrahedral but E(dxy) < E(dz
+2) in octahedral complexes
+d. E(dxy) < E(dz
+2) in square planar but E(dxy) < E(dz
+2) in octahedral complexes
+11) Cisplatin compounds are used in the treatment of:
+a. malaria 	b. cancer
+c. AIDS 	d. yellow fever
+12)
+13)
+a. 4 	b. 6
+c. 8 	d. 12
+14)
+a. left; d 	b. right, d
+d. right, l
+The C-O bond length of CO ligand increases as we change the central metal ion from a d0
+species to a d1 species. Assuming that the ion radii and oxidation states of both species are the
+same, the observation is due to:
+Which of the following isomerisms comprise of metal complex isomers with different general
+molecular formula?
+a. [Cr(H2O)4Cl2](NO2) 	b. [Cr(H2O)4Cl(ONO)]Cl
+d. All of the above	c. [Cr(H2O)3Cl2(NO2)].H2O
+c. left, l
+[Cu(SCN)2(NH3)4] is an octahedral complex. How many isomers are possible for this
+molecular formula?
+A dextrorotatory optical isomer rotates plane-polarized light to the _______ and is denoted as
+______.
+Which of the following statements is true?
+b. coordination isomerism
+d. none of the above
+a. optical isomerism
+c. fac/mer isomerism
+
+-- 3 of 4 --
+
+15)
+a. 97 KJ/mol 	b. 227 KJ/mol
+c. 1.2 KJ/mol 	d. 65 KJ/mol
+16)
+a. macrocyclic effect 	b. lewis basicity
+c. pi bonding 	d. chelate effect
+17)
+a. 1.8Δo 	b. 0.8Δo
+c. 1.8Δo - P 	d. 1.8Δo - 3P
+18) Which of the following on CO ligand is true?
+a. σ-donor, π-acceptor 	b. σ-donor, π-donor
+c. σ-acceptor, π-acceptor 	d. σ-acceptor, π-acceptor
+19) Which of the following metal complexes is expected to give the strongest Jahn-Teller effect?
+a. low-spin d4 b.high-spin d6
+c. low-spin d7 d. d2
+20) Which of the following causes d-orbitals splitting in crystal field theory?
+a. size of the metal ion/atom 	b. directionality of metal d orbitals
+c. spherical field 	d. all of the above
+The complex ion [NiCl6]4- has a crystal field splitting parameter of 81 KJ/mol. Calculate its
+crystal field stabilization energy (CFFE).
+Ethylenediamine is observed to form a more stable metal complex than methylamine. This is
+due to:
+What is the CFSE of low-spin d7 metal complex?
+
+-- 4 of 4 --
+
